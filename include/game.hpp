@@ -29,6 +29,12 @@ struct Game {
     bool thirdPerson = false;
     float bodyYaw = -90;
     float mouseSensitivity = .02f;
+    // -1: active monitor; -2: custom; 0: uncapped; positive: fixed FPS.
+    int fpsLimit = -1, customFPS = 144, monitorHz = 60;
+    std::vector<int> refreshRates;
+    int frameRateLimit() const {
+        return fpsLimit==-1 ? monitorHz : fpsLimit==-2 ? customFPS : fpsLimit;
+    }
     int cctvView = 0, retries = 0;
     std::array<Laser, 6> lasers;
     std::string hint;

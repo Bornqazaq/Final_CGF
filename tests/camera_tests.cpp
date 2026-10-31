@@ -50,6 +50,12 @@ int main(){try{
     need(glm::distance(split.sample(200,50),glm::vec2(1,0))<.0001f,"sensitivity setting ignored");
     Game setting;setting.mouseSensitivity=.007f;setting.reset();
     need(std::abs(setting.mouseSensitivity-.007f)<.000001f,"retry lost mouse setting");
+    Game limits;limits.monitorHz=165;limits.fpsLimit=-1;
+    need(limits.frameRateLimit()==165,"auto cap not using monitor refresh");
+    limits.fpsLimit=0;need(limits.frameRateLimit()==0,"uncapped mode");
+    limits.fpsLimit=540;need(limits.frameRateLimit()==540,"high refresh cap");
+    limits.fpsLimit=-2;limits.customFPS=237;limits.reset();
+    need(limits.frameRateLimit()==237 && limits.monitorHz==165,"retry lost FPS settings");
     Game g;
     need(!g.thirdPerson && glm::distance(g.camera(),g.eyePosition())<.0001f,"default first-person view");
     const auto pos=g.position;const auto time=g.time;

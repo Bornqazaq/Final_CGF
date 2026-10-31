@@ -90,7 +90,7 @@ UIAction drawUI(Game &g, float fps, int width, int height, const std::string &gp
         if (g.state != State::Victory)
             ImGui::GetBackgroundDrawList()->AddRectFilled({0, 0}, {w, h}, IM_COL32(3, 5, 6, 95));
         ImGui::SetNextWindowPos({w * .5f, h * .5f}, ImGuiCond_Always, {.5f, .5f});
-        ImGui::SetNextWindowSize({560, menu ? 460.f : g.state == State::Pause ? 370.f : 315.f});
+        ImGui::SetNextWindowSize({560, menu ? 540.f : g.state == State::Pause ? 450.f : 315.f});
         if (g.state == State::Victory) {
             ImGui::SetNextWindowPos({24, h - 345}, ImGuiCond_Always);
             ImGui::SetNextWindowSize({420, 315});
@@ -121,6 +121,25 @@ UIAction drawUI(Game &g, float fps, int width, int height, const std::string &gp
             if (ImGui::SliderFloat("Mouse sensitivity", &sensitivity, .1f, 10.f,
                                   "%.2f", ImGuiSliderFlags_AlwaysClamp))
                 g.mouseSensitivity=sensitivity*.022f;
+            auto limitName=[&](int rate){
+                if(rate==-1)return std::string("Auto / monitor (")+std::to_string(g.monitorHz)+" Hz)";
+                if(rate==-2)return std::string("Custom");
+                if(rate==0)return std::string("Unlimited");
+                return std::to_string(rate)+" FPS";
+            };
+            ImGui::SetNextItemWidth(300);
+            if(ImGui::BeginCombo("FPS limit",limitName(g.fpsLimit).c_str())){
+                for(int rate : {-1,0,-2})
+                    if(ImGui::Selectable(limitName(rate).c_str(),g.fpsLimit==rate))g.fpsLimit=rate;
+                for(int rate : g.refreshRates)
+                    if(ImGui::Selectable(limitName(rate).c_str(),g.fpsLimit==rate))g.fpsLimit=rate;
+                ImGui::EndCombo();
+            }
+            if(g.fpsLimit==-2){
+                ImGui::SetNextItemWidth(300);
+                ImGui::InputInt("Custom FPS",&g.customFPS);
+                g.customFPS=std::clamp(g.customFPS,1,10000);
+            }
         }
         if (ImGui::Button(menu                      ? "Begin heist  [ENTER]"
                           : g.state == State::Pause ? "Resume  [ESC]"

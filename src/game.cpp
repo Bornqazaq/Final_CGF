@@ -24,7 +24,9 @@ void Game::reset() {
     float danceLength = danceDuration;
     bool preferredView = thirdPerson;
     float preferredSensitivity = mouseSensitivity;
+    auto rates=refreshRates;int limit=fpsLimit,custom=customFPS,refresh=monitorHz;
     *this = Game();
+    refreshRates=std::move(rates);fpsLimit=limit;customFPS=custom;monitorHz=refresh;
     danceDuration = danceLength;
     thirdPerson = preferredView;
     mouseSensitivity = preferredSensitivity;

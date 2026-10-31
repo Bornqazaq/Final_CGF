@@ -1,6 +1,7 @@
 #include "animation.hpp"
 #include "director.hpp"
 #include "fixed_step.hpp"
+#include "frame_limiter.hpp"
 #include "game.hpp"
 #include "mouse_look.hpp"
 #include "mouse_motion.hpp"
@@ -15,6 +16,7 @@
 #define WIN32_LEAN_AND_MEAN
 #define GLFW_EXPOSE_NATIVE_WIN32
 #include <GLFW/glfw3native.h>
+#include <mmsystem.h>
 #endif
 #include <algorithm>
 #include <chrono>
@@ -92,12 +94,35 @@ void captureMouse(GLFWwindow *w, Mouse &mouse, bool locked) {
     }
 
 }
+void detectDisplay(GLFWwindow *window,lvh::Game &game) {
+    int x,y,w,h;glfwGetWindowPos(window,&x,&y);glfwGetWindowSize(window,&w,&h);
+    int count=0;auto monitors=glfwGetMonitors(&count);int best=-1;
+    game.refreshRates={25,30,48,50,60,70,72,75,85,90,100,120,138,144,155,160,165,170,175,180,185,190,200,220,225,240,250,260,270,280,300,320,330,360,380,400,420,440,480,500,540,600,610,720,750,1000};
+    for(int i=0;i<count;i++){
+        int mx,my;glfwGetMonitorPos(monitors[i],&mx,&my);
+        auto mode=glfwGetVideoMode(monitors[i]);if(!mode)continue;
+        int area=std::max(0,std::min(x+w,mx+mode->width)-std::max(x,mx))*
+                 std::max(0,std::min(y+h,my+mode->height)-std::max(y,my));
+        if(area>best){best=area;game.monitorHz=std::max(1,mode->refreshRate);}
+        int modes=0;auto list=glfwGetVideoModes(monitors[i],&modes);
+        for(int j=0;j<modes;j++)if(list[j].refreshRate>0)game.refreshRates.push_back(list[j].refreshRate);
+    }
+    std::sort(game.refreshRates.begin(),game.refreshRates.end());
+    game.refreshRates.erase(std::unique(game.refreshRates.begin(),game.refreshRates.end()),game.refreshRates.end());
+}
+#ifdef _WIN32
+struct TimerResolution {
+    bool active=timeBeginPeriod(1)==TIMERR_NOERROR;
+    ~TimerResolution(){if(active)timeEndPeriod(1);}
+};
+#endif
 void error(int code, const char *msg) {
     std::cerr << "GLFW " << code << ": " << msg << '\n';
 }
 } // namespace
 int main(int argc, char **argv) {
     using namespace lvh;
+    int requestedFPS=-1;bool fpsSpecified=false;
     bool entrancePreview = false;
     bool grey = false, hidden = false, help = false, preview = false, facePreview = false,
          restPose = false, demo = false, autoRoute = false, finalePreview = false, thirdPerson = false;
@@ -107,7 +132,12 @@ int main(int argc, char **argv) {
     fs::path encoder, record, captureWait, screenshot, root = fs::absolute(argv[0]).parent_path();
     for (int i = 1; i < argc; i++) {
         std::string arg = argv[i];
-        if (arg == "--entrance-preview") entrancePreview=true;
+        if(arg=="--fps" && i+1<argc){
+            std::string value=argv[++i];requestedFPS=value=="auto" ? -1 : std::stoi(value);
+            if(requestedFPS < -1 || requestedFPS>10000) {std::cerr<<"FPS must be auto or 0..10000\n";return 2;}
+            fpsSpecified=true;
+        }
+        else if (arg == "--entrance-preview") entrancePreview=true;
         else if (arg == "--greybox")
             grey = true;
         else if (arg == "--character-preview")
@@ -178,6 +208,9 @@ int main(int argc, char **argv) {
         glfwTerminate();
         return 1;
     }
+    #ifdef _WIN32
+    TimerResolution timerResolution;
+    #endif
     int result = 0;
     try {
         std::string gpu = reinterpret_cast<const char *>(glGetString(GL_RENDERER));
@@ -188,6 +221,9 @@ int main(int argc, char **argv) {
             << "OpenGL: " << version << "\nGPU: " << gpu << "\n";
         Game game;
         game.thirdPerson=thirdPerson;
+        detectDisplay(window,game);
+        game.fpsLimit=(!fpsSpecified && (hidden||autoRoute||demo)) ? 0 : requestedFPS;
+        std::cout<<"Display: "<<game.monitorHz<<" Hz; FPS limit: "<<game.frameRateLimit()<<'\n';
         Director director;
         Route route;
         FixedStep clock;
@@ -245,10 +281,13 @@ int main(int argc, char **argv) {
         if (!record.empty())
             recorder = std::make_unique<Recorder>(encoder, record, wantedWidth, wantedHeight);
         std::string source = readText(root / "assets" / "renderer-source.txt");
+        double lastDisplayCheck=-2;
         while (!glfwWindowShouldClose(window)) {
+            auto frameStarted=FrameLimiter::Clock::now();
             double now = glfwGetTime(), elapsed = now - last;
             last = now;
             glfwPollEvents();
+            if(now-lastDisplayCheck>1){detectDisplay(window,game);lastDisplayCheck=now;}
             // Consume fresh movement events once; never warp the Windows cursor.
             if (mouse.locked && mouse.focused) {
                 double x=0,y=0;
@@ -420,6 +459,7 @@ int main(int argc, char **argv) {
             GLenum glError = glGetError();
             if (glError != GL_NO_ERROR)
                 throw std::runtime_error("OpenGL error " + std::to_string(glError));
+            if(!glfwWindowShouldClose(window))FrameLimiter::wait(frameStarted,game.frameRateLimit());
         }
         if (recorder)
             recorder->close();
