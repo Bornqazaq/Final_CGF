@@ -31,3 +31,5 @@ and a complete third-person route through to victory. The two actual render
 screenshots are evidence/screenshots/first-person.png and third-person.png.
 Update these camera obstacle proxies together with gameplay collision when the
 location layout is redesigned.
+
+Mouse look uses 0.045 degrees per input unit and raw mouse motion where supported. Focus and cursor-capture changes reset the first sample to prevent view jumps. Mouse deltas are independent of frame time.

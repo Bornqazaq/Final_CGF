@@ -1,10 +1,20 @@
 #include "game.hpp"
+#include "mouse_look.hpp"
 #include "route.hpp"
 #include <iostream>
 #include <stdexcept>
 using namespace lvh;
 static void need(bool ok,const char *message){if(!ok)throw std::runtime_error(message);}
 int main(){try{
+    MouseLook mouse;
+    need(glm::length(mouse.sample(5000,-4000))==0,"initial cursor position turned the camera");
+    auto delta=mouse.sample(5100,-3900);
+    need(glm::distance(delta,glm::vec2(4.5f))<.0001f,"unexpected mouse sensitivity");
+    mouse.reset();
+    need(glm::length(mouse.sample(-9000,8000))==0,"focus/capture reset caused a camera jump");
+    MouseLook whole,split;whole.sample(0,0);split.sample(0,0);
+    auto one=whole.sample(100,50);auto many=split.sample(40,20);many+=split.sample(100,50);
+    need(glm::distance(one,many)<.0001f,"mouse rotation depends on event frequency");
     Game g;
     need(!g.thirdPerson && glm::distance(g.camera(),g.eyePosition())<.0001f,"default first-person view");
     const auto pos=g.position;const auto time=g.time;

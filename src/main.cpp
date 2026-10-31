@@ -2,6 +2,7 @@
 #include "director.hpp"
 #include "fixed_step.hpp"
 #include "game.hpp"
+#include "mouse_look.hpp"
 #include "recorder.hpp"
 #include "scene.hpp"
 #include "ui.hpp"
@@ -16,23 +17,31 @@
 namespace {
 struct Mouse {
     lvh::Game *game;
-    bool locked = true, first = true;
-    double x = 0, y = 0;
+    bool locked = true, focused = true;
+    lvh::MouseLook look;
 };
 void cursor(GLFWwindow *w, double x, double y) {
     auto *m = static_cast<Mouse *>(glfwGetWindowUserPointer(w));
-    if (!m || !m->locked)
+    if (!m || !m->locked || !m->focused)
         return;
-    if (m->first) {
-        m->x = x;
-        m->y = y;
-        m->first = false;
-    }
-    m->game->yaw += float(x - m->x) * .105f;
+    const auto delta=m->look.sample(x,y);
+    m->game->yaw += delta.x;
     float limit=m->game->thirdPerson ? 60.f : 85.f;
-    m->game->pitch=std::clamp(m->game->pitch-float(y-m->y)*.105f,-limit,limit);
-    m->x = x;
-    m->y = y;
+    m->game->pitch=std::clamp(m->game->pitch-delta.y,-limit,limit);
+}
+void focus(GLFWwindow *w, int focused) {
+    auto *m=static_cast<Mouse *>(glfwGetWindowUserPointer(w));
+    if (!m) return;
+    m->focused=focused==GLFW_TRUE;
+    m->look.reset();
+}
+void captureMouse(GLFWwindow *w, Mouse &mouse, bool locked) {
+    mouse.locked=locked;
+    mouse.look.reset();
+    glfwSetInputMode(w,GLFW_CURSOR,locked ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
+    if (glfwRawMouseMotionSupported())
+        glfwSetInputMode(w,GLFW_RAW_MOUSE_MOTION,locked ? GLFW_TRUE : GLFW_FALSE);
+    mouse.look.reset();
 }
 void error(int code, const char *msg) {
     std::cerr << "GLFW " << code << ": " << msg << '\n';
@@ -132,12 +141,12 @@ int main(int argc, char **argv) {
         Route route;
         FixedStep clock;
         bool menu = !hidden && !preview && !demo && !autoRoute && !finalePreview;
-        Mouse mouse{&game};
-        mouse.locked = !menu && !demo && !autoRoute && !hidden;
+        Mouse mouse{&game,true,true,{}};
+        mouse.focused = glfwGetWindowAttrib(window,GLFW_FOCUSED)==GLFW_TRUE;
         glfwSetWindowUserPointer(window, &mouse);
         glfwSetCursorPosCallback(window, cursor);
-        glfwSetInputMode(window, GLFW_CURSOR,
-                         mouse.locked ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
+        glfwSetWindowFocusCallback(window,focus);
+        captureMouse(window,mouse,!menu && !demo && !autoRoute && !hidden);
         fs::current_path(root);
         Scene scene;
         Animator animator;
@@ -187,10 +196,7 @@ int main(int argc, char **argv) {
                     beforePause = game.state;
                     game.state = State::Pause;
                 }
-                mouse.locked = game.state != State::Pause;
-                mouse.first = true;
-                glfwSetInputMode(window, GLFW_CURSOR,
-                                 mouse.locked ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
+                captureMouse(window,mouse,game.state != State::Pause);
             }
             wasEsc = esc;
             if (menu && key(GLFW_KEY_ENTER))
@@ -228,10 +234,7 @@ int main(int argc, char **argv) {
             auto lights = updateWorld(scene, game, alarm);
             bool locked = !menu && !demo && !autoRoute && !hidden && game.state == State::Playing;
             if (mouse.locked != locked) {
-                mouse.locked = locked;
-                mouse.first = true;
-                glfwSetInputMode(window, GLFW_CURSOR,
-                                 locked ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
+                captureMouse(window,mouse,locked);
             }
             int width, height;
             glfwGetFramebufferSize(window, &width, &height);
