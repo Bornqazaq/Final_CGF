@@ -28,6 +28,7 @@ struct Game {
     bool crouching = false, lamp = true, safeOpened = false, lastCrossed = false;
     bool thirdPerson = false;
     float bodyYaw = -90;
+    float mouseSensitivity = .02f;
     int cctvView = 0, retries = 0;
     std::array<Laser, 6> lasers;
     std::string hint;

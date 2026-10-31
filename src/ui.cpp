@@ -90,7 +90,7 @@ UIAction drawUI(Game &g, float fps, int width, int height, const std::string &gp
         if (g.state != State::Victory)
             ImGui::GetBackgroundDrawList()->AddRectFilled({0, 0}, {w, h}, IM_COL32(3, 5, 6, 95));
         ImGui::SetNextWindowPos({w * .5f, h * .5f}, ImGuiCond_Always, {.5f, .5f});
-        ImGui::SetNextWindowSize({560, menu ? 405.f : 315.f});
+        ImGui::SetNextWindowSize({560, menu ? 460.f : g.state == State::Pause ? 370.f : 315.f});
         if (g.state == State::Victory) {
             ImGui::SetNextWindowPos({24, h - 345}, ImGuiCond_Always);
             ImGui::SetNextWindowSize({420, 315});
@@ -114,6 +114,11 @@ UIAction drawUI(Game &g, float fps, int width, int height, const std::string &gp
             ImGui::Text("WASD + mouse    Move and look");
             ImGui::Text("CTRL / C    Crouch     E    Interact");
             ImGui::Text("V    Camera     F1    Help     ESC    Pause");
+        }
+        if (menu || g.state == State::Pause) {
+            ImGui::SetNextItemWidth(300);
+            ImGui::SliderFloat("Mouse sensitivity", &g.mouseSensitivity, .002f, .12f,
+                               "%.3f", ImGuiSliderFlags_Logarithmic | ImGuiSliderFlags_AlwaysClamp);
         }
         if (ImGui::Button(menu                      ? "Begin heist  [ENTER]"
                           : g.state == State::Pause ? "Resume  [ESC]"

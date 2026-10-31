@@ -9,12 +9,17 @@ int main(){try{
     MouseLook mouse;
     need(glm::length(mouse.sample(5000,-4000))==0,"initial cursor position turned the camera");
     auto delta=mouse.sample(5100,-3900);
-    need(glm::distance(delta,glm::vec2(4.5f))<.0001f,"unexpected mouse sensitivity");
+    need(glm::distance(delta,glm::vec2(2.f))<.0001f,"unexpected mouse sensitivity");
     mouse.reset();
     need(glm::length(mouse.sample(-9000,8000))==0,"focus/capture reset caused a camera jump");
     MouseLook whole,split;whole.sample(0,0);split.sample(0,0);
     auto one=whole.sample(100,50);auto many=split.sample(40,20);many+=split.sample(100,50);
     need(glm::distance(one,many)<.0001f,"mouse rotation depends on event frequency");
+    need(glm::length(split.sample(100,50))==0,"stationary mouse causes drift");
+    split.sensitivity=.01f;
+    need(glm::distance(split.sample(200,50),glm::vec2(1,0))<.0001f,"sensitivity setting ignored");
+    Game setting;setting.mouseSensitivity=.007f;setting.reset();
+    need(std::abs(setting.mouseSensitivity-.007f)<.000001f,"retry lost mouse setting");
     Game g;
     need(!g.thirdPerson && glm::distance(g.camera(),g.eyePosition())<.0001f,"default first-person view");
     const auto pos=g.position;const auto time=g.time;

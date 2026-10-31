@@ -23,9 +23,11 @@ void Game::reset() {
     int attempts = retries + 1;
     float danceLength = danceDuration;
     bool preferredView = thirdPerson;
+    float preferredSensitivity = mouseSensitivity;
     *this = Game();
     danceDuration = danceLength;
     thirdPerson = preferredView;
+    mouseSensitivity = preferredSensitivity;
     retries = attempts;
 }
 glm::vec3 Game::forward() const {

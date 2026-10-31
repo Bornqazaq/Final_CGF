@@ -20,15 +20,6 @@ struct Mouse {
     bool locked = true, focused = true;
     lvh::MouseLook look;
 };
-void cursor(GLFWwindow *w, double x, double y) {
-    auto *m = static_cast<Mouse *>(glfwGetWindowUserPointer(w));
-    if (!m || !m->locked || !m->focused)
-        return;
-    const auto delta=m->look.sample(x,y);
-    m->game->yaw += delta.x;
-    float limit=m->game->thirdPerson ? 60.f : 85.f;
-    m->game->pitch=std::clamp(m->game->pitch-delta.y,-limit,limit);
-}
 void focus(GLFWwindow *w, int focused) {
     auto *m=static_cast<Mouse *>(glfwGetWindowUserPointer(w));
     if (!m) return;
@@ -39,8 +30,9 @@ void captureMouse(GLFWwindow *w, Mouse &mouse, bool locked) {
     mouse.locked=locked;
     mouse.look.reset();
     glfwSetInputMode(w,GLFW_CURSOR,locked ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
+    // Keep the original OS cursor input path; do not mix raw and cursor motion.
     if (glfwRawMouseMotionSupported())
-        glfwSetInputMode(w,GLFW_RAW_MOUSE_MOTION,locked ? GLFW_TRUE : GLFW_FALSE);
+        glfwSetInputMode(w,GLFW_RAW_MOUSE_MOTION,GLFW_FALSE);
     mouse.look.reset();
 }
 void error(int code, const char *msg) {
@@ -144,7 +136,6 @@ int main(int argc, char **argv) {
         Mouse mouse{&game,true,true,{}};
         mouse.focused = glfwGetWindowAttrib(window,GLFW_FOCUSED)==GLFW_TRUE;
         glfwSetWindowUserPointer(window, &mouse);
-        glfwSetCursorPosCallback(window, cursor);
         glfwSetWindowFocusCallback(window,focus);
         captureMouse(window,mouse,!menu && !demo && !autoRoute && !hidden);
         fs::current_path(root);
@@ -178,6 +169,8 @@ int main(int argc, char **argv) {
         std::ofstream trace(root / "evidence" / "gameplay-trace.csv");
         trace << "wall_seconds,demo_seconds,x,z,crouching,body_height,lamp,cctv,state,safe_time,"
                  "retries\n";
+        std::ofstream mouseTrace(root / "evidence" / "mouse-input.csv");
+        mouseTrace << "seconds,x,y,delta_yaw,delta_pitch,yaw,pitch,sensitivity\n";
         double lastTrace = -1;
         std::unique_ptr<Recorder> recorder;
         if (!record.empty())
@@ -187,6 +180,20 @@ int main(int argc, char **argv) {
             double now = glfwGetTime(), elapsed = now - last;
             last = now;
             glfwPollEvents();
+            // Sample the final virtual position once. Recenter/event pairs cannot
+            // clamp pitch in opposite callbacks and leave a residual vertical drift.
+            if (mouse.locked && mouse.focused) {
+                double x,y;glfwGetCursorPos(window,&x,&y);
+                mouse.look.sensitivity=game.mouseSensitivity;
+                const auto delta=mouse.look.sample(x,y);
+                game.yaw=std::remainder(game.yaw+delta.x,360.f);
+                float limit=game.thirdPerson ? 60.f : 85.f;
+                game.pitch=std::clamp(game.pitch-delta.y,-limit,limit);
+                if (delta.x!=0 || delta.y!=0)
+                    mouseTrace << now-started << ',' << x << ',' << y << ',' << delta.x << ','
+                               << delta.y << ',' << game.yaw << ',' << game.pitch << ','
+                               << game.mouseSensitivity << '\n';
+            }
             auto key = [&](int k) { return glfwGetKey(window, k) == GLFW_PRESS; };
             bool esc = key(GLFW_KEY_ESCAPE);
             if (esc && !wasEsc && !menu && !demo) {
