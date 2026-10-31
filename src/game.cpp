@@ -99,7 +99,15 @@ glm::vec3 Game::camera() const {
     float clear=0;
     for(int i=1;i<=steps;++i){
         float t=float(i)/steps;
-        if(cameraBlocked(anchor+boom*t)) break;
+        if(cameraBlocked(anchor+boom*t)) {
+            float lo=clear,hi=t;
+            for(int j=0;j<10;++j) {
+                float mid=(lo+hi)*.5f;
+                if(cameraBlocked(anchor+boom*mid)) hi=mid; else lo=mid;
+            }
+            clear=lo;
+            break;
+        }
         clear=t;
     }
     return anchor+boom*clear;
@@ -111,7 +119,7 @@ bool Game::thirdPersonVisible() const {
 glm::mat4 Game::view() const {
     if (safeOpened)
         return glm::lookAt(camera(), glm::vec3(0, 1.42f, -13.1f), glm::vec3(0, 1, 0));
-    glm::vec3 target=thirdPerson ? eyePosition()+forward()*6.f : camera()+forward();
+    glm::vec3 target=camera()+forward();
     return glm::lookAt(camera(),target,glm::vec3(0,1,0));
 }
 void Game::updateLasers() {

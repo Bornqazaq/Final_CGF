@@ -3,11 +3,19 @@
 #include "fixed_step.hpp"
 #include "game.hpp"
 #include "mouse_look.hpp"
+#include "mouse_motion.hpp"
 #include "recorder.hpp"
 #include "scene.hpp"
 #include "ui.hpp"
 #include "world.hpp"
 #include <GLFW/glfw3.h>
+#include <imgui.h>
+#ifdef _WIN32
+#define NOMINMAX
+#define WIN32_LEAN_AND_MEAN
+#define GLFW_EXPOSE_NATIVE_WIN32
+#include <GLFW/glfw3native.h>
+#endif
 #include <algorithm>
 #include <chrono>
 #include <cmath>
@@ -19,21 +27,70 @@ struct Mouse {
     lvh::Game *game;
     bool locked = true, focused = true;
     lvh::MouseLook look;
+    GLFWcursor *hiddenCursor = nullptr;
+    lvh::MouseMotion motion;
+#ifdef _WIN32
+    WNDPROC previousProc = nullptr;
+#endif
 };
 void focus(GLFWwindow *w, int focused) {
     auto *m=static_cast<Mouse *>(glfwGetWindowUserPointer(w));
     if (!m) return;
     m->focused=focused==GLFW_TRUE;
     m->look.reset();
+    m->motion.reset();
 }
+#ifdef _WIN32
+LRESULT CALLBACK mouseMessages(HWND window,UINT message,WPARAM wparam,LPARAM lparam) {
+    auto *mouse=reinterpret_cast<Mouse *>(GetPropW(window,L"LVH.Mouse"));
+    if (!mouse) return DefWindowProcW(window,message,wparam,lparam);
+    if (message==WM_INPUT && mouse->locked && mouse->focused) {
+        RAWINPUT input{};UINT size=sizeof(input);
+        if (GetRawInputData(reinterpret_cast<HRAWINPUT>(lparam),RID_INPUT,&input,&size,sizeof(RAWINPUTHEADER))!=UINT(-1)
+            && input.header.dwType==RIM_TYPEMOUSE) {
+            auto &m=input.data.mouse;
+            if (m.usFlags & MOUSE_MOVE_ABSOLUTE) {
+                bool desktop=(m.usFlags & MOUSE_VIRTUAL_DESKTOP)!=0;
+                float width=float(GetSystemMetrics(desktop ? SM_CXVIRTUALSCREEN : SM_CXSCREEN));
+                float height=float(GetSystemMetrics(desktop ? SM_CYVIRTUALSCREEN : SM_CYSCREEN));
+                mouse->motion.absolutePosition(reinterpret_cast<std::uintptr_t>(input.header.hDevice),
+                    float(m.lLastX)*width/65535.f,float(m.lLastY)*height/65535.f);
+            } else mouse->motion.relative(float(m.lLastX),float(m.lLastY));
+        }
+    }
+    return CallWindowProcW(mouse->previousProc,window,message,wparam,lparam);
+}
+void installMouseEvents(GLFWwindow *window,Mouse &mouse) {
+    HWND native=glfwGetWin32Window(window);
+    RAWINPUTDEVICE device{1,2,0,native};
+    if (!RegisterRawInputDevices(&device,1,sizeof(device)))
+        throw std::runtime_error("Cannot register relative mouse input");
+    if (!SetPropW(native,L"LVH.Mouse",&mouse))
+        throw std::runtime_error("Cannot attach mouse input");
+    mouse.previousProc=reinterpret_cast<WNDPROC>(SetWindowLongPtrW(native,GWLP_WNDPROC,reinterpret_cast<LONG_PTR>(mouseMessages)));
+    if (!mouse.previousProc) throw std::runtime_error("Cannot install mouse input");
+}
+#endif
 void captureMouse(GLFWwindow *w, Mouse &mouse, bool locked) {
     mouse.locked=locked;
     mouse.look.reset();
-    glfwSetInputMode(w,GLFW_CURSOR,locked ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
-    // Keep the original OS cursor input path; do not mix raw and cursor motion.
+    mouse.motion.reset();
     if (glfwRawMouseMotionSupported())
         glfwSetInputMode(w,GLFW_RAW_MOUSE_MOTION,GLFW_FALSE);
-    mouse.look.reset();
+    // CAPTURED confines the physical cursor without GLFW's virtual/recenter loop.
+#ifdef _WIN32
+    glfwSetInputMode(w,GLFW_CURSOR,locked ? GLFW_CURSOR_CAPTURED : GLFW_CURSOR_NORMAL);
+#else
+    glfwSetInputMode(w,GLFW_CURSOR,locked ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
+    if (glfwRawMouseMotionSupported()) glfwSetInputMode(w,GLFW_RAW_MOUSE_MOTION,locked);
+#endif
+    glfwSetCursor(w,locked ? mouse.hiddenCursor : nullptr);
+    if (ImGui::GetCurrentContext()) {
+        auto &flags=ImGui::GetIO().ConfigFlags;
+        if (locked) flags |= ImGuiConfigFlags_NoMouse | ImGuiConfigFlags_NoMouseCursorChange;
+        else flags &= ~(ImGuiConfigFlags_NoMouse | ImGuiConfigFlags_NoMouseCursorChange);
+    }
+
 }
 void error(int code, const char *msg) {
     std::cerr << "GLFW " << code << ": " << msg << '\n';
@@ -133,11 +190,19 @@ int main(int argc, char **argv) {
         Route route;
         FixedStep clock;
         bool menu = !hidden && !preview && !demo && !autoRoute && !finalePreview;
-        Mouse mouse{&game,true,true,{}};
+        Mouse mouse{};
+        mouse.game=&game;
+        mouse.locked=false;
         mouse.focused = glfwGetWindowAttrib(window,GLFW_FOCUSED)==GLFW_TRUE;
         glfwSetWindowUserPointer(window, &mouse);
         glfwSetWindowFocusCallback(window,focus);
-        captureMouse(window,mouse,!menu && !demo && !autoRoute && !hidden);
+#ifdef _WIN32
+        installMouseEvents(window,mouse);
+#endif
+        unsigned char transparent[4]={0,0,0,0};
+        GLFWimage cursorImage{1,1,transparent};
+        mouse.hiddenCursor=glfwCreateCursor(&cursorImage,0,0);
+        if (!mouse.hiddenCursor) throw std::runtime_error("Cannot create gameplay cursor");
         fs::current_path(root);
         Scene scene;
         Animator animator;
@@ -159,6 +224,7 @@ int main(int argc, char **argv) {
         Renderer renderer(root / "shaders");
         renderer.characterPreview = preview;
         initUI(window);
+        captureMouse(window,mouse,!menu && !demo && !autoRoute && !hidden);
         double started = glfwGetTime(), last = started, fpsTime = last;
         int frame = 0, fpsFrames = 0;
         float fps = 0;
@@ -180,12 +246,18 @@ int main(int argc, char **argv) {
             double now = glfwGetTime(), elapsed = now - last;
             last = now;
             glfwPollEvents();
-            // Sample the final virtual position once. Recenter/event pairs cannot
-            // clamp pitch in opposite callbacks and leave a residual vertical drift.
+            // Consume fresh movement events once; never warp the Windows cursor.
             if (mouse.locked && mouse.focused) {
-                double x,y;glfwGetCursorPos(window,&x,&y);
+                double x=0,y=0;
+#ifdef _WIN32
+                const auto counts=mouse.motion.take();
+                x=counts.x;y=counts.y;
+                const auto delta=counts*game.mouseSensitivity;
+#else
+                glfwGetCursorPos(window,&x,&y);
                 mouse.look.sensitivity=game.mouseSensitivity;
                 const auto delta=mouse.look.sample(x,y);
+#endif
                 game.yaw=std::remainder(game.yaw+delta.x,360.f);
                 float limit=game.thirdPerson ? 60.f : 85.f;
                 game.pitch=std::clamp(game.pitch-delta.y,-limit,limit);
@@ -349,6 +421,11 @@ int main(int argc, char **argv) {
         if (recorder)
             recorder->close();
         stopUI();
+#ifdef _WIN32
+        SetWindowLongPtrW(glfwGetWin32Window(window),GWLP_WNDPROC,reinterpret_cast<LONG_PTR>(mouse.previousProc));
+        RemovePropW(glfwGetWin32Window(window),L"LVH.Mouse");
+#endif
+        glfwDestroyCursor(mouse.hiddenCursor);
         std::cout << "Rendered " << frame << " frames without GL errors\n";
     } catch (const std::exception &e) {
         std::cerr << "FATAL: " << e.what() << '\n';

@@ -1,11 +1,31 @@
 #include "game.hpp"
 #include "mouse_look.hpp"
+#include "mouse_motion.hpp"
 #include "route.hpp"
 #include <iostream>
 #include <stdexcept>
 using namespace lvh;
 static void need(bool ok,const char *message){if(!ok)throw std::runtime_error(message);}
 int main(){try{
+    MouseMotion events;
+    events.relative(12,-4);
+    need(events.take()==glm::vec2(12,-4),"relative input was changed or smoothed");
+    for(int n=0;n<1000;++n)
+        need(events.take()==glm::vec2(0),"consumed movement was replayed on idle frames");
+    events.absolutePosition(1,521,433);
+    need(events.take()==glm::vec2(0),"absolute device initial position caused turn");
+    for(int n=0;n<1000;++n){
+        events.absolutePosition(1,521,433);
+        need(events.take()==glm::vec2(0),"stationary absolute device causes endless rotation");
+    }
+    events.absolutePosition(1,525,433);
+    need(events.take()==glm::vec2(4,0),"absolute movement used distance from screen centre");
+    events.absolutePosition(2,900,700);
+    need(events.take()==glm::vec2(0),"second mouse polluted first device origin");
+    events.relative(3,7);events.relative(-1,-2);
+    need(events.take()==glm::vec2(2,5),"batched input was not summed once");
+    events.relative(10,10);events.reset();
+    need(events.take()==glm::vec2(0),"focus change retained movement");
     MouseLook mouse;
     need(glm::length(mouse.sample(5000,-4000))==0,"initial cursor position turned the camera");
     auto delta=mouse.sample(5100,-3900);
@@ -16,6 +36,16 @@ int main(){try{
     auto one=whole.sample(100,50);auto many=split.sample(40,20);many+=split.sample(100,50);
     need(glm::distance(one,many)<.0001f,"mouse rotation depends on event frequency");
     need(glm::length(split.sample(100,50))==0,"stationary mouse causes drift");
+    // Physical recentering must establish a fresh origin, never become look input.
+    MouseLook captured;captured.rebase(640,360);
+    for(int n=0;n<1000;++n){
+        need(glm::length(captured.sample(640,360))==0,"recenter feedback causes idle drift");
+        captured.rebase(640,360);
+    }
+    auto rightTurn=captured.sample(740,360);
+    captured.rebase(640,360);
+    need(rightTurn.x>0 && rightTurn.y==0,"horizontal motion changed camera pitch");
+    need(glm::length(captured.sample(640,360))==0,"turn continued after physical motion stopped");
     split.sensitivity=.01f;
     need(glm::distance(split.sample(200,50),glm::vec2(1,0))<.0001f,"sensitivity setting ignored");
     Game setting;setting.mouseSensitivity=.007f;setting.reset();

@@ -32,4 +32,4 @@ screenshots are evidence/screenshots/first-person.png and third-person.png.
 Update these camera obstacle proxies together with gameplay collision when the
 location layout is redesigned.
 
-Mouse look polls the final GLFW virtual cursor position once per frame with raw motion disabled. Default sensitivity is 0.020 degrees per cursor unit; menu and pause provide a sensitivity slider. Retry preserves the setting. Focus and cursor-capture changes reset the first sample. Input deltas and applied angles are recorded locally in evidence/mouse-input.csv for hardware diagnosis.
+Windows mouse look consumes native WM_INPUT motion once per frame. Absolute-motion devices keep separate per-device baselines. Other platforms use GLFW raw motion where supported. Default sensitivity is 0.020 degrees per input unit; menu and pause provide a slider. Retry preserves the setting. Focus and capture changes reset pending motion. Input deltas and applied angles are recorded locally in evidence/mouse-input.csv. Obstacle avoidance changes camera distance without changing look direction.

@@ -7,6 +7,7 @@ struct MouseLook {
     bool first = true;
     double x = 0, y = 0;
     void reset() { first = true; }
+    void rebase(double nextX, double nextY) { x=nextX; y=nextY; first=false; }
     glm::vec2 sample(double nextX, double nextY) {
         glm::vec2 delta(0);
         if (!std::isfinite(nextX) || !std::isfinite(nextY)) {
