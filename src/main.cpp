@@ -247,13 +247,7 @@ int main(int argc, char **argv) {
                 std::string clip = "Idle";
                 if (preview) clip = previewClip;
                 else if (game.safeOpened) clip = game.safeTime >= Game::safeOpenDuration ? "Dance" : "Idle";
-                else if (game.crouching) {
-                    if (!moving) clip = "CrouchIdle";
-                    else if (std::abs(game.localRight) > std::abs(game.localForward))
-                        clip = game.localRight > 0 ? "CrouchRight" : "CrouchLeft";
-                    else clip = game.localForward < 0 ? "CrouchBackward" : "CrouchWalk";
-                } else if (game.interactionTime > 0) clip = "Interact";
-                else if (moving) clip = game.localForward < -.5f ? "WalkBackward" : "Walk";
+                else clip = game.locomotionClip();
                 float phase = game.time / animator.duration(clip);
                 if (!preview) {
                     if (clip == "Dance") phase = (game.safeTime - Game::safeOpenDuration) / game.danceDuration;
@@ -269,13 +263,7 @@ int main(int argc, char **argv) {
                 scene.showCharacter = game.safeOpened || game.thirdPersonVisible();
                 // Reveal the performer only after the door has cleared the stage.
                 scene.characterPresent = !game.safeOpened || game.safeTime >= Game::safeOpenDuration;
-                float facing = glm::radians(90.f - game.yaw);
-                if (moving && !game.crouching && std::abs(game.localRight) > std::abs(game.localForward)) {
-                    auto f = game.forward(); f.y=0; f=glm::normalize(f);
-                    auto r = glm::normalize(glm::cross(f,glm::vec3(0,1,0)));
-                    auto v = f*game.localForward+r*game.localRight;
-                    facing = std::atan2(v.x,v.z);
-                }
+                float facing = game.characterFacing();
                 scene.characterModel = preview ? glm::mat4(1)
                     : game.safeOpened ? glm::translate(glm::mat4(1),glm::vec3(.55f,0,-12.3f)) *
                           glm::rotate(glm::mat4(1),glm::radians(35.f),glm::vec3(0,1,0))

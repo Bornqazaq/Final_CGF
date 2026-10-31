@@ -7,7 +7,13 @@ do not toggle. --third-person starts that mode for visual verification.
 The third-person camera sits 2.8 m behind the eye anchor with a 0.38 m shoulder
 offset and 0.22 m elevation. It targets six metres ahead of the eye. Mouse pitch
 is limited to +/-60 degrees in this mode. First-person pitch remains +/-85 degrees.
-Crouching updates the shared eye anchor. Movement uses the horizontal player facing.
+Crouching updates the shared eye anchor. WASD movement uses the horizontal camera
+direction. In first person the character follows mouse yaw. In third person mouse
+movement only orbits the camera; the body retains its heading at rest. Standing
+movement turns the body toward actual displacement and plays Walk in every direction,
+including A/D and S. Crouching retains body heading and selects the supplied forward,
+backward or side cycle relative to that heading. Switching back to first person aligns
+the body with the current view.
 
 The camera sweeps the boom in <=0.025 m steps against 3D obstacle proxies padded
 by 0.18 m. It covers room walls/ceiling, the open entrance frame, timber posts,

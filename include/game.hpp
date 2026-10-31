@@ -27,6 +27,7 @@ struct Game {
     float danceDuration = 7.5f, localForward = 0, localRight = 0;
     bool crouching = false, lamp = true, safeOpened = false, lastCrossed = false;
     bool thirdPerson = false;
+    float bodyYaw = -90;
     int cctvView = 0, retries = 0;
     std::array<Laser, 6> lasers;
     std::string hint;
@@ -39,6 +40,8 @@ struct Game {
     int interactionTarget() const;
     void interact();
     glm::vec3 forward() const;
+    float characterFacing() const;
+    std::string locomotionClip() const;
     void toggleCamera();
     glm::vec3 eyePosition() const;
     bool cameraBlocked(glm::vec3) const;

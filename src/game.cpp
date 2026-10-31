@@ -35,8 +35,28 @@ glm::vec3 Game::forward() const {
 }
 void Game::toggleCamera() {
     if (state != State::Playing || safeOpened) return;
+    // Enter orbit mode with the body's current first-person heading.
+    if (!thirdPerson) bodyYaw = yaw;
     thirdPerson = !thirdPerson;
     if (thirdPerson) pitch = std::clamp(pitch,-60.f,60.f);
+    else bodyYaw = yaw;
+}
+
+float Game::characterFacing() const {
+    return glm::radians(90.f - (thirdPerson ? bodyYaw : yaw));
+}
+
+std::string Game::locomotionClip() const {
+    bool moving = moveSpeed > .02f && state == State::Playing;
+    if (crouching) {
+        if (!moving) return "CrouchIdle";
+        if (std::abs(localRight) > std::abs(localForward))
+            return localRight > 0 ? "CrouchRight" : "CrouchLeft";
+        return localForward < 0 ? "CrouchBackward" : "CrouchWalk";
+    }
+    if (interactionTime > 0) return "Interact";
+    if (!moving) return "Idle";
+    return thirdPerson || localForward >= -.5f ? "Walk" : "WalkBackward";
 }
 glm::vec3 Game::eyePosition() const {
     return position + glm::vec3(0,eye,0);
@@ -225,8 +245,17 @@ void Game::update(float dt, const Input &i) {
     moveSpeed = glm::length(position - old) / std::max(dt, .00001f);
     float distance = glm::length(position - old);
     stepDistance += distance;
-    localForward = distance > .000001f ? glm::dot((position-old)/distance, f) : 0;
-    localRight = distance > .000001f ? glm::dot((position-old)/distance, right) : 0;
+    if (!thirdPerson) bodyYaw = yaw;
+    else if (!crouching && distance > .000001f) {
+        // Use actual displacement, including wall sliding, rather than mouse yaw.
+        glm::vec3 direction = (position-old)/distance;
+        bodyYaw = glm::degrees(std::atan2(direction.z,direction.x));
+    }
+    float heading = glm::radians(thirdPerson ? bodyYaw : yaw);
+    glm::vec3 bodyForward(std::cos(heading),0,std::sin(heading));
+    glm::vec3 bodyRight = glm::cross(bodyForward,glm::vec3(0,1,0));
+    localForward = distance > .000001f ? glm::dot((position-old)/distance, bodyForward) : 0;
+    localRight = distance > .000001f ? glm::dot((position-old)/distance, bodyRight) : 0;
     if (playerHit()) {
         state = State::Alarm;
         return;

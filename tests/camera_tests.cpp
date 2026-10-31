@@ -13,6 +13,38 @@ int main(){try{
     need(glm::distance(g.camera(),g.eyePosition())>2.f && !g.cameraBlocked(g.camera()),"spawn boom through the open doorway");
     need(g.position==pos && g.time==time,"switching view changed gameplay");
     g.toggleCamera();need(!g.thirdPerson,"return to first person");
+    // Orbiting at rest must never turn the body, even while crouched.
+    Game orbit;orbit.toggleCamera();
+    float originalFacing=orbit.characterFacing();
+    orbit.yaw=35;orbit.update(1.f/240,{});
+    need(std::abs(orbit.characterFacing()-originalFacing)<.0001f,"orbit turned idle character");
+    Input crouch;crouch.crouch=true;
+    orbit.yaw=150;orbit.update(1.f/240,crouch);
+    need(std::abs(orbit.characterFacing()-originalFacing)<.0001f,"orbit turned crouched character");
+    // Every standing direction uses a forward cycle, facing actual movement.
+    for(float viewYaw : {-90.f,25.f,170.f})
+        for(auto axes : {glm::vec2(1,0),glm::vec2(-1,0),glm::vec2(0,-1),glm::vec2(0,1),glm::vec2(1,1)}){
+            Game walk;walk.toggleCamera();walk.yaw=viewYaw;
+            Input input;input.forward=axes.x;input.right=axes.y;
+            glm::vec3 before=walk.position;walk.update(1.f/240,input);
+            glm::vec3 facing(std::sin(walk.characterFacing()),0,std::cos(walk.characterFacing()));
+            need(glm::dot(facing,glm::normalize(walk.position-before))>.999f,"body not facing movement");
+            need(walk.locomotionClip()=="Walk","standing direction lacks forward walk cycle");
+            float stopped=walk.characterFacing();walk.yaw+=60;walk.update(1.f/240,{});
+            need(std::abs(walk.characterFacing()-stopped)<.0001f,"stopped body snapped to camera");
+        }
+    for(float side : {-1.f,1.f}){
+        Game sneak;sneak.toggleCamera();Input input;input.crouch=true;input.right=side;
+        sneak.update(1.f/240,input);
+        need(sneak.locomotionClip()==(side>0 ? "CrouchRight" : "CrouchLeft"),"lost directional crouch clips");
+        need(std::abs(sneak.bodyYaw+90)<.0001f,"crouch strafe rotated body");
+    }
+    Game firstLook;firstLook.yaw=40;
+    need(std::abs(firstLook.characterFacing()-glm::radians(50.f))<.0001f,"first-person body did not follow mouse");
+    firstLook.toggleCamera();firstLook.yaw=100;
+    need(std::abs(firstLook.characterFacing()-glm::radians(50.f))<.0001f,"first-to-third heading jumped");
+    firstLook.toggleCamera();
+    need(std::abs(firstLook.characterFacing()-glm::radians(-10.f))<.0001f,"third-to-first did not follow look");
     g.thirdPerson=true;g.position={3.55f,0,-6};g.yaw=180;g.pitch=0;
     need(g.camera().x<3.77f && !g.cameraBlocked(g.camera()),"boom penetrated side wall");
     need(glm::distance(g.camera(),g.eyePosition())<.65f && !g.thirdPersonVisible(),"near-wall head visibility");
