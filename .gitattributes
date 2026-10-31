@@ -1,0 +1,19 @@
+* text=auto
+*.cpp text eol=lf
+*.hpp text eol=lf
+*.py text eol=lf
+*.vert text eol=lf
+*.frag text eol=lf
+*.md text eol=lf
+*.png binary
+*.lvhm binary
+*.blend binary
+*.pdf binary
+*.pptx binary
+*.docx binary
+*.png binary
+*.ttf binary
+*.blend binary
+*.glb binary
+*.lvhm binary
+*.lvanim binary

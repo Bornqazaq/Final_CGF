@@ -1,0 +1,30 @@
+{
+  "vault": {
+    "bytes": 1775372,
+    "sha256": "a7442de2f1f7c71b737abedb162e5d2baa0899780882c2699fd2a02df803db2c",
+    "skins": 0,
+    "meshes": 629,
+    "animations": [
+      "SafeDoorPivotAction.003",
+      "SafeBolt0Action",
+      "SafeBolt1Action",
+      "SafeBolt2Action",
+      "SafeWheelAction.003",
+      "SpotPivot0Action.003",
+      "SpotPivot1Action.003"
+    ]
+  },
+  "thief": {
+    "bytes": 916260,
+    "sha256": "7061c49cda4471b17201bac11b5d9e897801edbb949ce5df291e263bd8bfdfc4",
+    "skins": 1,
+    "meshes": 70,
+    "animations": [
+      "CrouchIdle",
+      "CrouchWalk",
+      "Idle",
+      "Interact",
+      "Walk"
+    ]
+  }
+}

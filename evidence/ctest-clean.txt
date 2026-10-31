@@ -1,0 +1,66 @@
+Start testing: Oct 29 06:38 Qyzylorda Standard Time
+----------------------------------------------------------
+1/3 Testing: gameplay_math
+1/3 Test: gameplay_math
+Command: "C:/Users/nyerb/OneDrive/Desktop/LaserVaultHeist/build-clean/lvh_logic_tests.exe"
+Directory: C:/Users/nyerb/OneDrive/Desktop/LaserVaultHeist/build-clean
+"gameplay_math" start time: Oct 29 06:38 Qyzylorda Standard Time
+Output:
+----------------------------------------------------------
+PASS box center
+PASS box boundary
+PASS outside box
+PASS rotated thin box true hit
+PASS world AABB false positive rejected
+PASS standing body hits last beam
+PASS crouching body clears last beam
+PASS laser causes alarm
+PASS retry resets simulation
+PASS pause freezes simulation
+PASS movement independent of render rate
+PASS reachable safe interaction
+PASS safe opening leads to victory
+All logic tests passed
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"gameplay_math" end time: Oct 29 06:38 Qyzylorda Standard Time
+"gameplay_math" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: complete_gameplay_route
+2/3 Test: complete_gameplay_route
+Command: "C:/Users/nyerb/OneDrive/Desktop/LaserVaultHeist/build-clean/lvh_route_tests.exe"
+Directory: C:/Users/nyerb/OneDrive/Desktop/LaserVaultHeist/build-clean
+"complete_gameplay_route" start time: Oct 29 06:38 Qyzylorda Standard Time
+Output:
+----------------------------------------------------------
+Route result: state=2 beam=6 z=-10.0808 t=15.9456 safe=1\nPASS lamp, CCTV, alarm, retry, six lasers, crouch, safe hierarchy trigger, victory in 15.9456 seconds
+PASS six alternate initial phases
+<end of output>
+Test time =   0.64 sec
+----------------------------------------------------------
+Test Passed.
+"complete_gameplay_route" end time: Oct 29 06:38 Qyzylorda Standard Time
+"complete_gameplay_route" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: demo_and_slow_frames
+3/3 Test: demo_and_slow_frames
+Command: "C:/Users/nyerb/OneDrive/Desktop/LaserVaultHeist/build-clean/lvh_director_tests.exe"
+Directory: C:/Users/nyerb/OneDrive/Desktop/LaserVaultHeist/build-clean
+"demo_and_slow_frames" start time: Oct 29 06:38 Qyzylorda Standard Time
+Output:
+----------------------------------------------------------
+PASS complete capture script, three interactions, alarm, reset, uninterrupted victory
+PASS retained input edges and collision at 6 versus 120 render FPS
+<end of output>
+Test time =   0.22 sec
+----------------------------------------------------------
+Test Passed.
+"demo_and_slow_frames" end time: Oct 29 06:38 Qyzylorda Standard Time
+"demo_and_slow_frames" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 29 06:38 Qyzylorda Standard Time

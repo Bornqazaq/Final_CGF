@@ -1,0 +1,141 @@
+{
+  "annotations": [
+    [
+      "Lighting",
+      "Phong compares shading rules and relates image quality to normals, hidden-surface removal and perception.",
+      "The project evaluates lighting per fragment. It uses the Blinn half-vector variant rather than copying Phong's original reflection-vector expression."
+    ],
+    [
+      "Lighting",
+      "Cook and Torrance model reflection using surface microgeometry and material-dependent directional response.",
+      "This is the physical comparison for the vault's brass and painted metal. The implemented empirical Blinn-Phong shader is cheaper and easier to explain, but it does not reproduce a calibrated metal BRDF."
+    ],
+    [
+      "Lighting",
+      "Schlick develops a compact reflectance model that balances physical constraints with practical cost.",
+      "Its efficiency goal supports keeping material controls understandable. The game does not implement the full Schlick BRDF or claim physically based rendering."
+    ],
+    [
+      "Animation",
+      "Kavan and colleagues replace linear matrix blending with approximate dual-quaternion blending to reduce collapsing-joint artifacts.",
+      "The thief uses linear blend skinning because its weights and motions are simple. This paper identifies a concrete future improvement for shoulder and knee volume preservation."
+    ],
+    [
+      "Animation",
+      "Kavan, Sloan and O'Sullivan fit standard linear skinning to animated meshes with sparse weights and efficient optimization.",
+      "The runtime likewise benefits from sparse influences and a compact palette. Our weights are authored procedurally and normalized, not fitted with the paper's optimization."
+    ],
+    [
+      "Animation",
+      "Le and Deng jointly recover rigid bone transforms and sparse convex skinning weights from example poses.",
+      "Their nonnegative, normalized weight constraints motivate explicit export validation. The project keeps an authored anatomical hierarchy instead of performing skinning decomposition."
+    ],
+    [
+      "Collision",
+      "Klosowski and colleagues organize discrete-orientation bounding volumes into hierarchies for efficient collision queries in complex environments.",
+      "A hierarchy is unnecessary for six laser boxes and a small set of furniture colliders. Transforming body samples into each beam's local space keeps the project inexpensive and directly inspectable."
+    ],
+    [
+      "Collision",
+      "Jimenez, Thomas and Torras classify continuous and sampled collision strategies and explain how temporal and spatial pruning control cost.",
+      "The game adopts repeated static local-box tests at 240 Hz, with a conservative body margin. This is bounded sampling, not an exact continuous-collision solver for arbitrary velocities."
+    ],
+    [
+      "Performance",
+      "Cohen-Or and colleagues survey visibility algorithms for interactive walkthroughs, including techniques that avoid drawing hidden geometry.",
+      "The compact single room uses depth testing, back-face culling and static instancing. More complex occlusion systems would add overhead without a demonstrated benefit at this scene size."
+    ],
+    [
+      "Display",
+      "Reinhard and colleagues adapt photographic tone reproduction to map high-dynamic-range images to a display.",
+      "The project also renders into a floating-point target before display conversion. Its implemented global fitted curve is credited separately and is not Reinhard's photographic operator."
+    ],
+    [
+      "Display",
+      "Larson, Rushmeier and Piatko preserve visibility through tone reproduction informed by luminance adaptation and human vision.",
+      "This provides a criterion for tuning the night scene: the safe and hazards must remain readable. The game uses artistic tuning rather than the paper's histogram and visual-adaptation model."
+    ],
+    [
+      "Shadows",
+      "Hasenfratz and colleagues compare real-time shadow methods by geometry, lighting conditions, image quality and cost.",
+      "The vault uses one directional depth map with a small PCF kernel. The spotlights illuminate surfaces but do not each render a separate shadow map; their dust cones are an inexpensive visual approximation."
+    ],
+    [
+      "Collision",
+      "Teschner and colleagues survey deformable collision using hierarchies, distance fields, spatial partitioning, image-space and stochastic methods.",
+      "The animated thief is represented by a sampled upright body for gameplay. This avoids deforming triangle-level collision, while pose-bound checks keep the crouched mesh compatible with the chosen clearance."
+    ],
+    [
+      "Textures",
+      "Blinn and Newell use surface parameterization to map patterns and filter their contributions over a pixel footprint.",
+      "The project's UV coordinates and mipmaps address the same sampling problem. Its mesh rasterizer does not reproduce the original patch renderer or environment-reflection system."
+    ],
+    [
+      "Textures",
+      "Lefebvre and Hoppe synthesize controllable, deterministic textures through parallel neighborhood matching and multiresolution operations.",
+      "The game instead generates seeded painted textures offline. This produces reproducible wood, cloth and plaster without the runtime complexity of exemplar-based synthesis."
+    ],
+    [
+      "Animation",
+      "Merry, Marais and Gain generalize skeletal subspace deformation while retaining a linear formulation and hardware rendering.",
+      "The comparison explains why plain linear blend skinning can lose volume around strongly bent joints. Our constrained animation range and garment shapes mitigate, but do not mathematically eliminate, those artifacts."
+    ],
+    [
+      "Animation",
+      "Mohr and Gleicher fit a compact real-time deformation model to examples exported from richer authoring tools.",
+      "The project similarly separates Blender authoring from a small runtime representation. It exports authored transforms directly, rather than fitting examples or reproducing muscle deformation."
+    ],
+    [
+      "Animation",
+      "James and Twigg derive skinning approximations from deformable mesh sequences using automatically chosen transforms and weights.",
+      "Their work supports the practicality of GPU matrix palettes. Our 20-bone rig is explicitly authored and hierarchical, so no automatic bone discovery or progressive approximation is needed."
+    ]
+  ],
+  "ranks": {
+    "ACM Transactions on Graphics": {
+      "quartile": "Q1",
+      "year": 2025,
+      "category": "Computer Graphics and Computer-Aided Design",
+      "sources": [
+        "https://www.journalsbase.com/journals/acm-transactions-on-graphics",
+        "https://journalindexes.com/acm-transactions-on-graphics-07300301/"
+      ]
+    },
+    "Computer Graphics Forum": {
+      "quartile": "Q1",
+      "year": 2025,
+      "category": "Computer Graphics and Computer-Aided Design",
+      "sources": [
+        "https://www.croris.hr/casopisi/casopis/10902",
+        "https://scienceaijournal.com/journals/computer-graphics-forum-0167-7055"
+      ]
+    },
+    "IEEE Transactions on Visualization and Computer Graphics": {
+      "quartile": "Q1",
+      "year": 2025,
+      "category": "Computer Graphics and Computer-Aided Design",
+      "sources": [
+        "https://www.iit.comillas.edu/publicacion/info_revista/en/912/ieee-transactions-on-visualization-and-computer-graphics",
+        "https://researchcloud.net/journal/1941-0506"
+      ]
+    },
+    "Computers & Graphics": {
+      "quartile": "Q2",
+      "year": 2025,
+      "category": "Computer Graphics and Computer-Aided Design",
+      "sources": [
+        "https://researchcloud.net/journal/0097-8493",
+        "https://akaturk.com/journals/25028?lang=en"
+      ]
+    },
+    "Communications of the ACM": {
+      "quartile": "Q1",
+      "year": 2025,
+      "category": "Computer Science (miscellaneous)",
+      "sources": [
+        "https://www.iit.comillas.edu/publicacion/info_revista/en/16/Communications_of_the_ACM",
+        "https://scienceaijournal.com/journals/communications-of-the-acm-0001-0782"
+      ]
+    }
+  }
+}

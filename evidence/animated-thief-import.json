@@ -1,0 +1,90 @@
+{
+  "source": "Meshy_AI_Hooded_Sentinel_biped_Meshy_Merged_Animations.fbx",
+  "sha256": "0e57ab486e6d2cc9c9ac98a4430f05a5a84cdf06986b091d7d6f53bc75f246dd",
+  "source_bones": 66,
+  "runtime_bones": 52,
+  "triangles": 30725,
+  "clips": {
+    "Walk": {
+      "source": "Walking",
+      "reverse_time": false,
+      "loop": true,
+      "duration": 1.0333333333333334,
+      "retarget_adjustment": "sole contact via two-bone leg IK; pelvis lowered 0.14 m for crouching"
+    },
+    "WalkBackward": {
+      "source": "Walking",
+      "reverse_time": true,
+      "loop": true,
+      "duration": 1.0333333333333334,
+      "retarget_adjustment": "sole contact via two-bone leg IK; pelvis lowered 0.14 m for crouching"
+    },
+    "Run": {
+      "source": "Running",
+      "reverse_time": false,
+      "loop": true,
+      "duration": 0.6333333333333333,
+      "retarget_adjustment": "sole contact via two-bone leg IK; pelvis lowered 0.14 m for crouching"
+    },
+    "CrouchBackward": {
+      "source": "Cautious_Crouch_Walk_Backward_inplace",
+      "reverse_time": false,
+      "loop": true,
+      "duration": 1.2666666666666666,
+      "retarget_adjustment": "sole contact via two-bone leg IK; pelvis lowered 0.14 m for crouching"
+    },
+    "CrouchWalk": {
+      "source": "Cautious_Crouch_Walk_Backward_inplace",
+      "reverse_time": true,
+      "loop": true,
+      "duration": 1.2666666666666666,
+      "retarget_adjustment": "sole contact via two-bone leg IK; pelvis lowered 0.14 m for crouching"
+    },
+    "CrouchLeft": {
+      "source": "Cautious_Crouch_Walk_Left_inplace",
+      "reverse_time": false,
+      "loop": true,
+      "duration": 1.1666666666666667,
+      "retarget_adjustment": "sole contact via two-bone leg IK; pelvis lowered 0.14 m for crouching"
+    },
+    "CrouchRight": {
+      "source": "Cautious_Crouch_Walk_Right_inplace",
+      "reverse_time": false,
+      "loop": true,
+      "duration": 1.2666666666666666,
+      "retarget_adjustment": "sole contact via two-bone leg IK; pelvis lowered 0.14 m for crouching"
+    },
+    "Dance": {
+      "source": "FunnyDancing_02",
+      "reverse_time": false,
+      "loop": false,
+      "duration": 7.5,
+      "retarget_adjustment": "sole contact via two-bone leg IK; pelvis lowered 0.14 m for crouching"
+    },
+    "DanceLong": {
+      "source": "Cherish_Pop_Dance",
+      "reverse_time": false,
+      "loop": false,
+      "duration": 15.666666666666666,
+      "retarget_adjustment": "sole contact via two-bone leg IK; pelvis lowered 0.14 m for crouching"
+    },
+    "Idle": {
+      "derived": "average opposite gait phases with subtle breathing",
+      "source": "Walk",
+      "duration": 2.0
+    },
+    "CrouchIdle": {
+      "derived": "average opposite gait phases with subtle breathing",
+      "source": "CrouchBackward",
+      "duration": 2.0
+    },
+    "Interact": {
+      "derived": "right-arm reach from neutral pose",
+      "duration": 0.7
+    }
+  },
+  "dance_duration": 7.5,
+  "source_fps": 60.0,
+  "forward_axis": "+Z runtime",
+  "derived_actions_editable": true
+}

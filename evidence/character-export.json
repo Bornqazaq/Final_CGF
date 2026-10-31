@@ -1,0 +1,13 @@
+{
+  "triangles": 29110,
+  "bones": 20,
+  "clips": [
+    "Idle",
+    "Walk",
+    "CrouchIdle",
+    "CrouchWalk",
+    "Interact"
+  ],
+  "max_influences": 4,
+  "axis_conversion": "x,z,-y"
+}

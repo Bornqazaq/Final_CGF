@@ -1,0 +1,40 @@
+{
+  "duration_seconds": 210.07,
+  "size": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 6302,
+  "repeated_sampling_slots": 0,
+  "whole_video_decode": "passed",
+  "bytes": 76530962,
+  "sha256": "2453b21067ddbea79a0c12ce8e9696088ed98848d8a42f1728296d22e9c105dc",
+  "state_transitions": [
+    {
+      "wall_seconds": "0.332873",
+      "demo_seconds": "0",
+      "state": "0",
+      "retries": "0"
+    },
+    {
+      "wall_seconds": "63.5439",
+      "demo_seconds": "63.0415",
+      "state": "1",
+      "retries": "0"
+    },
+    {
+      "wall_seconds": "84.5529",
+      "demo_seconds": "84.0447",
+      "state": "0",
+      "retries": "1"
+    },
+    {
+      "wall_seconds": "197.964",
+      "demo_seconds": "197.429",
+      "state": "2",
+      "retries": "1"
+    }
+  ],
+  "method": "Live GL_BACK framebuffer; real wall clock; deterministic ordinary game inputs; no montage."
+}

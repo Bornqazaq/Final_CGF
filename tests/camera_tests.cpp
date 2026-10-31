@@ -1,0 +1,46 @@
+#include "game.hpp"
+#include "route.hpp"
+#include <iostream>
+#include <stdexcept>
+using namespace lvh;
+static void need(bool ok,const char *message){if(!ok)throw std::runtime_error(message);}
+int main(){try{
+    Game g;
+    need(!g.thirdPerson && glm::distance(g.camera(),g.eyePosition())<.0001f,"default first-person view");
+    const auto pos=g.position;const auto time=g.time;
+    g.toggleCamera();
+    need(g.thirdPerson && g.thirdPersonVisible(),"third person must reveal the character");
+    need(glm::distance(g.camera(),g.eyePosition())>2.f && !g.cameraBlocked(g.camera()),"spawn boom through the open doorway");
+    need(g.position==pos && g.time==time,"switching view changed gameplay");
+    g.toggleCamera();need(!g.thirdPerson,"return to first person");
+    g.thirdPerson=true;g.position={3.55f,0,-6};g.yaw=180;g.pitch=0;
+    need(g.camera().x<3.77f && !g.cameraBlocked(g.camera()),"boom penetrated side wall");
+    need(glm::distance(g.camera(),g.eyePosition())<.65f && !g.thirdPersonVisible(),"near-wall head visibility");
+    g.position={3.3f,0,-4.6f};
+    need(g.camera().x<3.55f,"boom penetrated a timber post");
+    g.position={2.2f,0,-14};g.yaw=90;
+    need(g.camera().z> -14.77f && !g.cameraBlocked(g.camera()),"boom penetrated rear wall/safe");
+    g.position={-2.8f,0,-6};g.yaw=0;
+    need(glm::distance(g.camera(),g.eyePosition())<.65f,"cabinet did not contract the boom");
+    g.position={-1.7f,0,-2.5f};
+    need(g.camera().x< -2.4f,"camera should pass over the low desk");
+    g=Game();g.position={-1.5f,0,-1.25f};lookAt(g,{-2.85f,1.24f,-1.97f});
+    const auto firstTarget=g.interactionTarget();g.toggleCamera();
+    need(firstTarget==1 && g.interactionTarget()==1,"lamp reach changed with view");
+    g.position={0,0,-12.74f};lookAt(g,{0,1.65f,Game::safeFront});
+    need(g.interactionTarget()==3,"safe reach changed with view");
+    g.pitch=85;g.thirdPerson=false;g.toggleCamera();
+    need(g.pitch==60 && !g.cameraBlocked(g.camera()),"third-person vertical limits");
+    g.state=State::Pause;g.toggleCamera();need(g.thirdPerson,"camera switched in pause");
+    g.reset();need(g.thirdPerson,"retry discarded camera preference");
+    Game first,third;third.thirdPerson=true;Input move;move.forward=1;
+    for(int i=0;i<60;i++){first.update(1.f/240,move);third.update(1.f/240,move);}
+    need(glm::distance(first.position,third.position)<.0001f,"movement depends on visual camera");
+    Game routeGame;routeGame.thirdPerson=true;Route route;
+    for(int i=0;i<24000 && routeGame.state!=State::Victory;i++)
+        routeGame.update(1.f/240,route.next(routeGame));
+    need(routeGame.state==State::Victory,"third-person route did not reach victory");
+    auto cinematic=routeGame.camera();routeGame.toggleCamera();
+    need(routeGame.thirdPerson && routeGame.camera()==cinematic,"V changed the finale camera");
+    std::cout<<"PASS camera modes, room/prop obstruction, reach, movement, retry and complete third-person route\n";
+}catch(const std::exception &e){std::cerr<<e.what()<<'\n';return 1;}}

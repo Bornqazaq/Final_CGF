@@ -1,0 +1,60 @@
+{
+  "tools": [
+    {
+      "name": "gh",
+      "version": "v2.103.3",
+      "url": "https://github.com/cli/cli/releases/download/v2.103.3/gh_2.103.3_windows_amd64.zip",
+      "sha256": "98d0cfa794721665d7973dd728c78aff7bd836d58f10f6d7a03568eccb0a22e0"
+    },
+    {
+      "name": "llvm",
+      "version": "20261020",
+      "url": "https://github.com/mstorsjo/llvm-mingw/releases/download/20261020/llvm-mingw-20261020-ucrt-x86_64.zip",
+      "sha256": "fd5462b7f5d93b2ff981fcd3f9c7e427e47f3203c64ea91c27bcc444eebd74cd"
+    }
+  ],
+  "sources": [
+    {
+      "name": "glfw",
+      "repository": "https://github.com/glfw/glfw",
+      "ref": "3.4",
+      "archive_sha256": "a133ddc3d3c66143eba9035621db8e0bcf34dba1ee9514a9e23e96afd39fd57a"
+    },
+    {
+      "name": "imgui",
+      "repository": "https://github.com/ocornut/imgui",
+      "ref": "v1.91.9b",
+      "archive_sha256": "fd37507c8476a6d14cc7c4b352401f31bcbd0f0d995d35390811e968c466f46e"
+    },
+    {
+      "name": "glm",
+      "repository": "https://github.com/g-truc/glm",
+      "ref": "1.0.1",
+      "archive_sha256": "09c5716296787e1f7fcb87b1cbdbf26814ec1288ed6259ccd30d5d9795809fa5"
+    },
+    {
+      "name": "stb",
+      "repository": "https://github.com/nothings/stb",
+      "ref": "003501f6d7a8668ce8b6d875e34dd97ad0d5d5b5"
+    }
+  ],
+  "generated_loader": {
+    "generator": "glad2",
+    "version": "2.0.8",
+    "api": "gl:core=3.3",
+    "options": [
+      "loader",
+      "reproducible"
+    ],
+    "source": "https://github.com/Dav1dde/glad",
+    "license": "(CC0-1.0 OR WTFPL) AND Apache-2.0",
+    "header_sha256": "9c33599e63d43b8fcd13d4edbadbf146da9240537df6361de3ff0edcd6234375"
+  },
+  "font": {
+    "name": "Karla",
+    "source": "https://github.com/google/fonts/tree/main/ofl/karla",
+    "license": "OFL-1.1",
+    "sha256": "907c55a993e35b3ae4f3b8b8c28367f4b6d431df8e9ca6fbd382d8317dd3684e"
+  },
+  "vendor_trim": "Unused vendor docs, tests, examples and platform backends removed; compilation sources and license notices preserved. Clean build verified."
+}
