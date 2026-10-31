@@ -34,7 +34,7 @@ std::vector<Light> updateWorld(Scene &s, const Game &g, bool alarm) {
     glm::vec3 cool = alarm ? glm::vec3(1, .01f, .005f) : glm::vec3(.40f, .58f, 1);
     std::vector<Light> lights = {
         {{-3.30f, 2.37f, -5}, warm, {0, -1, 0}, .92f},
-        {{3.30f, 2.37f, -4}, warm, {0, -1, 0}, 1.05f},
+        {{3.30f, 2.37f, -3.6f}, warm, {0, -1, 0}, 1.05f},
         {{-3.30f, 2.37f, -13.6f}, warm, {0, -1, 0}, 1.15f},
         {{3.30f, 2.37f, -13.6f}, warm, {0, -1, 0}, 1.15f},
         {{-3.5f, 2.7f, -2}, cool, {0, -1, 0}, .71f},
@@ -51,6 +51,8 @@ std::vector<Light> updateWorld(Scene &s, const Game &g, bool alarm) {
         glm::vec3 position = glm::vec3(m * glm::vec4(0, -.43f, -.13f, 1));
         lights.push_back({position, warm, direction, 3.0f, .93f, .83f});
     }
+    lights.push_back({{-1.5f,2.45f,4.1f},warm,{0,-1,0},2.4f});
+    lights.push_back({{1.5f,2.45f,6.8f},warm,{0,-1,0},2.2f});
     return lights;
 }
 } // namespace lvh

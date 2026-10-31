@@ -98,6 +98,7 @@ void error(int code, const char *msg) {
 } // namespace
 int main(int argc, char **argv) {
     using namespace lvh;
+    bool entrancePreview = false;
     bool grey = false, hidden = false, help = false, preview = false, facePreview = false,
          restPose = false, demo = false, autoRoute = false, finalePreview = false, thirdPerson = false;
     double duration = 0;
@@ -106,7 +107,8 @@ int main(int argc, char **argv) {
     fs::path encoder, record, captureWait, screenshot, root = fs::absolute(argv[0]).parent_path();
     for (int i = 1; i < argc; i++) {
         std::string arg = argv[i];
-        if (arg == "--greybox")
+        if (arg == "--entrance-preview") entrancePreview=true;
+        else if (arg == "--greybox")
             grey = true;
         else if (arg == "--character-preview")
             preview = true;
@@ -189,7 +191,7 @@ int main(int argc, char **argv) {
         Director director;
         Route route;
         FixedStep clock;
-        bool menu = !hidden && !preview && !demo && !autoRoute && !finalePreview;
+        bool menu = !hidden && !preview && !demo && !autoRoute && !finalePreview && !entrancePreview;
         Mouse mouse{};
         mouse.game=&game;
         mouse.locked=false;
@@ -220,6 +222,7 @@ int main(int argc, char **argv) {
             game.lastCrossed = game.safeOpened = true;
             game.state = State::Finale;
         }
+        if (entrancePreview) { game.yaw=90;game.position={0,0,-1.6f}; }
         scene.buildBatches();
         Renderer renderer(root / "shaders");
         renderer.characterPreview = preview;

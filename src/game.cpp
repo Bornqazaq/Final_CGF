@@ -65,9 +65,9 @@ glm::vec3 Game::eyePosition() const {
 }
 bool Game::cameraBlocked(glm::vec3 p) const {
     // 0.18 m safety radius around the boom. The entrance remains an open doorway.
-    if (p.x < -3.77f || p.x > 3.77f || p.z < -14.77f || p.z > 3.2f ||
+    if (p.x < -3.77f || p.x > 3.77f || p.z < -14.77f || p.z > 2.40f ||
         p.y < .18f || p.y > 3.55f) return true;
-    if (p.z > -.25f && p.z < .5f && (std::abs(p.x)>1.72f || p.y>3.27f)) return true;
+    if (p.z > -.25f && p.z < 2.65f && (std::abs(p.x)>1.72f || p.y>3.27f)) return true;
     auto box = [&](glm::vec3 lo,glm::vec3 hi) {
         lo-=glm::vec3(.18f);hi+=glm::vec3(.18f);
         return glm::all(glm::greaterThanEqual(p,lo)) && glm::all(glm::lessThanEqual(p,hi));
@@ -78,7 +78,7 @@ bool Game::cameraBlocked(glm::vec3 p) const {
                 return true;
     return box({-3.73f,0,-3.8f},{-2.05f,.94f,-1.5f}) ||
            box({-3.0f,0,-1.35f},{-2.32f,1.36f,-.65f}) ||
-           box({-3.85f,0,-9.6f},{-3.05f,2.72f,-4.4f}) ||
+           box({-3.89f,0,-12.85f},{-3.21f,2.72f,-10.15f}) ||
            box({-1.8f,0,-14.9f},{1.8f,3.34f,-13.7f}) ||
            box({2.43f,0,-9.65f},{3.57f,.9f,-8.15f}) ||
            box({2.77f,0,-1.65f},{3.43f,1.5f,-.95f}) ||
@@ -155,12 +155,13 @@ void Game::updateLasers() {
     }
 }
 bool Game::blocked(glm::vec3 p) const {
-    if (p.x < -3.65f || p.x > 3.65f || p.z > -.35f || p.z < roomBack)
+    if (p.x < -3.65f || p.x > 3.65f || p.z > 2.35f || p.z < roomBack)
         return true;
+    if (p.z > -.25f && std::abs(p.x)>1.70f) return true;
     auto box = [&](float x0, float x1, float z0, float z1) {
         return p.x > x0 - .22f && p.x < x1 + .22f && p.z > z0 - .22f && p.z < z1 + .22f;
     };
-    return box(-3.7f, -2.05f, -3.8f, -1.5f) || box(-3.85f, -3.05f, -9.6f, -4.4f) ||
+    return box(-3.7f, -2.05f, -3.8f, -1.5f) || box(-3.89f, -3.21f, -12.85f, -10.15f) ||
            box(-1.8f, 1.8f, -14.9f, -13.7f) || box(2.43f, 3.57f, -9.65f, -8.15f) ||
            box(2.77f, 3.43f, -1.65f, -.95f) || box(2.79f, 3.45f, -13.73f, -13.07f) ||
            box(-2.91f, -2.39f, -13.36f, -12.84f);

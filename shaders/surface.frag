@@ -2,7 +2,7 @@
 in vec3 vWorld,vNormal; in vec2 vUV; in vec4 vShadow;
 out vec4 fragColor;
 struct Light{vec3 position,color,direction;float power,cutoff,outer;};
-uniform Light uLights[8]; uniform int uLightCount;
+uniform Light uLights[12]; uniform int uLightCount;
 uniform sampler2D uTexture,uShadow;
 uniform vec3 uColor,uEye; uniform float uSpecular,uShine,uEmission,uTime;
 uniform bool uScreen,uAlarm;
@@ -22,7 +22,7 @@ void main(){
  vec3 result=base*ambient;
  vec3 moon=uAlarm?vec3(.12,.008,.004):vec3(.19,.28,.46);
  result+=base*moon*max(dot(N,normalize(vec3(-.75,.45,.4))),0.0)*(1.0-.8*shadow());
- for(int i=0;i<8;i++){
+ for(int i=0;i<12;i++){
  if(i>=uLightCount)break;
  vec3 delta=uLights[i].position-vWorld;
  float dist=length(delta);vec3 L=delta/max(dist,.001);

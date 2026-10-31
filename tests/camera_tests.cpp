@@ -97,7 +97,7 @@ int main(){try{
     need(g.camera().x<3.55f,"boom penetrated a timber post");
     g.position={2.2f,0,-14};g.yaw=90;
     need(g.camera().z> -14.77f && !g.cameraBlocked(g.camera()),"boom penetrated rear wall/safe");
-    g.position={-2.8f,0,-6};g.yaw=0;
+    g.position={-2.9f,0,-11.2f};g.yaw=0;
     need(glm::distance(g.camera(),g.eyePosition())<.65f,"cabinet did not contract the boom");
     g.position={-1.7f,0,-2.5f};
     need(g.camera().x< -2.4f,"camera should pass over the low desk");
@@ -110,6 +110,9 @@ int main(){try{
     need(g.pitch==60 && !g.cameraBlocked(g.camera()),"third-person vertical limits");
     g.state=State::Pause;g.toggleCamera();need(g.thirdPerson,"camera switched in pause");
     g.reset();need(g.thirdPerson,"retry discarded camera preference");
+    need(!g.blocked({0,0,2.2f}) && g.blocked({0,0,2.5f}),"visible security gate must block exit");
+    need(g.blocked({2,0,1}) && !g.blocked({0,0,1}),"vestibule side walls");
+    need(g.cameraBlocked({0,1.5f,2.5f}),"camera must not pass locked gate");
     Game first,third;third.thirdPerson=true;Input move;move.forward=1;
     for(int i=0;i<60;i++){first.update(1.f/240,move);third.update(1.f/240,move);}
     need(glm::distance(first.position,third.position)<.0001f,"movement depends on visual camera");

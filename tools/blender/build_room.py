@@ -1,4 +1,4 @@
-"""Build the approved room through Blender MCP; preserve unrelated scenes."""
+"""Build the approved room in Blender; preserve unrelated scenes."""
 import sys,math
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
@@ -56,6 +56,61 @@ for x in [-2,0,2]:cube('CeilingJoist',(x,7.5,4),(.16,15,.16),darkwood,.015)
 for x in [-2.1,2.1]:cube('DoorJamb',(x,.1,1.85),(.35,.34,3.7),darkwood,.03)
 cube('DoorLintel',(0,.1,3.63),(4.55,.36,.28),wood,.03)
 for side in [-1,1]:cube('EntranceSide',(side*3.1,.1,1.9),(1.8,.22,3.8),stone,.03)
+# Enclosed vestibule, locked security gate and a furnished corridor beyond it.
+teal=material('HeritageTeal',(.055,.12,.115),None,.13)
+ivory=material('SignIvory',(.75,.65,.43),None,.08,16,.25)
+def label(name,body,loc,size=.13):
+ bpy.ops.object.text_add(location=loc)
+ ob=bpy.context.object;ob.name=name;ob.data.body=body;ob.data.size=size
+ ob.data.align_x=enum_value(ob.data,'align_x','CENTER');ob.data.extrude=.001
+ ob.rotation_euler=(math.pi/2,0,math.pi);assign(ob,ivory)
+ bpy.ops.object.convert(target=next(e.identifier for e in bpy.ops.object.convert.get_rna_type().properties['target'].enum_items if e.identifier=='MESH'))
+ return bpy.context.object
+cube('VestibuleFloor',(0,-4,-.10),(4.15,8.2,.20),stone,.015)
+cube('VestibuleCeiling',(0,-4,3.85),(4.3,8.4,.22),darkwood,.02)
+cube('CorridorEndWall',(0,-8.1,1.9),(4.3,.22,3.8),plaster,.02)
+for side in [-1,1]:
+ cube('CorridorWall',(side*2.03,-4,1.9),(.22,8.2,3.8),plaster,.02)
+ cube('CorridorWainscot',(side*1.90,-4,.62),(.08,8.1,1.24),teal,.01)
+ for z in [.12,1.27,3.59]:cube('CorridorMoulding',(side*1.83,-4,z),(.12,8.1,.10),brass if z==1.27 else darkwood,.012)
+ for y in [-.5,-2.65,-5,-7.85]:cube('CorridorPilaster',(side*1.83,y,1.9),(.18,.19,3.75),darkwood,.02)
+ for y in [-4.1,-6.8]:
+  cube('CorridorSconceBack',(side*1.79,y,2.45),(.10,.22,.40),brass,.02)
+  cyl('CorridorSconceGlow',(side*1.65,y,2.45),.095,.25,lampmat,16)
+  for z in [2.28,2.62]:cyl('CorridorSconceCap',(side*1.65,y,z),.14,.055,brass,16)
+for y in [-2.65,-5,-7.85]:cube('CorridorCoffer',(0,y,3.65),(3.8,.2,.23),darkwood,.025)
+for row in range(8):
+ for col in range(4):
+  cube('CorridorTile',(-1.48+col*.985,-.52-row*.99,.012),(.96,.96,.024),stone,.006)
+for x in [-1.35,1.35]:cube('CorridorFloorInlay',(x,-4,.029),(.035,8.0,.012),brass,.003)
+cube('CorridorRunner',(0,-5.3,.045),(1.8,4.9,.025),rug,.007)
+# The grille is an actual physical boundary at runtime z=2.65 m.
+for x in [-1.83,0,1.83]:cube('SecurityGateFrame',(x,-2.65,1.69),(.10,.14,3.38),edge,.016)
+for z in [.10,1.1,3.32]:cube('SecurityGateCrossbar',(0,-2.65,z),(3.7,.14,.09),edge,.012)
+for i in range(20):
+ x=-1.71+i*.18
+ cube('SecurityGateBar',(x,-2.65,1.70),(.035,.075,3.12),edge,.008)
+ sphere('GateBrassCollar',(x,-2.65,1.1),(.038,.055,.065),brass,12,8)
+cube('SecurityGateKickplate',(0,-2.65,.24),(3.65,.12,.32),teal,.018)
+cube('SecurityGateLockPlate',(0,-2.55,1.57),(.30,.10,.46),brass,.025)
+cube('SecurityGateLock',(0,-2.46,1.47),(.16,.10,.18),black,.02)
+torus('SecurityGateShackle',(0,-2.46,1.59),.075,.018,brass,None,(math.pi/2,0,0))
+cube('SecurityNotice',(0,-2.55,2.52),(2.6,.08,.44),teal,.02)
+label('GateNoticeText','SECURITY LOCKDOWN',(0,-2.50,2.53),.145)
+label('GateNoticeSmall','ACCESS SEALED',(0,-2.50,2.36),.09)
+cube('CorridorEndDoor',(0,-7.95,1.54),(2.35,.12,3.08),darkwood,.035)
+for x in [-.58,.58]:
+ cube('EndDoorInset',(x,-7.87,1.7),(.98,.035,2.35),teal,.02)
+ cyl('EndDoorKnob',(x*.25,-7.79,1.42),.055,.10,brass,16,None,(math.pi/2,0,0))
+cube('EndDoorCrown',(0,-7.84,3.18),(2.65,.22,.18),wood,.02)
+label('CorridorArchiveLabel','PRIVATE ARCHIVES',(0,-7.75,3.43),.16)
+# Layered wall panelling stays behind the security mounting rails.
+for side in [-1,1]:
+ cube('RoomWainscot',(side*3.95,8,.60),(.065,13.7,1.0),teal,.01)
+ cube('RoomChairRail',(side*3.90,8,1.14),(.08,13.7,.075),darkwood,.01)
+ for y in [1.2,3.5,5.0,6.25,7.55,10.5,12.9,14.2]:
+  cube('PanellingStile',(side*3.90,y,.60),(.06,.055,.91),brass,.004)
+
 # Tall blue window and its physical mullions.
 cube('NightBeyondWindow',(-4.28,3.2,2.45),(.04,3.36,2.70),sky,0)
 for y in [1.5,4.9]:cube('WindowVerticalFrame',(-3.94,y,2.45),(.25,.12,2.85),darkwood,.015)
@@ -93,10 +148,10 @@ cube('MonitorBezel',(-2.78,3.025,1.25),(.65,.045,.49),black,.025)
 screen=cube('CCTVScreen',(-2.78,2.996,1.27),(.54,.012,.36),material('CCTV',(.9,1,.94),None,0),.005);screen['screen']=True
 for x in [-3.01,-2.89,-2.77]:cyl('MonitorButton',(x,2.988,1.04),.014,.012,brass,12,rotation=(math.pi/2,0,0))
 # Deposit cabinet with repeated doors and distinct handles.
-cube('DepositCabinet',(-3.55,7.25,1.35),(.68,5.1,2.7),black,.04)
+cube('DepositCabinet',(-3.55,11.5,1.35),(.68,2.7,2.7),black,.04)
 for row in range(5):
- for col in range(8):
-  y=4.97+col*.64;z=.3+row*.52
+ for col in range(4):
+  y=10.54+col*.64;z=.3+row*.52
   cube('DepositDoor',(-3.18,y,z),(.065,.60,.48),metal,.015)
   cube('DepositLabel',(-3.137,y-.12,z+.08),(.012,.17,.065),brass,.003)
   rod('DepositHandle',(-3.10,y+.07,z-.06),(-3.10,y+.20,z-.06),.016,brass)
@@ -124,7 +179,7 @@ for i,z in enumerate([.45,1.36,2.27]):
  bolt.keyframe_insert('location',frame=13);bolt.location.x-=.22;bolt.keyframe_insert('location',frame=28)
  cyl('SafeHinge',(-1.53,14.04,z+.3),.11,.36,brass,20)
 # Wall sconces with visible supports and warm glass.
-for side,y in [(-1,5),(1,4),(-1,13.6),(1,13.6)]:
+for side,y in [(-1,5),(1,3.6),(-1,13.6),(1,13.6)]:
  x=side*3.76
  cube('SconcePlate',(x,y,2.30),(.08,.22,.38),brass,.025)
  rod('SconceArm',(x,y,2.2),(x-side*.24,y,2.18),.035,brass)
@@ -172,7 +227,7 @@ def plant(loc,scale):
   sol=ob.modifiers.new('Leaf thickness',next(e.identifier for e in bpy.types.Modifier.bl_rna.properties['type'].enum_items if e.identifier=='SOLIDIFY'));sol.thickness=.004
 for loc,scale in [((3.1,1.3,0),1.2),((3.12,13.4,0),1.1),((-2.65,13.1,0),.85)]:plant(loc,scale)
 # Framed original landscapes.
-for y in [2.4,8.5]:
+for y in [1.65,10.8]:
  cube('PaintingCanvas',(3.86,y,2.35),(.025,1.2,1.0),painting,0)
  for yy in [y-.66,y+.66]:cube('PictureSide',(3.83,yy,2.35),(.13,.11,1.18),brass,.018)
  for zz in [1.79,2.91]:cube('PictureTop',(3.83,y,zz),(.13,1.4,.11),brass,.018)
@@ -199,5 +254,5 @@ bpy.context.view_layer.update()
 import export_scene
 importlib.reload(export_scene);export_scene.export(scene)
 bpy.ops.file.pack_all()
-bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'art'/'blender'/'vault.blend'))
+bpy.data.libraries.write(str(ROOT/'art'/'blender'/'vault.blend'),{scene},fake_user=True,compress=True)
 print('Vault created:',len(scene.objects),'objects; editable source saved')

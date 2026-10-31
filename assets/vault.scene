@@ -1,31 +1,33 @@
 # LVH scene format version 1; metres; right handed Y up
-material "LVH_Oak.004" 1 1 1 0.14 32 0 "textures/wood.png"
-material "LVH_Walnut.004" 1 1 1 0.18 32 0 "textures/darkwood.png"
-material "LVH_Plaster.004" 1 1 1 0.03 32 0 "textures/plaster.png"
-material "LVH_Stone.004" 1 1 1 0.05 32 0 "textures/stone.png"
-material "LVH_NightSky.004" 0.012 0.035 0.1 0 8 0.6 "-"
-material "LVH_MetalEdge.004" 0.12 0.16 0.14 0.5 48 0 "-"
-material "LVH_Moon.004" 0.55 0.69 1.0 0 8 1.5 "-"
-material "LVH_Rug.004" 1 1 1 0.02 32 0 "textures/rug.png"
-material "LVH_Brass.004" 0.46 0.29 0.105 0.65 64 0 "-"
-material "LVH_ChairFabric.004" 0.25 0.065 0.035 0.02 32 0 "-"
-material "LVH_LampGlass.004" 1.0 0.58 0.21 0.1 32 2.3 "-"
-material "LVH_Black.004" 0.012 0.018 0.017 0.12 32 0 "-"
-material "LVH_CCTV.004" 0.9 1.0 0.94 0 32 0 "-"
-material "LVH_Metal.004" 1 1 1 0.55 64 0 "textures/metal.png"
-material "LVH_Laser.004" 0.95 0.003 0.001 0 16 7 "-"
-material "LVH_Ceramic.004" 0.3 0.23 0.14 0.18 32 0 "-"
-material "LVH_Leaf0.004" 0.07 0.13 0.045 0.08 32 0 "-"
-material "LVH_Leaf1.004" 0.095 0.165 0.056999999999999995 0.08 32 0 "-"
-material "LVH_Leaf2.004" 0.12000000000000001 0.2 0.069 0.08 32 0 "-"
-material "LVH_Landscape.004" 1 1 1 0.03 32 0 "textures/landscape.png"
+material "LVH_Oak" 1 1 1 0.14 32 0 "textures/wood.png"
+material "LVH_Walnut" 1 1 1 0.18 32 0 "textures/darkwood.png"
+material "LVH_Plaster" 1 1 1 0.03 32 0 "textures/plaster.png"
+material "LVH_Stone" 1 1 1 0.05 32 0 "textures/stone.png"
+material "LVH_HeritageTeal" 0.055 0.12 0.115 0.13 32 0 "-"
+material "LVH_Brass" 0.46 0.29 0.105 0.65 64 0 "-"
+material "LVH_LampGlass" 1.0 0.58 0.21 0.1 32 2.3 "-"
+material "LVH_Rug" 1 1 1 0.02 32 0 "textures/rug.png"
+material "LVH_MetalEdge" 0.12 0.16 0.14 0.5 48 0 "-"
+material "LVH_Black" 0.012 0.018 0.017 0.12 32 0 "-"
+material "LVH_SignIvory" 0.75 0.65 0.43 0.08 16 0.25 "-"
+material "LVH_NightSky" 0.012 0.035 0.1 0 8 0.6 "-"
+material "LVH_Moon" 0.55 0.69 1.0 0 8 1.5 "-"
+material "LVH_ChairFabric" 0.25 0.065 0.035 0.02 32 0 "-"
+material "LVH_CCTV" 0.9 1.0 0.94 0 32 0 "-"
+material "LVH_Metal" 1 1 1 0.55 64 0 "textures/metal.png"
+material "LVH_Laser" 0.95 0.003 0.001 0 16 7 "-"
+material "LVH_Ceramic" 0.3 0.23 0.14 0.18 32 0 "-"
+material "LVH_Leaf0" 0.07 0.13 0.045 0.08 32 0 "-"
+material "LVH_Leaf1" 0.095 0.165 0.056999999999999995 0.08 32 0 "-"
+material "LVH_Leaf2" 0.12000000000000001 0.2 0.069 0.08 32 0 "-"
+material "LVH_Landscape" 1 1 1 0.03 32 0 "textures/landscape.png"
 mesh "Floor_0_0" "meshes/vault_0000.lvhm"
-mesh "Floor_0_1" "meshes/vault_0001.lvhm"
-mesh "Floor_0_7" "meshes/vault_0002.lvhm"
-mesh "Floor_2_5" "meshes/vault_0003.lvhm"
-mesh "Floor_2_7" "meshes/vault_0004.lvhm"
-mesh "Floor_3_0" "meshes/vault_0005.lvhm"
-mesh "Floor_4_7" "meshes/vault_0006.lvhm"
+mesh "Floor_0_7" "meshes/vault_0001.lvhm"
+mesh "Floor_2_2" "meshes/vault_0002.lvhm"
+mesh "Floor_2_7" "meshes/vault_0003.lvhm"
+mesh "Floor_3_0" "meshes/vault_0004.lvhm"
+mesh "Floor_7_5" "meshes/vault_0005.lvhm"
+mesh "Floor_9_7" "meshes/vault_0006.lvhm"
 mesh "FloorUnderlay" "meshes/vault_0007.lvhm"
 mesh "RightPlaster" "meshes/vault_0008.lvhm"
 mesh "BackPlaster" "meshes/vault_0009.lvhm"
@@ -35,373 +37,434 @@ mesh "WindowSillWall" "meshes/vault_0012.lvhm"
 mesh "WindowTopWall" "meshes/vault_0013.lvhm"
 mesh "Ceiling" "meshes/vault_0014.lvhm"
 mesh "BackStone_0_0" "meshes/vault_0015.lvhm"
-mesh "BackStone_4_1" "meshes/vault_0016.lvhm"
-mesh "BackStone_4_3" "meshes/vault_0017.lvhm"
-mesh "BackStone_4_5" "meshes/vault_0018.lvhm"
-mesh "BackStone_4_7" "meshes/vault_0019.lvhm"
-mesh "Skirting-1" "meshes/vault_0020.lvhm"
-mesh "TimberUpright" "meshes/vault_0021.lvhm"
-mesh "TimberFoot" "meshes/vault_0022.lvhm"
-mesh "TimberUpright.003" "meshes/vault_0023.lvhm"
-mesh "Skirting1" "meshes/vault_0024.lvhm"
-mesh "CeilingBeam" "meshes/vault_0025.lvhm"
-mesh "CeilingBeam.001" "meshes/vault_0026.lvhm"
-mesh "CeilingJoist" "meshes/vault_0027.lvhm"
-mesh "CeilingJoist.001" "meshes/vault_0028.lvhm"
-mesh "DoorJamb" "meshes/vault_0029.lvhm"
-mesh "DoorJamb.001" "meshes/vault_0030.lvhm"
-mesh "DoorLintel" "meshes/vault_0031.lvhm"
-mesh "EntranceSide" "meshes/vault_0032.lvhm"
-mesh "EntranceSide.001" "meshes/vault_0033.lvhm"
-mesh "NightBeyondWindow" "meshes/vault_0034.lvhm"
-mesh "WindowVerticalFrame" "meshes/vault_0035.lvhm"
-mesh "WindowHorizontalFrame" "meshes/vault_0036.lvhm"
-mesh "WindowHorizontalFrame.001" "meshes/vault_0037.lvhm"
-mesh "WindowMullion" "meshes/vault_0038.lvhm"
-mesh "WindowCrossbar" "meshes/vault_0039.lvhm"
-mesh "WindowCrossbar.001" "meshes/vault_0040.lvhm"
-mesh "MoonDisc" "meshes/vault_0041.lvhm"
-mesh "WindowSill" "meshes/vault_0042.lvhm"
-mesh "WovenCarpet" "meshes/vault_0043.lvhm"
-mesh "DeskTop" "meshes/vault_0044.lvhm"
-mesh "DeskApron" "meshes/vault_0045.lvhm"
-mesh "DeskLeg" "meshes/vault_0046.lvhm"
-mesh "DeskLegFoot" "meshes/vault_0047.lvhm"
-mesh "DrawerFront" "meshes/vault_0048.lvhm"
-mesh "DrawerHandle" "meshes/vault_0049.lvhm"
-mesh "DrawerFront.001" "meshes/vault_0050.lvhm"
-mesh "DrawerHandle.001" "meshes/vault_0051.lvhm"
-mesh "ChairSeat" "meshes/vault_0052.lvhm"
-mesh "ChairCushion" "meshes/vault_0053.lvhm"
-mesh "ChairLeg" "meshes/vault_0054.lvhm"
-mesh "ChairLeg.001" "meshes/vault_0055.lvhm"
-mesh "ChairBackPost" "meshes/vault_0056.lvhm"
-mesh "ChairBackPost.001" "meshes/vault_0057.lvhm"
-mesh "ChairBackSlat" "meshes/vault_0058.lvhm"
-mesh "ChairBackSlat.001" "meshes/vault_0059.lvhm"
-mesh "DeskLampFoot" "meshes/vault_0060.lvhm"
-mesh "DeskLampStem" "meshes/vault_0061.lvhm"
-mesh "DeskLampShade" "meshes/vault_0062.lvhm"
-mesh "DeskLampGlow" "meshes/vault_0063.lvhm"
-mesh "MonitorCase" "meshes/vault_0064.lvhm"
-mesh "MonitorStand" "meshes/vault_0065.lvhm"
-mesh "MonitorBezel" "meshes/vault_0066.lvhm"
-mesh "CCTVScreen" "meshes/vault_0067.lvhm"
-mesh "MonitorButton" "meshes/vault_0068.lvhm"
-mesh "DepositCabinet" "meshes/vault_0069.lvhm"
-mesh "DepositDoor" "meshes/vault_0070.lvhm"
-mesh "DepositLabel" "meshes/vault_0071.lvhm"
-mesh "DepositHandle" "meshes/vault_0072.lvhm"
-mesh "DepositKeyhole" "meshes/vault_0073.lvhm"
-mesh "DepositKeyhole.001" "meshes/vault_0074.lvhm"
-mesh "DepositHandle.002" "meshes/vault_0075.lvhm"
-mesh "DepositKeyhole.002" "meshes/vault_0076.lvhm"
-mesh "DepositKeyhole.003" "meshes/vault_0077.lvhm"
-mesh "DepositKeyhole.004" "meshes/vault_0078.lvhm"
-mesh "DepositKeyhole.005" "meshes/vault_0079.lvhm"
-mesh "DepositKeyhole.006" "meshes/vault_0080.lvhm"
-mesh "DepositHandle.007" "meshes/vault_0081.lvhm"
-mesh "DepositKeyhole.007" "meshes/vault_0082.lvhm"
-mesh "DepositKeyhole.008" "meshes/vault_0083.lvhm"
-mesh "DepositKeyhole.009" "meshes/vault_0084.lvhm"
-mesh "DepositLabel.011" "meshes/vault_0085.lvhm"
-mesh "DepositHandle.011" "meshes/vault_0086.lvhm"
-mesh "DepositKeyhole.011" "meshes/vault_0087.lvhm"
-mesh "DepositDoor.012" "meshes/vault_0088.lvhm"
-mesh "DepositHandle.012" "meshes/vault_0089.lvhm"
-mesh "DepositKeyhole.012" "meshes/vault_0090.lvhm"
-mesh "DepositHandle.013" "meshes/vault_0091.lvhm"
-mesh "DepositKeyhole.013" "meshes/vault_0092.lvhm"
-mesh "DepositHandle.014" "meshes/vault_0093.lvhm"
-mesh "DepositKeyhole.014" "meshes/vault_0094.lvhm"
-mesh "DepositHandle.015" "meshes/vault_0095.lvhm"
-mesh "DepositKeyhole.015" "meshes/vault_0096.lvhm"
-mesh "DepositHandle.016" "meshes/vault_0097.lvhm"
-mesh "DepositKeyhole.016" "meshes/vault_0098.lvhm"
-mesh "DepositHandle.017" "meshes/vault_0099.lvhm"
-mesh "DepositKeyhole.017" "meshes/vault_0100.lvhm"
-mesh "DepositKeyhole.018" "meshes/vault_0101.lvhm"
-mesh "DepositHandle.019" "meshes/vault_0102.lvhm"
-mesh "DepositKeyhole.019" "meshes/vault_0103.lvhm"
-mesh "DepositHandle.023" "meshes/vault_0104.lvhm"
-mesh "DepositHandle.024" "meshes/vault_0105.lvhm"
-mesh "DepositHandle.027" "meshes/vault_0106.lvhm"
-mesh "DepositKeyhole.032" "meshes/vault_0107.lvhm"
-mesh "DepositKeyhole.033" "meshes/vault_0108.lvhm"
-mesh "DepositKeyhole.034" "meshes/vault_0109.lvhm"
-mesh "SafeShadowBack" "meshes/vault_0110.lvhm"
-mesh "SafeSide" "meshes/vault_0111.lvhm"
-mesh "SafeFrame" "meshes/vault_0112.lvhm"
-mesh "VaultShelf" "meshes/vault_0113.lvhm"
-mesh "VaultLedger" "meshes/vault_0114.lvhm"
-mesh "VaultLedger.001" "meshes/vault_0115.lvhm"
-mesh "GoldIngot" "meshes/vault_0116.lvhm"
-mesh "GoldIngot.003" "meshes/vault_0117.lvhm"
-mesh "SafeDoor" "meshes/vault_0118.lvhm"
-mesh "SafeDoorInset" "meshes/vault_0119.lvhm"
-mesh "DoorRivet" "meshes/vault_0120.lvhm"
-mesh "WheelRing" "meshes/vault_0121.lvhm"
-mesh "WheelHub" "meshes/vault_0122.lvhm"
-mesh "WheelSpoke" "meshes/vault_0123.lvhm"
-mesh "SafeBolt0" "meshes/vault_0124.lvhm"
-mesh "SafeHinge" "meshes/vault_0125.lvhm"
-mesh "SafeBolt2" "meshes/vault_0126.lvhm"
-mesh "SafeHinge.002" "meshes/vault_0127.lvhm"
-mesh "SconcePlate" "meshes/vault_0128.lvhm"
-mesh "SconceArm" "meshes/vault_0129.lvhm"
-mesh "SconceGlass" "meshes/vault_0130.lvhm"
-mesh "SconceCap" "meshes/vault_0131.lvhm"
-mesh "SconceCap.002" "meshes/vault_0132.lvhm"
-mesh "SpotCeilingPlate" "meshes/vault_0133.lvhm"
-mesh "SpotStem" "meshes/vault_0134.lvhm"
-mesh "SpotYoke" "meshes/vault_0135.lvhm"
-mesh "SpotBracket" "meshes/vault_0136.lvhm"
-mesh "SpotBracket.001" "meshes/vault_0137.lvhm"
-mesh "SpotHousing" "meshes/vault_0138.lvhm"
-mesh "SpotLens" "meshes/vault_0139.lvhm"
-mesh "SpotHousing.001" "meshes/vault_0140.lvhm"
-mesh "EmitterRail" "meshes/vault_0141.lvhm"
-mesh "LaserMount" "meshes/vault_0142.lvhm"
-mesh "LaserEmitter" "meshes/vault_0143.lvhm"
-mesh "EmitterLens" "meshes/vault_0144.lvhm"
-mesh "LaserMount.001" "meshes/vault_0145.lvhm"
-mesh "LaserEmitter.001" "meshes/vault_0146.lvhm"
-mesh "Laser0" "meshes/vault_0147.lvhm"
-mesh "LaserEmitter.002" "meshes/vault_0148.lvhm"
-mesh "LaserEmitter.005" "meshes/vault_0149.lvhm"
-mesh "LaserEmitter.006" "meshes/vault_0150.lvhm"
-mesh "LaserEmitter.010" "meshes/vault_0151.lvhm"
-mesh "EmitterRail.011" "meshes/vault_0152.lvhm"
-mesh "PlantPot" "meshes/vault_0153.lvhm"
-mesh "PotLip" "meshes/vault_0154.lvhm"
-mesh "PotSoil" "meshes/vault_0155.lvhm"
-mesh "PlantStalk" "meshes/vault_0156.lvhm"
-mesh "BroadLeaf" "meshes/vault_0157.lvhm"
-mesh "PlantStalk.001" "meshes/vault_0158.lvhm"
-mesh "BroadLeaf.001" "meshes/vault_0159.lvhm"
-mesh "PlantStalk.002" "meshes/vault_0160.lvhm"
-mesh "BroadLeaf.002" "meshes/vault_0161.lvhm"
-mesh "PlantStalk.003" "meshes/vault_0162.lvhm"
-mesh "BroadLeaf.003" "meshes/vault_0163.lvhm"
-mesh "PlantStalk.004" "meshes/vault_0164.lvhm"
-mesh "BroadLeaf.004" "meshes/vault_0165.lvhm"
-mesh "PlantStalk.005" "meshes/vault_0166.lvhm"
-mesh "BroadLeaf.005" "meshes/vault_0167.lvhm"
-mesh "PlantStalk.006" "meshes/vault_0168.lvhm"
-mesh "BroadLeaf.006" "meshes/vault_0169.lvhm"
-mesh "PlantStalk.007" "meshes/vault_0170.lvhm"
-mesh "BroadLeaf.007" "meshes/vault_0171.lvhm"
-mesh "PlantStalk.008" "meshes/vault_0172.lvhm"
-mesh "BroadLeaf.008" "meshes/vault_0173.lvhm"
-mesh "PlantPot.001" "meshes/vault_0174.lvhm"
-mesh "PotLip.001" "meshes/vault_0175.lvhm"
-mesh "PotSoil.001" "meshes/vault_0176.lvhm"
-mesh "PlantStalk.009" "meshes/vault_0177.lvhm"
-mesh "BroadLeaf.009" "meshes/vault_0178.lvhm"
-mesh "PlantStalk.010" "meshes/vault_0179.lvhm"
-mesh "BroadLeaf.010" "meshes/vault_0180.lvhm"
-mesh "PlantStalk.011" "meshes/vault_0181.lvhm"
-mesh "BroadLeaf.011" "meshes/vault_0182.lvhm"
-mesh "BroadLeaf.012" "meshes/vault_0183.lvhm"
-mesh "PlantStalk.013" "meshes/vault_0184.lvhm"
-mesh "BroadLeaf.013" "meshes/vault_0185.lvhm"
-mesh "PlantStalk.014" "meshes/vault_0186.lvhm"
-mesh "BroadLeaf.014" "meshes/vault_0187.lvhm"
-mesh "PlantStalk.015" "meshes/vault_0188.lvhm"
-mesh "BroadLeaf.015" "meshes/vault_0189.lvhm"
-mesh "PlantStalk.016" "meshes/vault_0190.lvhm"
-mesh "BroadLeaf.016" "meshes/vault_0191.lvhm"
-mesh "PlantStalk.017" "meshes/vault_0192.lvhm"
-mesh "BroadLeaf.017" "meshes/vault_0193.lvhm"
-mesh "PlantPot.002" "meshes/vault_0194.lvhm"
-mesh "PotLip.002" "meshes/vault_0195.lvhm"
-mesh "PotSoil.002" "meshes/vault_0196.lvhm"
-mesh "PlantStalk.018" "meshes/vault_0197.lvhm"
-mesh "BroadLeaf.018" "meshes/vault_0198.lvhm"
-mesh "PlantStalk.019" "meshes/vault_0199.lvhm"
-mesh "BroadLeaf.019" "meshes/vault_0200.lvhm"
-mesh "PlantStalk.020" "meshes/vault_0201.lvhm"
-mesh "BroadLeaf.020" "meshes/vault_0202.lvhm"
-mesh "PlantStalk.021" "meshes/vault_0203.lvhm"
-mesh "BroadLeaf.021" "meshes/vault_0204.lvhm"
-mesh "PlantStalk.022" "meshes/vault_0205.lvhm"
-mesh "BroadLeaf.022" "meshes/vault_0206.lvhm"
-mesh "PlantStalk.023" "meshes/vault_0207.lvhm"
-mesh "BroadLeaf.023" "meshes/vault_0208.lvhm"
-mesh "PlantStalk.024" "meshes/vault_0209.lvhm"
-mesh "BroadLeaf.024" "meshes/vault_0210.lvhm"
-mesh "PlantStalk.025" "meshes/vault_0211.lvhm"
-mesh "BroadLeaf.025" "meshes/vault_0212.lvhm"
-mesh "PlantStalk.026" "meshes/vault_0213.lvhm"
-mesh "BroadLeaf.026" "meshes/vault_0214.lvhm"
-mesh "PaintingCanvas" "meshes/vault_0215.lvhm"
-mesh "PictureSide" "meshes/vault_0216.lvhm"
-mesh "PictureTop" "meshes/vault_0217.lvhm"
-mesh "PictureLight" "meshes/vault_0218.lvhm"
-mesh "PictureLight.001" "meshes/vault_0219.lvhm"
-mesh "SideTableTop" "meshes/vault_0220.lvhm"
-mesh "SideTableLeg" "meshes/vault_0221.lvhm"
-mesh "ClosedBook" "meshes/vault_0222.lvhm"
+mesh "BackStone_0_1" "meshes/vault_0016.lvhm"
+mesh "BackStone_0_2" "meshes/vault_0017.lvhm"
+mesh "BackStone_0_3" "meshes/vault_0018.lvhm"
+mesh "BackStone_0_4" "meshes/vault_0019.lvhm"
+mesh "BackStone_1_0" "meshes/vault_0020.lvhm"
+mesh "Skirting-1" "meshes/vault_0021.lvhm"
+mesh "TimberUpright" "meshes/vault_0022.lvhm"
+mesh "TimberFoot" "meshes/vault_0023.lvhm"
+mesh "TimberUpright.002" "meshes/vault_0024.lvhm"
+mesh "Skirting1" "meshes/vault_0025.lvhm"
+mesh "CeilingBeam" "meshes/vault_0026.lvhm"
+mesh "CeilingBeam.001" "meshes/vault_0027.lvhm"
+mesh "CeilingJoist" "meshes/vault_0028.lvhm"
+mesh "CeilingJoist.001" "meshes/vault_0029.lvhm"
+mesh "DoorJamb" "meshes/vault_0030.lvhm"
+mesh "DoorJamb.001" "meshes/vault_0031.lvhm"
+mesh "DoorLintel" "meshes/vault_0032.lvhm"
+mesh "EntranceSide" "meshes/vault_0033.lvhm"
+mesh "EntranceSide.001" "meshes/vault_0034.lvhm"
+mesh "VestibuleFloor" "meshes/vault_0035.lvhm"
+mesh "VestibuleCeiling" "meshes/vault_0036.lvhm"
+mesh "CorridorEndWall" "meshes/vault_0037.lvhm"
+mesh "CorridorWall" "meshes/vault_0038.lvhm"
+mesh "CorridorWainscot" "meshes/vault_0039.lvhm"
+mesh "CorridorMoulding" "meshes/vault_0040.lvhm"
+mesh "CorridorMoulding.001" "meshes/vault_0041.lvhm"
+mesh "CorridorMoulding.002" "meshes/vault_0042.lvhm"
+mesh "CorridorPilaster" "meshes/vault_0043.lvhm"
+mesh "CorridorPilaster.001" "meshes/vault_0044.lvhm"
+mesh "CorridorSconceBack" "meshes/vault_0045.lvhm"
+mesh "CorridorSconceGlow" "meshes/vault_0046.lvhm"
+mesh "CorridorSconceCap" "meshes/vault_0047.lvhm"
+mesh "CorridorSconceBack.001" "meshes/vault_0048.lvhm"
+mesh "CorridorSconceCap.002" "meshes/vault_0049.lvhm"
+mesh "CorridorWall.001" "meshes/vault_0050.lvhm"
+mesh "CorridorWainscot.001" "meshes/vault_0051.lvhm"
+mesh "CorridorCoffer" "meshes/vault_0052.lvhm"
+mesh "CorridorCoffer.001" "meshes/vault_0053.lvhm"
+mesh "CorridorTile" "meshes/vault_0054.lvhm"
+mesh "CorridorTile.001" "meshes/vault_0055.lvhm"
+mesh "CorridorTile.003" "meshes/vault_0056.lvhm"
+mesh "CorridorTile.022" "meshes/vault_0057.lvhm"
+mesh "CorridorFloorInlay" "meshes/vault_0058.lvhm"
+mesh "CorridorFloorInlay.001" "meshes/vault_0059.lvhm"
+mesh "CorridorRunner" "meshes/vault_0060.lvhm"
+mesh "SecurityGateFrame" "meshes/vault_0061.lvhm"
+mesh "SecurityGateFrame.001" "meshes/vault_0062.lvhm"
+mesh "SecurityGateCrossbar" "meshes/vault_0063.lvhm"
+mesh "SecurityGateCrossbar.001" "meshes/vault_0064.lvhm"
+mesh "SecurityGateBar" "meshes/vault_0065.lvhm"
+mesh "GateBrassCollar" "meshes/vault_0066.lvhm"
+mesh "GateBrassCollar.001" "meshes/vault_0067.lvhm"
+mesh "SecurityGateBar.002" "meshes/vault_0068.lvhm"
+mesh "GateBrassCollar.002" "meshes/vault_0069.lvhm"
+mesh "GateBrassCollar.003" "meshes/vault_0070.lvhm"
+mesh "SecurityGateBar.004" "meshes/vault_0071.lvhm"
+mesh "GateBrassCollar.004" "meshes/vault_0072.lvhm"
+mesh "GateBrassCollar.005" "meshes/vault_0073.lvhm"
+mesh "SecurityGateBar.006" "meshes/vault_0074.lvhm"
+mesh "GateBrassCollar.006" "meshes/vault_0075.lvhm"
+mesh "GateBrassCollar.007" "meshes/vault_0076.lvhm"
+mesh "GateBrassCollar.009" "meshes/vault_0077.lvhm"
+mesh "GateBrassCollar.013" "meshes/vault_0078.lvhm"
+mesh "GateBrassCollar.016" "meshes/vault_0079.lvhm"
+mesh "SecurityGateBar.019" "meshes/vault_0080.lvhm"
+mesh "SecurityGateKickplate" "meshes/vault_0081.lvhm"
+mesh "SecurityGateLockPlate" "meshes/vault_0082.lvhm"
+mesh "SecurityGateLock" "meshes/vault_0083.lvhm"
+mesh "SecurityGateShackle" "meshes/vault_0084.lvhm"
+mesh "SecurityNotice" "meshes/vault_0085.lvhm"
+mesh "GateNoticeText" "meshes/vault_0086.lvhm"
+mesh "GateNoticeSmall" "meshes/vault_0087.lvhm"
+mesh "CorridorEndDoor" "meshes/vault_0088.lvhm"
+mesh "EndDoorInset" "meshes/vault_0089.lvhm"
+mesh "EndDoorKnob" "meshes/vault_0090.lvhm"
+mesh "EndDoorInset.001" "meshes/vault_0091.lvhm"
+mesh "EndDoorCrown" "meshes/vault_0092.lvhm"
+mesh "CorridorArchiveLabel" "meshes/vault_0093.lvhm"
+mesh "RoomWainscot" "meshes/vault_0094.lvhm"
+mesh "RoomChairRail" "meshes/vault_0095.lvhm"
+mesh "PanellingStile" "meshes/vault_0096.lvhm"
+mesh "PanellingStile.001" "meshes/vault_0097.lvhm"
+mesh "NightBeyondWindow" "meshes/vault_0098.lvhm"
+mesh "WindowVerticalFrame" "meshes/vault_0099.lvhm"
+mesh "WindowVerticalFrame.001" "meshes/vault_0100.lvhm"
+mesh "WindowHorizontalFrame" "meshes/vault_0101.lvhm"
+mesh "WindowHorizontalFrame.001" "meshes/vault_0102.lvhm"
+mesh "WindowMullion" "meshes/vault_0103.lvhm"
+mesh "WindowCrossbar" "meshes/vault_0104.lvhm"
+mesh "WindowCrossbar.001" "meshes/vault_0105.lvhm"
+mesh "MoonDisc" "meshes/vault_0106.lvhm"
+mesh "WindowSill" "meshes/vault_0107.lvhm"
+mesh "WovenCarpet" "meshes/vault_0108.lvhm"
+mesh "DeskTop" "meshes/vault_0109.lvhm"
+mesh "DeskApron" "meshes/vault_0110.lvhm"
+mesh "DeskLeg" "meshes/vault_0111.lvhm"
+mesh "DeskLegFoot" "meshes/vault_0112.lvhm"
+mesh "DeskLeg.002" "meshes/vault_0113.lvhm"
+mesh "DrawerFront" "meshes/vault_0114.lvhm"
+mesh "DrawerHandle" "meshes/vault_0115.lvhm"
+mesh "DrawerFront.001" "meshes/vault_0116.lvhm"
+mesh "ChairSeat" "meshes/vault_0117.lvhm"
+mesh "ChairCushion" "meshes/vault_0118.lvhm"
+mesh "ChairLeg" "meshes/vault_0119.lvhm"
+mesh "ChairBackPost" "meshes/vault_0120.lvhm"
+mesh "ChairBackSlat" "meshes/vault_0121.lvhm"
+mesh "DeskLampFoot" "meshes/vault_0122.lvhm"
+mesh "DeskLampStem" "meshes/vault_0123.lvhm"
+mesh "DeskLampShade" "meshes/vault_0124.lvhm"
+mesh "DeskLampGlow" "meshes/vault_0125.lvhm"
+mesh "MonitorCase" "meshes/vault_0126.lvhm"
+mesh "MonitorStand" "meshes/vault_0127.lvhm"
+mesh "MonitorBezel" "meshes/vault_0128.lvhm"
+mesh "CCTVScreen" "meshes/vault_0129.lvhm"
+mesh "MonitorButton" "meshes/vault_0130.lvhm"
+mesh "DepositCabinet" "meshes/vault_0131.lvhm"
+mesh "DepositDoor" "meshes/vault_0132.lvhm"
+mesh "DepositLabel" "meshes/vault_0133.lvhm"
+mesh "DepositHandle" "meshes/vault_0134.lvhm"
+mesh "DepositKeyhole" "meshes/vault_0135.lvhm"
+mesh "DepositDoor.001" "meshes/vault_0136.lvhm"
+mesh "DepositLabel.001" "meshes/vault_0137.lvhm"
+mesh "DepositHandle.001" "meshes/vault_0138.lvhm"
+mesh "DepositKeyhole.001" "meshes/vault_0139.lvhm"
+mesh "DepositHandle.002" "meshes/vault_0140.lvhm"
+mesh "DepositKeyhole.002" "meshes/vault_0141.lvhm"
+mesh "DepositHandle.003" "meshes/vault_0142.lvhm"
+mesh "DepositKeyhole.003" "meshes/vault_0143.lvhm"
+mesh "DepositKeyhole.004" "meshes/vault_0144.lvhm"
+mesh "DepositHandle.005" "meshes/vault_0145.lvhm"
+mesh "DepositKeyhole.005" "meshes/vault_0146.lvhm"
+mesh "DepositHandle.006" "meshes/vault_0147.lvhm"
+mesh "DepositKeyhole.006" "meshes/vault_0148.lvhm"
+mesh "DepositKeyhole.007" "meshes/vault_0149.lvhm"
+mesh "DepositHandle.008" "meshes/vault_0150.lvhm"
+mesh "DepositKeyhole.009" "meshes/vault_0151.lvhm"
+mesh "DepositKeyhole.010" "meshes/vault_0152.lvhm"
+mesh "DepositHandle.012" "meshes/vault_0153.lvhm"
+mesh "DepositKeyhole.012" "meshes/vault_0154.lvhm"
+mesh "DepositHandle.013" "meshes/vault_0155.lvhm"
+mesh "DepositHandle.014" "meshes/vault_0156.lvhm"
+mesh "DepositKeyhole.015" "meshes/vault_0157.lvhm"
+mesh "DepositHandle.018" "meshes/vault_0158.lvhm"
+mesh "DepositKeyhole.019" "meshes/vault_0159.lvhm"
+mesh "SafeShadowBack" "meshes/vault_0160.lvhm"
+mesh "SafeSide" "meshes/vault_0161.lvhm"
+mesh "SafeFrame" "meshes/vault_0162.lvhm"
+mesh "SafeFrame.001" "meshes/vault_0163.lvhm"
+mesh "VaultShelf" "meshes/vault_0164.lvhm"
+mesh "VaultShelf.001" "meshes/vault_0165.lvhm"
+mesh "VaultLedger" "meshes/vault_0166.lvhm"
+mesh "VaultLedger.002" "meshes/vault_0167.lvhm"
+mesh "GoldIngot" "meshes/vault_0168.lvhm"
+mesh "SafeDoor" "meshes/vault_0169.lvhm"
+mesh "SafeDoorInset" "meshes/vault_0170.lvhm"
+mesh "DoorRivet" "meshes/vault_0171.lvhm"
+mesh "WheelRing" "meshes/vault_0172.lvhm"
+mesh "WheelHub" "meshes/vault_0173.lvhm"
+mesh "WheelSpoke" "meshes/vault_0174.lvhm"
+mesh "SafeBolt0" "meshes/vault_0175.lvhm"
+mesh "SafeHinge" "meshes/vault_0176.lvhm"
+mesh "SafeBolt1" "meshes/vault_0177.lvhm"
+mesh "SafeHinge.001" "meshes/vault_0178.lvhm"
+mesh "SconcePlate" "meshes/vault_0179.lvhm"
+mesh "SconceArm" "meshes/vault_0180.lvhm"
+mesh "SconceGlass" "meshes/vault_0181.lvhm"
+mesh "SconceCap" "meshes/vault_0182.lvhm"
+mesh "SconceArm.001" "meshes/vault_0183.lvhm"
+mesh "SconceCap.002" "meshes/vault_0184.lvhm"
+mesh "SconceArm.002" "meshes/vault_0185.lvhm"
+mesh "SconcePlate.003" "meshes/vault_0186.lvhm"
+mesh "SconceArm.003" "meshes/vault_0187.lvhm"
+mesh "SpotCeilingPlate" "meshes/vault_0188.lvhm"
+mesh "SpotStem" "meshes/vault_0189.lvhm"
+mesh "SpotYoke" "meshes/vault_0190.lvhm"
+mesh "SpotBracket" "meshes/vault_0191.lvhm"
+mesh "SpotHousing" "meshes/vault_0192.lvhm"
+mesh "SpotLens" "meshes/vault_0193.lvhm"
+mesh "SpotCeilingPlate.001" "meshes/vault_0194.lvhm"
+mesh "SpotStem.001" "meshes/vault_0195.lvhm"
+mesh "SpotYoke.001" "meshes/vault_0196.lvhm"
+mesh "EmitterRail" "meshes/vault_0197.lvhm"
+mesh "LaserMount" "meshes/vault_0198.lvhm"
+mesh "LaserEmitter" "meshes/vault_0199.lvhm"
+mesh "EmitterLens" "meshes/vault_0200.lvhm"
+mesh "LaserEmitter.001" "meshes/vault_0201.lvhm"
+mesh "Laser0" "meshes/vault_0202.lvhm"
+mesh "LaserMount.002" "meshes/vault_0203.lvhm"
+mesh "LaserEmitter.002" "meshes/vault_0204.lvhm"
+mesh "LaserMount.003" "meshes/vault_0205.lvhm"
+mesh "LaserEmitter.003" "meshes/vault_0206.lvhm"
+mesh "EmitterRail.004" "meshes/vault_0207.lvhm"
+mesh "LaserEmitter.005" "meshes/vault_0208.lvhm"
+mesh "LaserEmitter.006" "meshes/vault_0209.lvhm"
+mesh "LaserEmitter.008" "meshes/vault_0210.lvhm"
+mesh "LaserEmitter.009" "meshes/vault_0211.lvhm"
+mesh "LaserEmitter.010" "meshes/vault_0212.lvhm"
+mesh "PlantPot" "meshes/vault_0213.lvhm"
+mesh "PotLip" "meshes/vault_0214.lvhm"
+mesh "PotSoil" "meshes/vault_0215.lvhm"
+mesh "PlantStalk" "meshes/vault_0216.lvhm"
+mesh "BroadLeaf" "meshes/vault_0217.lvhm"
+mesh "PlantStalk.001" "meshes/vault_0218.lvhm"
+mesh "BroadLeaf.001" "meshes/vault_0219.lvhm"
+mesh "PlantStalk.002" "meshes/vault_0220.lvhm"
+mesh "BroadLeaf.002" "meshes/vault_0221.lvhm"
+mesh "PlantStalk.003" "meshes/vault_0222.lvhm"
+mesh "BroadLeaf.003" "meshes/vault_0223.lvhm"
+mesh "PlantStalk.004" "meshes/vault_0224.lvhm"
+mesh "BroadLeaf.004" "meshes/vault_0225.lvhm"
+mesh "PlantStalk.005" "meshes/vault_0226.lvhm"
+mesh "BroadLeaf.005" "meshes/vault_0227.lvhm"
+mesh "PlantStalk.006" "meshes/vault_0228.lvhm"
+mesh "BroadLeaf.006" "meshes/vault_0229.lvhm"
+mesh "PlantStalk.007" "meshes/vault_0230.lvhm"
+mesh "BroadLeaf.007" "meshes/vault_0231.lvhm"
+mesh "PlantStalk.008" "meshes/vault_0232.lvhm"
+mesh "BroadLeaf.008" "meshes/vault_0233.lvhm"
+mesh "PlantPot.001" "meshes/vault_0234.lvhm"
+mesh "PotLip.001" "meshes/vault_0235.lvhm"
+mesh "PotSoil.001" "meshes/vault_0236.lvhm"
+mesh "PlantStalk.009" "meshes/vault_0237.lvhm"
+mesh "BroadLeaf.009" "meshes/vault_0238.lvhm"
+mesh "PlantStalk.010" "meshes/vault_0239.lvhm"
+mesh "BroadLeaf.010" "meshes/vault_0240.lvhm"
+mesh "PlantStalk.011" "meshes/vault_0241.lvhm"
+mesh "BroadLeaf.011" "meshes/vault_0242.lvhm"
+mesh "BroadLeaf.012" "meshes/vault_0243.lvhm"
+mesh "PlantStalk.013" "meshes/vault_0244.lvhm"
+mesh "BroadLeaf.013" "meshes/vault_0245.lvhm"
+mesh "PlantStalk.014" "meshes/vault_0246.lvhm"
+mesh "BroadLeaf.014" "meshes/vault_0247.lvhm"
+mesh "PlantStalk.015" "meshes/vault_0248.lvhm"
+mesh "BroadLeaf.015" "meshes/vault_0249.lvhm"
+mesh "PlantStalk.016" "meshes/vault_0250.lvhm"
+mesh "BroadLeaf.016" "meshes/vault_0251.lvhm"
+mesh "PlantStalk.017" "meshes/vault_0252.lvhm"
+mesh "BroadLeaf.017" "meshes/vault_0253.lvhm"
+mesh "PlantPot.002" "meshes/vault_0254.lvhm"
+mesh "PotLip.002" "meshes/vault_0255.lvhm"
+mesh "PotSoil.002" "meshes/vault_0256.lvhm"
+mesh "PlantStalk.018" "meshes/vault_0257.lvhm"
+mesh "BroadLeaf.018" "meshes/vault_0258.lvhm"
+mesh "PlantStalk.019" "meshes/vault_0259.lvhm"
+mesh "BroadLeaf.019" "meshes/vault_0260.lvhm"
+mesh "PlantStalk.020" "meshes/vault_0261.lvhm"
+mesh "BroadLeaf.020" "meshes/vault_0262.lvhm"
+mesh "PlantStalk.021" "meshes/vault_0263.lvhm"
+mesh "BroadLeaf.021" "meshes/vault_0264.lvhm"
+mesh "PlantStalk.022" "meshes/vault_0265.lvhm"
+mesh "BroadLeaf.022" "meshes/vault_0266.lvhm"
+mesh "PlantStalk.023" "meshes/vault_0267.lvhm"
+mesh "BroadLeaf.023" "meshes/vault_0268.lvhm"
+mesh "PlantStalk.024" "meshes/vault_0269.lvhm"
+mesh "BroadLeaf.024" "meshes/vault_0270.lvhm"
+mesh "PlantStalk.025" "meshes/vault_0271.lvhm"
+mesh "BroadLeaf.025" "meshes/vault_0272.lvhm"
+mesh "PlantStalk.026" "meshes/vault_0273.lvhm"
+mesh "BroadLeaf.026" "meshes/vault_0274.lvhm"
+mesh "PaintingCanvas" "meshes/vault_0275.lvhm"
+mesh "PictureSide" "meshes/vault_0276.lvhm"
+mesh "PictureTop" "meshes/vault_0277.lvhm"
+mesh "PictureLight" "meshes/vault_0278.lvhm"
+mesh "PictureTop.002" "meshes/vault_0279.lvhm"
+mesh "PictureLight.001" "meshes/vault_0280.lvhm"
+mesh "SideTableTop" "meshes/vault_0281.lvhm"
+mesh "SideTableLeg" "meshes/vault_0282.lvhm"
+mesh "ClosedBook" "meshes/vault_0283.lvhm"
 node "Floor_0_0" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -1 1
-node "Floor_0_1" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -3 1
+node "Floor_0_1" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -3 1
 node "Floor_0_2" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -5 1
 node "Floor_0_3" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -7 1
-node "Floor_0_4" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -9 1
+node "Floor_0_4" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -9 1
 node "Floor_0_5" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -11 1
 node "Floor_0_6" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -13 1
-node "Floor_0_7" -1 2 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -14.5 1
+node "Floor_0_7" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.8 -0.04 -14.5 1
 node "Floor_1_0" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -1 1
 node "Floor_1_1" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -3 1
-node "Floor_1_2" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -5 1
+node "Floor_1_2" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -5 1
 node "Floor_1_3" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -7 1
 node "Floor_1_4" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -9 1
 node "Floor_1_5" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -11 1
-node "Floor_1_6" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -13 1
-node "Floor_1_7" -1 2 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -14.5 1
+node "Floor_1_6" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -13 1
+node "Floor_1_7" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.4 -0.04 -14.5 1
 node "Floor_2_0" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -1 1
 node "Floor_2_1" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -3 1
-node "Floor_2_2" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -5 1
+node "Floor_2_2" -1 2 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -5 1
 node "Floor_2_3" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -7 1
 node "Floor_2_4" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -9 1
-node "Floor_2_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -11 1
-node "Floor_2_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -13 1
-node "Floor_2_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -14.5 1
-node "Floor_3_0" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -1 1
-node "Floor_3_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -3 1
-node "Floor_3_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -5 1
-node "Floor_3_3" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -7 1
-node "Floor_3_4" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -9 1
-node "Floor_3_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -11 1
-node "Floor_3_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -13 1
-node "Floor_3_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -14.5 1
-node "Floor_4_0" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -1 1
-node "Floor_4_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -3 1
-node "Floor_4_2" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -5 1
-node "Floor_4_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -7 1
-node "Floor_4_4" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -9 1
-node "Floor_4_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -11 1
-node "Floor_4_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -13 1
-node "Floor_4_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -14.5 1
-node "Floor_5_0" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -1 1
-node "Floor_5_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -3 1
-node "Floor_5_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -5 1
-node "Floor_5_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -7 1
-node "Floor_5_4" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -9 1
-node "Floor_5_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -11 1
-node "Floor_5_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -13 1
-node "Floor_5_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -14.5 1
-node "Floor_6_0" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -1 1
-node "Floor_6_1" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -3 1
-node "Floor_6_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -5 1
-node "Floor_6_3" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -7 1
-node "Floor_6_4" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -9 1
-node "Floor_6_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -11 1
-node "Floor_6_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -13 1
-node "Floor_6_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -14.5 1
-node "Floor_7_0" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -1 1
+node "Floor_2_5" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -11 1
+node "Floor_2_6" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -13 1
+node "Floor_2_7" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3 -0.04 -14.5 1
+node "Floor_3_0" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -1 1
+node "Floor_3_1" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -3 1
+node "Floor_3_2" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -5 1
+node "Floor_3_3" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -7 1
+node "Floor_3_4" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -9 1
+node "Floor_3_5" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -11 1
+node "Floor_3_6" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -13 1
+node "Floor_3_7" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.6 -0.04 -14.5 1
+node "Floor_4_0" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -1 1
+node "Floor_4_1" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -3 1
+node "Floor_4_2" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -5 1
+node "Floor_4_3" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -7 1
+node "Floor_4_4" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -9 1
+node "Floor_4_5" -1 2 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -11 1
+node "Floor_4_6" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -13 1
+node "Floor_4_7" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 -0.04 -14.5 1
+node "Floor_5_0" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -1 1
+node "Floor_5_1" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -3 1
+node "Floor_5_2" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -5 1
+node "Floor_5_3" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -7 1
+node "Floor_5_4" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -9 1
+node "Floor_5_5" -1 2 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -11 1
+node "Floor_5_6" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -13 1
+node "Floor_5_7" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.8 -0.04 -14.5 1
+node "Floor_6_0" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -1 1
+node "Floor_6_1" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -3 1
+node "Floor_6_2" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -5 1
+node "Floor_6_3" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -7 1
+node "Floor_6_4" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -9 1
+node "Floor_6_5" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -11 1
+node "Floor_6_6" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -13 1
+node "Floor_6_7" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.4 -0.04 -14.5 1
+node "Floor_7_0" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -1 1
 node "Floor_7_1" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -3 1
-node "Floor_7_2" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -5 1
+node "Floor_7_2" -1 2 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -5 1
 node "Floor_7_3" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -7 1
-node "Floor_7_4" -1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -9 1
-node "Floor_7_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -11 1
-node "Floor_7_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -13 1
-node "Floor_7_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -14.5 1
-node "Floor_8_0" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -1 1
-node "Floor_8_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -3 1
+node "Floor_7_4" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -9 1
+node "Floor_7_5" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -11 1
+node "Floor_7_6" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -13 1
+node "Floor_7_7" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -1 -0.04 -14.5 1
+node "Floor_8_0" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -1 1
+node "Floor_8_1" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -3 1
 node "Floor_8_2" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -5 1
-node "Floor_8_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -7 1
+node "Floor_8_3" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -7 1
 node "Floor_8_4" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -9 1
-node "Floor_8_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -11 1
+node "Floor_8_5" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -11 1
 node "Floor_8_6" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -13 1
-node "Floor_8_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -14.5 1
+node "Floor_8_7" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.6 -0.04 -14.5 1
 node "Floor_9_0" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -1 1
-node "Floor_9_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -3 1
-node "Floor_9_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -5 1
-node "Floor_9_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -7 1
-node "Floor_9_4" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -9 1
-node "Floor_9_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -11 1
-node "Floor_9_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -13 1
+node "Floor_9_1" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -3 1
+node "Floor_9_2" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -5 1
+node "Floor_9_3" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -7 1
+node "Floor_9_4" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -9 1
+node "Floor_9_5" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -11 1
+node "Floor_9_6" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -13 1
 node "Floor_9_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.2 -0.04 -14.5 1
-node "Floor_10_0" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -1 1
-node "Floor_10_1" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -3 1
-node "Floor_10_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -5 1
-node "Floor_10_3" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -7 1
-node "Floor_10_4" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -9 1
-node "Floor_10_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -11 1
-node "Floor_10_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -13 1
-node "Floor_10_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -14.5 1
-node "Floor_11_0" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -1 1
-node "Floor_11_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -3 1
-node "Floor_11_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -5 1
-node "Floor_11_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -7 1
-node "Floor_11_4" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -9 1
-node "Floor_11_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -11 1
-node "Floor_11_6" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -13 1
-node "Floor_11_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -14.5 1
-node "Floor_12_0" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -1 1
-node "Floor_12_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -3 1
-node "Floor_12_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -5 1
-node "Floor_12_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -7 1
-node "Floor_12_4" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -9 1
-node "Floor_12_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -11 1
-node "Floor_12_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -13 1
-node "Floor_12_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -14.5 1
-node "Floor_13_0" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -1 1
-node "Floor_13_1" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -3 1
-node "Floor_13_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -5 1
-node "Floor_13_3" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -7 1
-node "Floor_13_4" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -9 1
-node "Floor_13_5" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -11 1
-node "Floor_13_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -13 1
-node "Floor_13_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -14.5 1
-node "Floor_14_0" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -1 1
-node "Floor_14_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -3 1
-node "Floor_14_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -5 1
-node "Floor_14_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -7 1
+node "Floor_10_0" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -1 1
+node "Floor_10_1" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -3 1
+node "Floor_10_2" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -5 1
+node "Floor_10_3" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -7 1
+node "Floor_10_4" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -9 1
+node "Floor_10_5" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -11 1
+node "Floor_10_6" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -13 1
+node "Floor_10_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.2 -0.04 -14.5 1
+node "Floor_11_0" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -1 1
+node "Floor_11_1" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -3 1
+node "Floor_11_2" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -5 1
+node "Floor_11_3" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -7 1
+node "Floor_11_4" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -9 1
+node "Floor_11_5" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -11 1
+node "Floor_11_6" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -13 1
+node "Floor_11_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0.6 -0.04 -14.5 1
+node "Floor_12_0" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -1 1
+node "Floor_12_1" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -3 1
+node "Floor_12_2" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -5 1
+node "Floor_12_3" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -7 1
+node "Floor_12_4" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -9 1
+node "Floor_12_5" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -11 1
+node "Floor_12_6" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -13 1
+node "Floor_12_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 -0.04 -14.5 1
+node "Floor_13_0" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -1 1
+node "Floor_13_1" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -3 1
+node "Floor_13_2" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -5 1
+node "Floor_13_3" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -7 1
+node "Floor_13_4" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -9 1
+node "Floor_13_5" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -11 1
+node "Floor_13_6" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -13 1
+node "Floor_13_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.4 -0.04 -14.5 1
+node "Floor_14_0" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -1 1
+node "Floor_14_1" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -3 1
+node "Floor_14_2" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -5 1
+node "Floor_14_3" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -7 1
 node "Floor_14_4" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -9 1
-node "Floor_14_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -11 1
-node "Floor_14_6" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -13 1
-node "Floor_14_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -14.5 1
+node "Floor_14_5" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -11 1
+node "Floor_14_6" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -13 1
+node "Floor_14_7" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1.8 -0.04 -14.5 1
 node "Floor_15_0" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -1 1
-node "Floor_15_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -3 1
-node "Floor_15_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -5 1
-node "Floor_15_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -7 1
-node "Floor_15_4" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -9 1
+node "Floor_15_1" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -3 1
+node "Floor_15_2" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -5 1
+node "Floor_15_3" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -7 1
+node "Floor_15_4" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -9 1
 node "Floor_15_5" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -11 1
 node "Floor_15_6" -1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -13 1
-node "Floor_15_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -14.5 1
+node "Floor_15_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 -0.04 -14.5 1
 node "Floor_16_0" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -1 1
-node "Floor_16_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -3 1
-node "Floor_16_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -5 1
-node "Floor_16_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -7 1
-node "Floor_16_4" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -9 1
-node "Floor_16_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -11 1
-node "Floor_16_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -13 1
-node "Floor_16_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -14.5 1
-node "Floor_17_0" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -1 1
-node "Floor_17_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -3 1
-node "Floor_17_2" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -5 1
-node "Floor_17_3" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -7 1
-node "Floor_17_4" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -9 1
-node "Floor_17_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -11 1
-node "Floor_17_6" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -13 1
+node "Floor_16_1" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -3 1
+node "Floor_16_2" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -5 1
+node "Floor_16_3" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -7 1
+node "Floor_16_4" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -9 1
+node "Floor_16_5" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -11 1
+node "Floor_16_6" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -13 1
+node "Floor_16_7" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 2.6 -0.04 -14.5 1
+node "Floor_17_0" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -1 1
+node "Floor_17_1" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -3 1
+node "Floor_17_2" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -5 1
+node "Floor_17_3" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -7 1
+node "Floor_17_4" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -9 1
+node "Floor_17_5" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -11 1
+node "Floor_17_6" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -13 1
 node "Floor_17_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 -0.04 -14.5 1
-node "Floor_18_0" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -1 1
-node "Floor_18_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -3 1
-node "Floor_18_2" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -5 1
-node "Floor_18_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -7 1
-node "Floor_18_4" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -9 1
-node "Floor_18_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -11 1
+node "Floor_18_0" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -1 1
+node "Floor_18_1" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -3 1
+node "Floor_18_2" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -5 1
+node "Floor_18_3" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -7 1
+node "Floor_18_4" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -9 1
+node "Floor_18_5" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -11 1
 node "Floor_18_6" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -13 1
-node "Floor_18_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -14.5 1
-node "Floor_19_0" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -1 1
-node "Floor_19_1" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -3 1
-node "Floor_19_2" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -5 1
-node "Floor_19_3" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -7 1
-node "Floor_19_4" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -9 1
-node "Floor_19_5" -1 3 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -11 1
-node "Floor_19_6" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -13 1
-node "Floor_19_7" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -14.5 1
+node "Floor_18_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.4 -0.04 -14.5 1
+node "Floor_19_0" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -1 1
+node "Floor_19_1" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -3 1
+node "Floor_19_2" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -5 1
+node "Floor_19_3" -1 5 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -7 1
+node "Floor_19_4" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -9 1
+node "Floor_19_5" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -11 1
+node "Floor_19_6" -1 4 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -13 1
+node "Floor_19_7" -1 6 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.8 -0.04 -14.5 1
 node "FloorUnderlay" -1 7 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 -0.12 -7.5 1
 node "RightPlaster" -1 8 2 0 1 0 0 0 0 1 0 0 0 0 1 0 4.08 2 -7.5 1
 node "BackPlaster" -1 9 2 0 1 0 0 0 0 1 0 0 0 0 1 0 0 2 -15.08 1
@@ -411,524 +474,599 @@ node "WindowSillWall" -1 12 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -4.08 0.54 -3.2 1
 node "WindowTopWall" -1 13 2 0 1 0 0 0 0 1 0 0 0 0 1 0 -4.08 3.92 -3.2 1
 node "Ceiling" -1 14 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 4.1 -7.5 1
 node "BackStone_0_0" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.6 0.38 -14.9 1
-node "BackStone_0_1" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.8 0.38 -14.9 1
-node "BackStone_0_2" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2 0.38 -14.9 1
-node "BackStone_0_3" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.2 0.38 -14.9 1
-node "BackStone_0_4" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.4 0.38 -14.9 1
-node "BackStone_0_5" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.4 0.38 -14.9 1
-node "BackStone_0_6" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.2 0.38 -14.9 1
-node "BackStone_0_7" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2 0.38 -14.9 1
-node "BackStone_0_8" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.8 0.38 -14.9 1
-node "BackStone_0_9" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.6 0.38 -14.9 1
-node "BackStone_1_0" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.53 1.14 -14.9 1
-node "BackStone_1_1" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.73 1.14 -14.9 1
-node "BackStone_1_2" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.93 1.14 -14.9 1
-node "BackStone_1_3" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.13 1.14 -14.9 1
-node "BackStone_1_4" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.33 1.14 -14.9 1
-node "BackStone_1_5" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.47 1.14 -14.9 1
-node "BackStone_1_6" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.27 1.14 -14.9 1
-node "BackStone_1_7" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.07 1.14 -14.9 1
-node "BackStone_1_8" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.87 1.14 -14.9 1
-node "BackStone_1_9" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.67 1.14 -14.9 1
-node "BackStone_2_0" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.6 1.9 -14.9 1
-node "BackStone_2_1" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.8 1.9 -14.9 1
-node "BackStone_2_2" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2 1.9 -14.9 1
-node "BackStone_2_3" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.2 1.9 -14.9 1
-node "BackStone_2_4" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.4 1.9 -14.9 1
-node "BackStone_2_5" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.4 1.9 -14.9 1
-node "BackStone_2_6" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.2 1.9 -14.9 1
-node "BackStone_2_7" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2 1.9 -14.9 1
-node "BackStone_2_8" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.8 1.9 -14.9 1
-node "BackStone_2_9" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.6 1.9 -14.9 1
+node "BackStone_0_1" -1 16 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.8 0.38 -14.9 1
+node "BackStone_0_2" -1 17 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2 0.38 -14.9 1
+node "BackStone_0_3" -1 18 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.2 0.38 -14.9 1
+node "BackStone_0_4" -1 19 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.4 0.38 -14.9 1
+node "BackStone_0_5" -1 17 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.4 0.38 -14.9 1
+node "BackStone_0_6" -1 17 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.2 0.38 -14.9 1
+node "BackStone_0_7" -1 17 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2 0.38 -14.9 1
+node "BackStone_0_8" -1 16 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.8 0.38 -14.9 1
+node "BackStone_0_9" -1 19 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.6 0.38 -14.9 1
+node "BackStone_1_0" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.53 1.14 -14.9 1
+node "BackStone_1_1" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.73 1.14 -14.9 1
+node "BackStone_1_2" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.93 1.14 -14.9 1
+node "BackStone_1_3" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.13 1.14 -14.9 1
+node "BackStone_1_4" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.33 1.14 -14.9 1
+node "BackStone_1_5" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.47 1.14 -14.9 1
+node "BackStone_1_6" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.27 1.14 -14.9 1
+node "BackStone_1_7" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.07 1.14 -14.9 1
+node "BackStone_1_8" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.87 1.14 -14.9 1
+node "BackStone_1_9" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.67 1.14 -14.9 1
+node "BackStone_2_0" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.6 1.9 -14.9 1
+node "BackStone_2_1" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.8 1.9 -14.9 1
+node "BackStone_2_2" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2 1.9 -14.9 1
+node "BackStone_2_3" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.2 1.9 -14.9 1
+node "BackStone_2_4" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.4 1.9 -14.9 1
+node "BackStone_2_5" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.4 1.9 -14.9 1
+node "BackStone_2_6" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.2 1.9 -14.9 1
+node "BackStone_2_7" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2 1.9 -14.9 1
+node "BackStone_2_8" -1 16 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.8 1.9 -14.9 1
+node "BackStone_2_9" -1 19 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.6 1.9 -14.9 1
 node "BackStone_3_0" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.53 2.66 -14.9 1
-node "BackStone_3_1" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.73 2.66 -14.9 1
-node "BackStone_3_2" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.93 2.66 -14.9 1
-node "BackStone_3_3" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.13 2.66 -14.9 1
-node "BackStone_3_4" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.33 2.66 -14.9 1
-node "BackStone_3_5" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.47 2.66 -14.9 1
-node "BackStone_3_6" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.27 2.66 -14.9 1
-node "BackStone_3_7" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.07 2.66 -14.9 1
+node "BackStone_3_1" -1 16 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.73 2.66 -14.9 1
+node "BackStone_3_2" -1 17 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.93 2.66 -14.9 1
+node "BackStone_3_3" -1 18 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.13 2.66 -14.9 1
+node "BackStone_3_4" -1 19 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.33 2.66 -14.9 1
+node "BackStone_3_5" -1 17 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.47 2.66 -14.9 1
+node "BackStone_3_6" -1 18 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.27 2.66 -14.9 1
+node "BackStone_3_7" -1 19 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.07 2.66 -14.9 1
 node "BackStone_3_8" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.87 2.66 -14.9 1
-node "BackStone_3_9" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.67 2.66 -14.9 1
+node "BackStone_3_9" -1 19 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.67 2.66 -14.9 1
 node "BackStone_4_0" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.6 3.42 -14.9 1
-node "BackStone_4_1" -1 16 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.8 3.42 -14.9 1
-node "BackStone_4_2" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2 3.42 -14.9 1
-node "BackStone_4_3" -1 17 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.2 3.42 -14.9 1
+node "BackStone_4_1" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.8 3.42 -14.9 1
+node "BackStone_4_2" -1 17 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -2 3.42 -14.9 1
+node "BackStone_4_3" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.2 3.42 -14.9 1
 node "BackStone_4_4" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.4 3.42 -14.9 1
-node "BackStone_4_5" -1 18 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.4 3.42 -14.9 1
-node "BackStone_4_6" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.2 3.42 -14.9 1
-node "BackStone_4_7" -1 19 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2 3.42 -14.9 1
-node "BackStone_4_8" -1 15 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.8 3.42 -14.9 1
-node "BackStone_4_9" -1 18 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.6 3.42 -14.9 1
-node "Skirting-1" -1 20 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.92 0.17 -7.5 1
-node "TimberUpright" -1 21 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 2 -0.2 1
-node "TimberFoot" -1 22 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 0.15 -0.2 1
-node "TimberUpright.001" -1 21 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 2 -4.6 1
-node "TimberFoot.001" -1 22 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 0.15 -4.6 1
-node "TimberUpright.002" -1 21 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 2 -8.6 1
-node "TimberFoot.002" -1 22 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 0.15 -8.6 1
-node "TimberUpright.003" -1 23 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 2 -11.7 1
-node "TimberFoot.003" -1 22 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 0.15 -11.7 1
-node "TimberUpright.004" -1 23 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 2 -14.7 1
-node "TimberFoot.004" -1 22 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 0.15 -14.7 1
-node "Skirting1" -1 24 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.92 0.17 -7.5 1
-node "TimberUpright.005" -1 23 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 2 -0.2 1
-node "TimberFoot.005" -1 22 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 0.15 -0.2 1
-node "TimberUpright.006" -1 21 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 2 -4.6 1
-node "TimberFoot.006" -1 22 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 0.15 -4.6 1
-node "TimberUpright.007" -1 23 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 2 -8.6 1
-node "TimberFoot.007" -1 22 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 0.15 -8.6 1
-node "TimberUpright.008" -1 23 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 2 -11.7 1
-node "TimberFoot.008" -1 22 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 0.15 -11.7 1
-node "TimberUpright.009" -1 21 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 2 -14.7 1
-node "TimberFoot.009" -1 22 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 0.15 -14.7 1
-node "CeilingBeam" -1 25 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.91 -0.2 1
-node "CeilingBeam.001" -1 26 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.91 -4.6 1
-node "CeilingBeam.002" -1 25 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.91 -8.6 1
-node "CeilingBeam.003" -1 26 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.91 -11.7 1
-node "CeilingBeam.004" -1 25 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.91 -14.7 1
-node "CeilingJoist" -1 27 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2 4 -7.5 1
-node "CeilingJoist.001" -1 28 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 4 -7.5 1
-node "CeilingJoist.002" -1 27 1 0 1 0 0 0 0 1 0 0 0 0 1 0 2 4 -7.5 1
-node "DoorJamb" -1 29 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.1 1.85 -0.1 1
-node "DoorJamb.001" -1 30 1 0 1 0 0 0 0 1 0 0 0 0 1 0 2.1 1.85 -0.1 1
-node "DoorLintel" -1 31 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.63 -0.1 1
-node "EntranceSide" -1 32 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.1 1.9 -0.1 1
-node "EntranceSide.001" -1 33 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.1 1.9 -0.1 1
-node "NightBeyondWindow" -1 34 4 0 1 0 0 0 0 1 0 0 0 0 1 0 -4.28 2.45 -3.2 1
-node "WindowVerticalFrame" -1 35 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.94 2.45 -1.5 1
-node "WindowVerticalFrame.001" -1 35 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.94 2.45 -4.9 1
-node "WindowHorizontalFrame" -1 36 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.94 1.04 -3.2 1
-node "WindowHorizontalFrame.001" -1 37 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.94 3.88 -3.2 1
-node "WindowMullion" -1 38 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.96 2.47 -2.32 1
-node "WindowMullion.001" -1 38 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.96 2.47 -3.2 1
-node "WindowMullion.002" -1 38 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.96 2.47 -4.08 1
-node "WindowCrossbar" -1 39 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.96 1.96 -3.2 1
-node "WindowCrossbar.001" -1 40 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.96 2.94 -3.2 1
-node "MoonDisc" -1 41 6 0 0.03 0 0 0 0 0.26 0 0 0 0 0.26 0 -4.22 3.22 -3.68 1
-node "WindowSill" -1 42 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.85 1.02 -3.2 1
-node "WovenCarpet" -1 43 7 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0.015 -6.55 1
-node "DeskTop" -1 44 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.9 0.83 -2.65 1
-node "DeskApron" -1 45 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.9 0.65 -2.65 1
-node "DeskLeg" -1 46 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.55 0.37 -1.8 1
-node "DeskLegFoot" -1 47 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.55 0.08 -1.8 1
-node "DeskLeg.001" -1 46 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.55 0.37 -3.5 1
-node "DeskLegFoot.001" -1 47 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.55 0.08 -3.5 1
-node "DeskLeg.002" -1 46 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.25 0.37 -1.8 1
-node "DeskLegFoot.002" -1 47 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.25 0.08 -1.8 1
-node "DeskLeg.003" -1 46 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.25 0.37 -3.5 1
-node "DeskLegFoot.003" -1 47 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.25 0.08 -3.5 1
-node "DrawerFront" -1 48 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.07 0.62 -2.1 1
-node "DrawerHandle" -1 49 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -2.03 0.64 -2.1 1
-node "DrawerFront.001" -1 50 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.07 0.62 -2.63 1
-node "DrawerHandle.001" -1 51 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -2.03 0.64 -2.63 1
-node "DrawerFront.002" -1 48 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.07 0.62 -3.16 1
-node "DrawerHandle.002" -1 49 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -2.03 0.64 -3.16 1
-node "ChairSeat" -1 52 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.66 0.49 -1 1
-node "ChairCushion" -1 53 9 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.66 0.58 -1 1
-node "ChairLeg" -1 54 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.91 0.24 -0.77 1
-node "ChairLeg.001" -1 55 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.91 0.24 -1.23 1
-node "ChairLeg.002" -1 54 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.41 0.24 -0.77 1
-node "ChairLeg.003" -1 55 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.41 0.24 -1.23 1
-node "ChairBackPost" -1 56 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.94 0.91 -0.73 1
-node "ChairBackPost.001" -1 57 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.38 0.91 -0.73 1
-node "ChairBackSlat" -1 58 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.66 0.84 -0.73 1
-node "ChairBackSlat.001" -1 59 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.66 1.05 -0.73 1
-node "ChairBackSlat.002" -1 58 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.66 1.28 -0.73 1
-node "DeskLampFoot" -1 60 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.85 0.94 -1.97 1
-node "DeskLampStem" -1 61 8 0 -1 0 1.509958e-07 0 0 1 0 0 -1.509958e-07 0 -1 0 -2.85 1.13 -1.97 1
-node "DeskLampShade" -1 62 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.85 1.4 -1.97 1
-node "DeskLampGlow" -1 63 10 1 1 0 0 0 0 1 0 0 0 0 1 0 -2.85 1.29 -1.97 1
-node "MonitorCase" -1 64 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.78 1.23 -3.3 1
-node "MonitorStand" -1 65 11 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.78 0.94 -3.35 1
-node "MonitorBezel" -1 66 11 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.78 1.25 -3.025 1
-node "CCTVScreen" -1 67 12 2 1 0 0 0 0 1 0 0 0 0 1 0 -2.78 1.27 -2.996 1
-node "MonitorButton" -1 68 8 0 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 -3.01 1.04 -2.988 1
-node "MonitorButton.001" -1 68 8 0 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 -2.89 1.04 -2.988 1
-node "MonitorButton.002" -1 68 8 0 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 -2.77 1.04 -2.988 1
-node "DepositCabinet" -1 69 11 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.55 1.35 -7.25 1
-node "DepositDoor" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -4.97 1
-node "DepositLabel" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -4.85 1
-node "DepositHandle" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -5.105 1
-node "DepositKeyhole" -1 73 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -4.83 1
-node "DepositDoor.001" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -5.61 1
-node "DepositLabel.001" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -5.49 1
-node "DepositHandle.001" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -5.745 1
-node "DepositKeyhole.001" -1 74 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -5.47 1
-node "DepositDoor.002" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -6.25 1
-node "DepositLabel.002" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -6.13 1
-node "DepositHandle.002" -1 75 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -6.385 1
-node "DepositKeyhole.002" -1 76 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -6.11 1
-node "DepositDoor.003" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -6.89 1
-node "DepositLabel.003" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -6.77 1
-node "DepositHandle.003" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -7.025 1
-node "DepositKeyhole.003" -1 77 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -6.75 1
-node "DepositDoor.004" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -7.53 1
-node "DepositLabel.004" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -7.41 1
-node "DepositHandle.004" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -7.665 1
-node "DepositKeyhole.004" -1 78 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -7.39 1
-node "DepositDoor.005" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -8.17 1
-node "DepositLabel.005" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -8.05 1
-node "DepositHandle.005" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -8.305 1
-node "DepositKeyhole.005" -1 79 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -8.03 1
-node "DepositDoor.006" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -8.81 1
-node "DepositLabel.006" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -8.69 1
-node "DepositHandle.006" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -8.945 1
-node "DepositKeyhole.006" -1 80 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -8.67 1
-node "DepositDoor.007" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -9.45 1
-node "DepositLabel.007" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -9.33 1
-node "DepositHandle.007" -1 81 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -9.585 1
-node "DepositKeyhole.007" -1 82 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -9.31 1
-node "DepositDoor.008" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -4.97 1
-node "DepositLabel.008" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -4.85 1
-node "DepositHandle.008" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -5.105 1
-node "DepositKeyhole.008" -1 83 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -4.83 1
-node "DepositDoor.009" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -5.61 1
-node "DepositLabel.009" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -5.49 1
-node "DepositHandle.009" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -5.745 1
-node "DepositKeyhole.009" -1 84 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -5.47 1
-node "DepositDoor.010" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -6.25 1
-node "DepositLabel.010" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -6.13 1
-node "DepositHandle.010" -1 75 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -6.385 1
-node "DepositKeyhole.010" -1 78 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -6.11 1
-node "DepositDoor.011" -1 70 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -6.89 1
-node "DepositLabel.011" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -6.77 1
-node "DepositHandle.011" -1 86 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -7.025 1
-node "DepositKeyhole.011" -1 87 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -6.75 1
-node "DepositDoor.012" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -7.53 1
-node "DepositLabel.012" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -7.41 1
-node "DepositHandle.012" -1 89 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -7.665 1
-node "DepositKeyhole.012" -1 90 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -7.39 1
-node "DepositDoor.013" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -8.17 1
-node "DepositLabel.013" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -8.05 1
-node "DepositHandle.013" -1 91 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -8.305 1
-node "DepositKeyhole.013" -1 92 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -8.03 1
-node "DepositDoor.014" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -8.81 1
-node "DepositLabel.014" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -8.69 1
-node "DepositHandle.014" -1 93 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -8.945 1
-node "DepositKeyhole.014" -1 94 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -8.67 1
-node "DepositDoor.015" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -9.45 1
-node "DepositLabel.015" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -9.33 1
-node "DepositHandle.015" -1 95 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -9.585 1
-node "DepositKeyhole.015" -1 96 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -9.31 1
-node "DepositDoor.016" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -4.97 1
-node "DepositLabel.016" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -4.85 1
-node "DepositHandle.016" -1 97 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -5.105 1
-node "DepositKeyhole.016" -1 98 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -4.83 1
-node "DepositDoor.017" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -5.61 1
-node "DepositLabel.017" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -5.49 1
-node "DepositHandle.017" -1 99 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -5.745 1
-node "DepositKeyhole.017" -1 100 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -5.47 1
-node "DepositDoor.018" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -6.25 1
-node "DepositLabel.018" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -6.13 1
-node "DepositHandle.018" -1 75 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -6.385 1
-node "DepositKeyhole.018" -1 101 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -6.11 1
-node "DepositDoor.019" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -6.89 1
-node "DepositLabel.019" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -6.77 1
-node "DepositHandle.019" -1 102 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -7.025 1
-node "DepositKeyhole.019" -1 103 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -6.75 1
-node "DepositDoor.020" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -7.53 1
-node "DepositLabel.020" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -7.41 1
-node "DepositHandle.020" -1 86 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -7.665 1
-node "DepositKeyhole.020" -1 87 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -7.39 1
-node "DepositDoor.021" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -8.17 1
-node "DepositLabel.021" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -8.05 1
-node "DepositHandle.021" -1 89 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -8.305 1
-node "DepositKeyhole.021" -1 90 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -8.03 1
-node "DepositDoor.022" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -8.81 1
-node "DepositLabel.022" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -8.69 1
-node "DepositHandle.022" -1 91 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -8.945 1
-node "DepositKeyhole.022" -1 92 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -8.67 1
-node "DepositDoor.023" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -9.45 1
-node "DepositLabel.023" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -9.33 1
-node "DepositHandle.023" -1 104 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -9.585 1
-node "DepositKeyhole.023" -1 94 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -9.31 1
-node "DepositDoor.024" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -4.97 1
-node "DepositLabel.024" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -4.85 1
-node "DepositHandle.024" -1 105 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -5.105 1
-node "DepositKeyhole.024" -1 96 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -4.83 1
-node "DepositDoor.025" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -5.61 1
-node "DepositLabel.025" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -5.49 1
-node "DepositHandle.025" -1 97 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -5.745 1
-node "DepositKeyhole.025" -1 98 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -5.47 1
-node "DepositDoor.026" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -6.25 1
-node "DepositLabel.026" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -6.13 1
-node "DepositHandle.026" -1 75 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -6.385 1
-node "DepositKeyhole.026" -1 100 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -6.11 1
-node "DepositDoor.027" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -6.89 1
-node "DepositLabel.027" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -6.77 1
-node "DepositHandle.027" -1 106 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -7.025 1
-node "DepositKeyhole.027" -1 101 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -6.75 1
-node "DepositDoor.028" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -7.53 1
-node "DepositLabel.028" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -7.41 1
-node "DepositHandle.028" -1 102 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -7.665 1
-node "DepositKeyhole.028" -1 103 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -7.39 1
-node "DepositDoor.029" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -8.17 1
-node "DepositLabel.029" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -8.05 1
-node "DepositHandle.029" -1 86 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -8.305 1
-node "DepositKeyhole.029" -1 87 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -8.03 1
-node "DepositDoor.030" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -8.81 1
-node "DepositLabel.030" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -8.69 1
-node "DepositHandle.030" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -8.945 1
-node "DepositKeyhole.030" -1 74 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -8.67 1
-node "DepositDoor.031" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -9.45 1
-node "DepositLabel.031" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -9.33 1
-node "DepositHandle.031" -1 81 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -9.585 1
-node "DepositKeyhole.031" -1 80 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -9.31 1
-node "DepositDoor.032" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -4.97 1
-node "DepositLabel.032" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -4.85 1
-node "DepositHandle.032" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -5.105 1
-node "DepositKeyhole.032" -1 107 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -4.83 1
-node "DepositDoor.033" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -5.61 1
-node "DepositLabel.033" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -5.49 1
-node "DepositHandle.033" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -5.745 1
-node "DepositKeyhole.033" -1 108 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -5.47 1
-node "DepositDoor.034" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -6.25 1
-node "DepositLabel.034" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -6.13 1
-node "DepositHandle.034" -1 75 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -6.385 1
-node "DepositKeyhole.034" -1 109 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -6.11 1
-node "DepositDoor.035" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -6.89 1
-node "DepositLabel.035" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -6.77 1
-node "DepositHandle.035" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -7.025 1
-node "DepositKeyhole.035" -1 74 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -6.75 1
-node "DepositDoor.036" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -7.53 1
-node "DepositLabel.036" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -7.41 1
-node "DepositHandle.036" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -7.665 1
-node "DepositKeyhole.036" -1 80 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -7.39 1
-node "DepositDoor.037" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -8.17 1
-node "DepositLabel.037" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -8.05 1
-node "DepositHandle.037" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -8.305 1
-node "DepositKeyhole.037" -1 83 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -8.03 1
-node "DepositDoor.038" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -8.81 1
-node "DepositLabel.038" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -8.69 1
-node "DepositHandle.038" -1 72 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -8.945 1
-node "DepositKeyhole.038" -1 108 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -8.67 1
-node "DepositDoor.039" -1 88 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -9.45 1
-node "DepositLabel.039" -1 85 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -9.33 1
-node "DepositHandle.039" -1 104 8 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -9.585 1
-node "DepositKeyhole.039" -1 92 11 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -9.31 1
-node "SafeShadowBack" -1 110 11 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1.66 -14.72 1
-node "SafeSide" -1 111 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.62 1.65 -14.45 1
-node "SafeSide.001" -1 111 13 0 1 0 0 0 0 1 0 0 0 0 1 0 1.62 1.65 -14.45 1
-node "SafeFrame" -1 112 13 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0.17 -14.45 1
-node "SafeFrame.001" -1 112 13 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.16 -14.45 1
-node "VaultShelf" -1 113 5 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0.8 -14.65 1
-node "VaultShelf.001" -1 113 5 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1.55 -14.65 1
-node "VaultShelf.002" -1 113 5 0 1 0 0 0 0 1 0 0 0 0 1 0 0 2.3 -14.65 1
-node "VaultLedger" -1 114 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.9 0.99 -14.63 1
-node "VaultLedger.001" -1 115 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.61 0.99 -14.63 1
-node "VaultLedger.002" -1 115 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.32 0.99 -14.63 1
-node "VaultLedger.003" -1 115 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.03 0.99 -14.63 1
-node "VaultLedger.004" -1 115 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0.26 0.99 -14.63 1
-node "VaultLedger.005" -1 115 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0.55 0.99 -14.63 1
-node "GoldIngot" -1 116 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.5 1.67 -14.61 1
-node "GoldIngot.001" -1 116 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.18 1.67 -14.61 1
-node "GoldIngot.002" -1 116 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0.14 1.67 -14.61 1
-node "GoldIngot.003" -1 117 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0.46 1.67 -14.61 1
+node "BackStone_4_5" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.4 3.42 -14.9 1
+node "BackStone_4_6" -1 17 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.2 3.42 -14.9 1
+node "BackStone_4_7" -1 17 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2 3.42 -14.9 1
+node "BackStone_4_8" -1 20 3 0 1 0 0 0 0 1 0 0 0 0 1 0 2.8 3.42 -14.9 1
+node "BackStone_4_9" -1 16 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.6 3.42 -14.9 1
+node "Skirting-1" -1 21 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.92 0.17 -7.5 1
+node "TimberUpright" -1 22 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 2 -0.2 1
+node "TimberFoot" -1 23 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 0.15 -0.2 1
+node "TimberUpright.001" -1 22 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 2 -4.6 1
+node "TimberFoot.001" -1 23 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 0.15 -4.6 1
+node "TimberUpright.002" -1 24 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 2 -8.6 1
+node "TimberFoot.002" -1 23 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 0.15 -8.6 1
+node "TimberUpright.003" -1 22 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 2 -11.7 1
+node "TimberFoot.003" -1 23 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 0.15 -11.7 1
+node "TimberUpright.004" -1 24 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 2 -14.7 1
+node "TimberFoot.004" -1 23 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.88 0.15 -14.7 1
+node "Skirting1" -1 25 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.92 0.17 -7.5 1
+node "TimberUpright.005" -1 24 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 2 -0.2 1
+node "TimberFoot.005" -1 23 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 0.15 -0.2 1
+node "TimberUpright.006" -1 22 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 2 -4.6 1
+node "TimberFoot.006" -1 23 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 0.15 -4.6 1
+node "TimberUpright.007" -1 22 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 2 -8.6 1
+node "TimberFoot.007" -1 23 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 0.15 -8.6 1
+node "TimberUpright.008" -1 22 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 2 -11.7 1
+node "TimberFoot.008" -1 23 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 0.15 -11.7 1
+node "TimberUpright.009" -1 22 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 2 -14.7 1
+node "TimberFoot.009" -1 23 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3.88 0.15 -14.7 1
+node "CeilingBeam" -1 26 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.91 -0.2 1
+node "CeilingBeam.001" -1 27 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.91 -4.6 1
+node "CeilingBeam.002" -1 26 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.91 -8.6 1
+node "CeilingBeam.003" -1 27 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.91 -11.7 1
+node "CeilingBeam.004" -1 26 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.91 -14.7 1
+node "CeilingJoist" -1 28 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2 4 -7.5 1
+node "CeilingJoist.001" -1 29 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 4 -7.5 1
+node "CeilingJoist.002" -1 29 1 0 1 0 0 0 0 1 0 0 0 0 1 0 2 4 -7.5 1
+node "DoorJamb" -1 30 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.1 1.85 -0.1 1
+node "DoorJamb.001" -1 31 1 0 1 0 0 0 0 1 0 0 0 0 1 0 2.1 1.85 -0.1 1
+node "DoorLintel" -1 32 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.63 -0.1 1
+node "EntranceSide" -1 33 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.1 1.9 -0.1 1
+node "EntranceSide.001" -1 34 3 0 1 0 0 0 0 1 0 0 0 0 1 0 3.1 1.9 -0.1 1
+node "VestibuleFloor" -1 35 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0 -0.1 4 1
+node "VestibuleCeiling" -1 36 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.85 4 1
+node "CorridorEndWall" -1 37 2 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1.9 8.1 1
+node "CorridorWall" -1 38 2 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.03 1.9 4 1
+node "CorridorWainscot" -1 39 4 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.9 0.62 4 1
+node "CorridorMoulding" -1 40 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.83 0.12 4 1
+node "CorridorMoulding.001" -1 41 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.83 1.27 4 1
+node "CorridorMoulding.002" -1 42 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.83 3.59 4 1
+node "CorridorPilaster" -1 43 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.83 1.9 0.5 1
+node "CorridorPilaster.001" -1 44 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.83 1.9 2.65 1
+node "CorridorPilaster.002" -1 43 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.83 1.9 5 1
+node "CorridorPilaster.003" -1 44 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.83 1.9 7.85 1
+node "CorridorSconceBack" -1 45 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.79 2.45 4.1 1
+node "CorridorSconceGlow" -1 46 6 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.65 2.45 4.1 1
+node "CorridorSconceCap" -1 47 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.65 2.28 4.1 1
+node "CorridorSconceCap.001" -1 47 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.65 2.62 4.1 1
+node "CorridorSconceBack.001" -1 48 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.79 2.45 6.8 1
+node "CorridorSconceGlow.001" -1 46 6 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.65 2.45 6.8 1
+node "CorridorSconceCap.002" -1 49 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.65 2.28 6.8 1
+node "CorridorSconceCap.003" -1 49 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.65 2.62 6.8 1
+node "CorridorWall.001" -1 50 2 0 1 0 0 0 0 1 0 0 0 0 1 0 2.03 1.9 4 1
+node "CorridorWainscot.001" -1 51 4 0 1 0 0 0 0 1 0 0 0 0 1 0 1.9 0.62 4 1
+node "CorridorMoulding.003" -1 41 1 0 1 0 0 0 0 1 0 0 0 0 1 0 1.83 0.12 4 1
+node "CorridorMoulding.004" -1 40 5 0 1 0 0 0 0 1 0 0 0 0 1 0 1.83 1.27 4 1
+node "CorridorMoulding.005" -1 41 1 0 1 0 0 0 0 1 0 0 0 0 1 0 1.83 3.59 4 1
+node "CorridorPilaster.004" -1 44 1 0 1 0 0 0 0 1 0 0 0 0 1 0 1.83 1.9 0.5 1
+node "CorridorPilaster.005" -1 43 1 0 1 0 0 0 0 1 0 0 0 0 1 0 1.83 1.9 2.65 1
+node "CorridorPilaster.006" -1 44 1 0 1 0 0 0 0 1 0 0 0 0 1 0 1.83 1.9 5 1
+node "CorridorPilaster.007" -1 43 1 0 1 0 0 0 0 1 0 0 0 0 1 0 1.83 1.9 7.85 1
+node "CorridorSconceBack.002" -1 48 5 0 1 0 0 0 0 1 0 0 0 0 1 0 1.79 2.45 4.1 1
+node "CorridorSconceGlow.002" -1 46 6 0 1 0 0 0 0 1 0 0 0 0 1 0 1.65 2.45 4.1 1
+node "CorridorSconceCap.004" -1 49 5 0 1 0 0 0 0 1 0 0 0 0 1 0 1.65 2.28 4.1 1
+node "CorridorSconceCap.005" -1 49 5 0 1 0 0 0 0 1 0 0 0 0 1 0 1.65 2.62 4.1 1
+node "CorridorSconceBack.003" -1 45 5 0 1 0 0 0 0 1 0 0 0 0 1 0 1.79 2.45 6.8 1
+node "CorridorSconceGlow.003" -1 46 6 0 1 0 0 0 0 1 0 0 0 0 1 0 1.65 2.45 6.8 1
+node "CorridorSconceCap.006" -1 47 5 0 1 0 0 0 0 1 0 0 0 0 1 0 1.65 2.28 6.8 1
+node "CorridorSconceCap.007" -1 47 5 0 1 0 0 0 0 1 0 0 0 0 1 0 1.65 2.62 6.8 1
+node "CorridorCoffer" -1 52 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.65 2.65 1
+node "CorridorCoffer.001" -1 53 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.65 5 1
+node "CorridorCoffer.002" -1 52 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.65 7.85 1
+node "CorridorTile" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.48 0.012 0.52 1
+node "CorridorTile.001" -1 55 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.495 0.012 0.52 1
+node "CorridorTile.002" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.49 0.012 0.52 1
+node "CorridorTile.003" -1 56 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.475 0.012 0.52 1
+node "CorridorTile.004" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.48 0.012 1.51 1
+node "CorridorTile.005" -1 56 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.495 0.012 1.51 1
+node "CorridorTile.006" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.49 0.012 1.51 1
+node "CorridorTile.007" -1 55 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.475 0.012 1.51 1
+node "CorridorTile.008" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.48 0.012 2.5 1
+node "CorridorTile.009" -1 55 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.495 0.012 2.5 1
+node "CorridorTile.010" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.49 0.012 2.5 1
+node "CorridorTile.011" -1 56 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.475 0.012 2.5 1
+node "CorridorTile.012" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.48 0.012 3.49 1
+node "CorridorTile.013" -1 56 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.495 0.012 3.49 1
+node "CorridorTile.014" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.49 0.012 3.49 1
+node "CorridorTile.015" -1 56 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.475 0.012 3.49 1
+node "CorridorTile.016" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.48 0.012 4.48 1
+node "CorridorTile.017" -1 56 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.495 0.012 4.48 1
+node "CorridorTile.018" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.49 0.012 4.48 1
+node "CorridorTile.019" -1 55 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.475 0.012 4.48 1
+node "CorridorTile.020" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.48 0.012 5.47 1
+node "CorridorTile.021" -1 55 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.495 0.012 5.47 1
+node "CorridorTile.022" -1 57 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.49 0.012 5.47 1
+node "CorridorTile.023" -1 55 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.475 0.012 5.47 1
+node "CorridorTile.024" -1 57 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.48 0.012 6.46 1
+node "CorridorTile.025" -1 55 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.495 0.012 6.46 1
+node "CorridorTile.026" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.49 0.012 6.46 1
+node "CorridorTile.027" -1 55 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.475 0.012 6.46 1
+node "CorridorTile.028" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.48 0.012 7.45 1
+node "CorridorTile.029" -1 55 3 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.495 0.012 7.45 1
+node "CorridorTile.030" -1 54 3 0 1 0 0 0 0 1 0 0 0 0 1 0 0.49 0.012 7.45 1
+node "CorridorTile.031" -1 55 3 0 1 0 0 0 0 1 0 0 0 0 1 0 1.475 0.012 7.45 1
+node "CorridorFloorInlay" -1 58 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.35 0.029 4 1
+node "CorridorFloorInlay.001" -1 59 5 0 1 0 0 0 0 1 0 0 0 0 1 0 1.35 0.029 4 1
+node "CorridorRunner" -1 60 7 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0.045 5.3 1
+node "SecurityGateFrame" -1 61 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.83 1.69 2.65 1
+node "SecurityGateFrame.001" -1 62 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1.69 2.65 1
+node "SecurityGateFrame.002" -1 61 8 0 1 0 0 0 0 1 0 0 0 0 1 0 1.83 1.69 2.65 1
+node "SecurityGateCrossbar" -1 63 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0.1 2.65 1
+node "SecurityGateCrossbar.001" -1 64 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1.1 2.65 1
+node "SecurityGateCrossbar.002" -1 63 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.32 2.65 1
+node "SecurityGateBar" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.71 1.7 2.65 1
+node "GateBrassCollar" -1 66 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 -1.71 1.1 2.65 1
+node "SecurityGateBar.001" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.53 1.7 2.65 1
+node "GateBrassCollar.001" -1 67 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 -1.53 1.1 2.65 1
+node "SecurityGateBar.002" -1 68 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.35 1.7 2.65 1
+node "GateBrassCollar.002" -1 69 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 -1.35 1.1 2.65 1
+node "SecurityGateBar.003" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.17 1.7 2.65 1
+node "GateBrassCollar.003" -1 70 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 -1.17 1.1 2.65 1
+node "SecurityGateBar.004" -1 71 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.99 1.7 2.65 1
+node "GateBrassCollar.004" -1 72 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 -0.99 1.1 2.65 1
+node "SecurityGateBar.005" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.81 1.7 2.65 1
+node "GateBrassCollar.005" -1 73 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 -0.81 1.1 2.65 1
+node "SecurityGateBar.006" -1 74 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.63 1.7 2.65 1
+node "GateBrassCollar.006" -1 75 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 -0.63 1.1 2.65 1
+node "SecurityGateBar.007" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.45 1.7 2.65 1
+node "GateBrassCollar.007" -1 76 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 -0.45 1.1 2.65 1
+node "SecurityGateBar.008" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.27 1.7 2.65 1
+node "GateBrassCollar.008" -1 70 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 -0.27 1.1 2.65 1
+node "SecurityGateBar.009" -1 74 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.09 1.7 2.65 1
+node "GateBrassCollar.009" -1 77 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 -0.09 1.1 2.65 1
+node "SecurityGateBar.010" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0.09 1.7 2.65 1
+node "GateBrassCollar.010" -1 70 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 0.09 1.1 2.65 1
+node "SecurityGateBar.011" -1 68 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0.27 1.7 2.65 1
+node "GateBrassCollar.011" -1 69 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 0.27 1.1 2.65 1
+node "SecurityGateBar.012" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0.45 1.7 2.65 1
+node "GateBrassCollar.012" -1 67 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 0.45 1.1 2.65 1
+node "SecurityGateBar.013" -1 74 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0.63 1.7 2.65 1
+node "GateBrassCollar.013" -1 78 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 0.63 1.1 2.65 1
+node "SecurityGateBar.014" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0.81 1.7 2.65 1
+node "GateBrassCollar.014" -1 66 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 0.81 1.1 2.65 1
+node "SecurityGateBar.015" -1 68 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0.99 1.7 2.65 1
+node "GateBrassCollar.015" -1 73 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 0.99 1.1 2.65 1
+node "SecurityGateBar.016" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 1.17 1.7 2.65 1
+node "GateBrassCollar.016" -1 79 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 1.17 1.1 2.65 1
+node "SecurityGateBar.017" -1 74 8 0 1 0 0 0 0 1 0 0 0 0 1 0 1.35 1.7 2.65 1
+node "GateBrassCollar.017" -1 72 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 1.35 1.1 2.65 1
+node "SecurityGateBar.018" -1 65 8 0 1 0 0 0 0 1 0 0 0 0 1 0 1.53 1.7 2.65 1
+node "GateBrassCollar.018" -1 70 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 1.53 1.1 2.65 1
+node "SecurityGateBar.019" -1 80 8 0 1 0 0 0 0 1 0 0 0 0 1 0 1.71 1.7 2.65 1
+node "GateBrassCollar.019" -1 69 5 0 0.038 0 0 0 0 0.065 0 0 0 0 0.055 0 1.71 1.1 2.65 1
+node "SecurityGateKickplate" -1 81 4 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0.24 2.65 1
+node "SecurityGateLockPlate" -1 82 5 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1.57 2.55 1
+node "SecurityGateLock" -1 83 9 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1.47 2.46 1
+node "SecurityGateShackle" -1 84 5 0 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 0 1.59 2.46 1
+node "SecurityNotice" -1 85 4 0 1 0 0 0 0 1 0 0 0 0 1 0 0 2.52 2.55 1
+node "GateNoticeText" -1 86 10 0 -1 0 8.742278e-08 0 -8.742278e-08 -4.371139e-08 -1 0 3.821371e-15 -1 4.371139e-08 0 0 2.53 2.5 1
+node "GateNoticeSmall" -1 87 10 0 -1 0 8.742278e-08 0 -8.742278e-08 -4.371139e-08 -1 0 3.821371e-15 -1 4.371139e-08 0 0 2.36 2.5 1
+node "CorridorEndDoor" -1 88 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1.54 7.95 1
+node "EndDoorInset" -1 89 4 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.58 1.7 7.87 1
+node "EndDoorKnob" -1 90 5 0 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 -0.145 1.42 7.79 1
+node "EndDoorInset.001" -1 91 4 0 1 0 0 0 0 1 0 0 0 0 1 0 0.58 1.7 7.87 1
+node "EndDoorKnob.001" -1 90 5 0 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 0.145 1.42 7.79 1
+node "EndDoorCrown" -1 92 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.18 7.84 1
+node "CorridorArchiveLabel" -1 93 10 0 -1 0 8.742278e-08 0 -8.742278e-08 -4.371139e-08 -1 0 3.821371e-15 -1 4.371139e-08 0 0 3.43 7.75 1
+node "RoomWainscot" -1 94 4 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.95 0.6 -8 1
+node "RoomChairRail" -1 95 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.9 1.14 -8 1
+node "PanellingStile" -1 96 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.9 0.6 -1.2 1
+node "PanellingStile.001" -1 97 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.9 0.6 -3.5 1
+node "PanellingStile.002" -1 96 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.9 0.6 -5 1
+node "PanellingStile.003" -1 97 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.9 0.6 -6.25 1
+node "PanellingStile.004" -1 96 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.9 0.6 -7.55 1
+node "PanellingStile.005" -1 97 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.9 0.6 -10.5 1
+node "PanellingStile.006" -1 96 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.9 0.6 -12.9 1
+node "PanellingStile.007" -1 97 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.9 0.6 -14.2 1
+node "RoomWainscot.001" -1 94 4 0 1 0 0 0 0 1 0 0 0 0 1 0 3.95 0.6 -8 1
+node "RoomChairRail.001" -1 95 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.9 1.14 -8 1
+node "PanellingStile.008" -1 96 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.9 0.6 -1.2 1
+node "PanellingStile.009" -1 97 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.9 0.6 -3.5 1
+node "PanellingStile.010" -1 96 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.9 0.6 -5 1
+node "PanellingStile.011" -1 97 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.9 0.6 -6.25 1
+node "PanellingStile.012" -1 96 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.9 0.6 -7.55 1
+node "PanellingStile.013" -1 97 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.9 0.6 -10.5 1
+node "PanellingStile.014" -1 96 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.9 0.6 -12.9 1
+node "PanellingStile.015" -1 97 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.9 0.6 -14.2 1
+node "NightBeyondWindow" -1 98 11 0 1 0 0 0 0 1 0 0 0 0 1 0 -4.28 2.45 -3.2 1
+node "WindowVerticalFrame" -1 99 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.94 2.45 -1.5 1
+node "WindowVerticalFrame.001" -1 100 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.94 2.45 -4.9 1
+node "WindowHorizontalFrame" -1 101 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.94 1.04 -3.2 1
+node "WindowHorizontalFrame.001" -1 102 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.94 3.88 -3.2 1
+node "WindowMullion" -1 103 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.96 2.47 -2.32 1
+node "WindowMullion.001" -1 103 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.96 2.47 -3.2 1
+node "WindowMullion.002" -1 103 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.96 2.47 -4.08 1
+node "WindowCrossbar" -1 104 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.96 1.96 -3.2 1
+node "WindowCrossbar.001" -1 105 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.96 2.94 -3.2 1
+node "MoonDisc" -1 106 12 0 0.03 0 0 0 0 0.26 0 0 0 0 0.26 0 -4.22 3.22 -3.68 1
+node "WindowSill" -1 107 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.85 1.02 -3.2 1
+node "WovenCarpet" -1 108 7 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0.015 -6.55 1
+node "DeskTop" -1 109 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.9 0.83 -2.65 1
+node "DeskApron" -1 110 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.9 0.65 -2.65 1
+node "DeskLeg" -1 111 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.55 0.37 -1.8 1
+node "DeskLegFoot" -1 112 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.55 0.08 -1.8 1
+node "DeskLeg.001" -1 111 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.55 0.37 -3.5 1
+node "DeskLegFoot.001" -1 112 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.55 0.08 -3.5 1
+node "DeskLeg.002" -1 113 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.25 0.37 -1.8 1
+node "DeskLegFoot.002" -1 112 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.25 0.08 -1.8 1
+node "DeskLeg.003" -1 113 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.25 0.37 -3.5 1
+node "DeskLegFoot.003" -1 112 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.25 0.08 -3.5 1
+node "DrawerFront" -1 114 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.07 0.62 -2.1 1
+node "DrawerHandle" -1 115 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -2.03 0.64 -2.1 1
+node "DrawerFront.001" -1 116 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.07 0.62 -2.63 1
+node "DrawerHandle.001" -1 115 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -2.03 0.64 -2.63 1
+node "DrawerFront.002" -1 116 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.07 0.62 -3.16 1
+node "DrawerHandle.002" -1 115 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -2.03 0.64 -3.16 1
+node "ChairSeat" -1 117 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.66 0.49 -1 1
+node "ChairCushion" -1 118 13 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.66 0.58 -1 1
+node "ChairLeg" -1 119 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.91 0.24 -0.77 1
+node "ChairLeg.001" -1 119 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.91 0.24 -1.23 1
+node "ChairLeg.002" -1 119 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.41 0.24 -0.77 1
+node "ChairLeg.003" -1 119 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.41 0.24 -1.23 1
+node "ChairBackPost" -1 120 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.94 0.91 -0.73 1
+node "ChairBackPost.001" -1 120 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.38 0.91 -0.73 1
+node "ChairBackSlat" -1 121 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.66 0.84 -0.73 1
+node "ChairBackSlat.001" -1 121 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.66 1.05 -0.73 1
+node "ChairBackSlat.002" -1 121 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.66 1.28 -0.73 1
+node "DeskLampFoot" -1 122 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.85 0.94 -1.97 1
+node "DeskLampStem" -1 123 5 0 -1 0 1.509958e-07 0 0 1 0 0 -1.509958e-07 0 -1 0 -2.85 1.13 -1.97 1
+node "DeskLampShade" -1 124 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.85 1.4 -1.97 1
+node "DeskLampGlow" -1 125 6 1 1 0 0 0 0 1 0 0 0 0 1 0 -2.85 1.29 -1.97 1
+node "MonitorCase" -1 126 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.78 1.23 -3.3 1
+node "MonitorStand" -1 127 9 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.78 0.94 -3.35 1
+node "MonitorBezel" -1 128 9 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.78 1.25 -3.025 1
+node "CCTVScreen" -1 129 14 2 1 0 0 0 0 1 0 0 0 0 1 0 -2.78 1.27 -2.996 1
+node "MonitorButton" -1 130 5 0 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 -3.01 1.04 -2.988 1
+node "MonitorButton.001" -1 130 5 0 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 -2.89 1.04 -2.988 1
+node "MonitorButton.002" -1 130 5 0 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 -2.77 1.04 -2.988 1
+node "DepositCabinet" -1 131 9 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.55 1.35 -11.5 1
+node "DepositDoor" -1 132 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -10.54 1
+node "DepositLabel" -1 133 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -10.42 1
+node "DepositHandle" -1 134 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -10.675 1
+node "DepositKeyhole" -1 135 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -10.4 1
+node "DepositDoor.001" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -11.18 1
+node "DepositLabel.001" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -11.06 1
+node "DepositHandle.001" -1 138 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -11.315 1
+node "DepositKeyhole.001" -1 139 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -11.04 1
+node "DepositDoor.002" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -11.82 1
+node "DepositLabel.002" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -11.7 1
+node "DepositHandle.002" -1 140 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -11.955 1
+node "DepositKeyhole.002" -1 141 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -11.68 1
+node "DepositDoor.003" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.3 -12.46 1
+node "DepositLabel.003" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.38 -12.34 1
+node "DepositHandle.003" -1 142 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.24 -12.595 1
+node "DepositKeyhole.003" -1 143 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.23 -12.32 1
+node "DepositDoor.004" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -10.54 1
+node "DepositLabel.004" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -10.42 1
+node "DepositHandle.004" -1 140 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -10.675 1
+node "DepositKeyhole.004" -1 144 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -10.4 1
+node "DepositDoor.005" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -11.18 1
+node "DepositLabel.005" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -11.06 1
+node "DepositHandle.005" -1 145 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -11.315 1
+node "DepositKeyhole.005" -1 146 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -11.04 1
+node "DepositDoor.006" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -11.82 1
+node "DepositLabel.006" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -11.7 1
+node "DepositHandle.006" -1 147 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -11.955 1
+node "DepositKeyhole.006" -1 148 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -11.68 1
+node "DepositDoor.007" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 0.82 -12.46 1
+node "DepositLabel.007" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 0.9 -12.34 1
+node "DepositHandle.007" -1 138 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 0.76 -12.595 1
+node "DepositKeyhole.007" -1 149 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 0.75 -12.32 1
+node "DepositDoor.008" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -10.54 1
+node "DepositLabel.008" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -10.42 1
+node "DepositHandle.008" -1 150 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -10.675 1
+node "DepositKeyhole.008" -1 148 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -10.4 1
+node "DepositDoor.009" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -11.18 1
+node "DepositLabel.009" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -11.06 1
+node "DepositHandle.009" -1 140 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -11.315 1
+node "DepositKeyhole.009" -1 151 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -11.04 1
+node "DepositDoor.010" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -11.82 1
+node "DepositLabel.010" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -11.7 1
+node "DepositHandle.010" -1 145 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -11.955 1
+node "DepositKeyhole.010" -1 152 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -11.68 1
+node "DepositDoor.011" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.34 -12.46 1
+node "DepositLabel.011" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.42 -12.34 1
+node "DepositHandle.011" -1 150 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.28 -12.595 1
+node "DepositKeyhole.011" -1 144 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.27 -12.32 1
+node "DepositDoor.012" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -10.54 1
+node "DepositLabel.012" -1 133 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -10.42 1
+node "DepositHandle.012" -1 153 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -10.675 1
+node "DepositKeyhole.012" -1 154 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -10.4 1
+node "DepositDoor.013" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -11.18 1
+node "DepositLabel.013" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -11.06 1
+node "DepositHandle.013" -1 155 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -11.315 1
+node "DepositKeyhole.013" -1 139 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -11.04 1
+node "DepositDoor.014" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -11.82 1
+node "DepositLabel.014" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -11.7 1
+node "DepositHandle.014" -1 156 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -11.955 1
+node "DepositKeyhole.014" -1 149 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -11.68 1
+node "DepositDoor.015" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 1.86 -12.46 1
+node "DepositLabel.015" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 1.94 -12.34 1
+node "DepositHandle.015" -1 145 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 1.8 -12.595 1
+node "DepositKeyhole.015" -1 157 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 1.79 -12.32 1
+node "DepositDoor.016" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -10.54 1
+node "DepositLabel.016" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -10.42 1
+node "DepositHandle.016" -1 142 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -10.675 1
+node "DepositKeyhole.016" -1 148 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -10.4 1
+node "DepositDoor.017" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -11.18 1
+node "DepositLabel.017" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -11.06 1
+node "DepositHandle.017" -1 150 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -11.315 1
+node "DepositKeyhole.017" -1 135 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -11.04 1
+node "DepositDoor.018" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -11.82 1
+node "DepositLabel.018" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -11.7 1
+node "DepositHandle.018" -1 158 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -11.955 1
+node "DepositKeyhole.018" -1 151 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -11.68 1
+node "DepositDoor.019" -1 136 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.18 2.38 -12.46 1
+node "DepositLabel.019" -1 137 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.137 2.46 -12.34 1
+node "DepositHandle.019" -1 147 5 0 -1 1.509958e-07 0 0 -1.139987e-14 -7.54979e-08 -1 0 -1.509958e-07 -1 7.54979e-08 0 -3.1 2.32 -12.595 1
+node "DepositKeyhole.019" -1 159 9 0 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -3.13 2.31 -12.32 1
+node "SafeShadowBack" -1 160 9 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1.66 -14.72 1
+node "SafeSide" -1 161 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.62 1.65 -14.45 1
+node "SafeSide.001" -1 161 15 0 1 0 0 0 0 1 0 0 0 0 1 0 1.62 1.65 -14.45 1
+node "SafeFrame" -1 162 15 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0.17 -14.45 1
+node "SafeFrame.001" -1 163 15 0 1 0 0 0 0 1 0 0 0 0 1 0 0 3.16 -14.45 1
+node "VaultShelf" -1 164 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0.8 -14.65 1
+node "VaultShelf.001" -1 165 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1.55 -14.65 1
+node "VaultShelf.002" -1 164 8 0 1 0 0 0 0 1 0 0 0 0 1 0 0 2.3 -14.65 1
+node "VaultLedger" -1 166 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.9 0.99 -14.63 1
+node "VaultLedger.001" -1 166 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.61 0.99 -14.63 1
+node "VaultLedger.002" -1 167 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.32 0.99 -14.63 1
+node "VaultLedger.003" -1 166 1 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.03 0.99 -14.63 1
+node "VaultLedger.004" -1 167 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0.26 0.99 -14.63 1
+node "VaultLedger.005" -1 166 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0.55 0.99 -14.63 1
+node "GoldIngot" -1 168 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.5 1.67 -14.61 1
+node "GoldIngot.001" -1 168 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -0.18 1.67 -14.61 1
+node "GoldIngot.002" -1 168 5 0 1 0 0 0 0 1 0 0 0 0 1 0 0.14 1.67 -14.61 1
+node "GoldIngot.003" -1 168 5 0 1 0 0 0 0 1 0 0 0 0 1 0 0.46 1.67 -14.61 1
 node "SafeDoorPivot" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 -1.36 0.3 -14.02 1
-node "SafeDoor" 483 118 13 1 1 0 0 0 0 1 0 0 0 0 1 0 1.36 1.36 0 1
-node "SafeDoorInset" 483 119 5 1 1 0 0 0 0 1 0 0 0 0 1 0 1.36 1.36 0.1479998 1
-node "DoorRivet" 483 120 8 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 0.25 0.25 0.1899996 1
-node "DoorRivet.001" 483 120 8 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 0.25 2.47 0.1899996 1
-node "DoorRivet.002" 483 120 8 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 2.47 0.25 0.1899996 1
-node "DoorRivet.003" 483 120 8 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 2.47 2.47 0.1899996 1
-node "SafeWheel" 483 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1.36 1.36 0.2700005 1
-node "WheelRing" 490 121 8 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 0 0 0 1
-node "WheelHub" 490 122 8 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 0 0 0 1
-node "WheelSpoke" 490 123 8 1 -4.371139e-08 0 -1 0 1 -4.371139e-08 -4.371139e-08 0 -4.371139e-08 -1 1.910686e-15 0 0.2 0 0 1
-node "WheelSpoke.001" 490 123 8 1 -4.371139e-08 0 -1 0 0.5000001 0.8660254 -2.18557e-08 0 0.8660254 -0.5000001 -3.785517e-08 0 0.1 0.1732051 0 1
-node "WheelSpoke.002" 490 123 8 1 -4.371139e-08 0 1 0 -0.5000001 0.8660254 -2.18557e-08 0 -0.8660254 -0.5000001 -3.785517e-08 0 -0.1 0.1732051 0 1
-node "WheelSpoke.003" 490 123 8 1 -4.371139e-08 0 1 0 -1 -4.371139e-08 -4.371139e-08 0 4.371139e-08 -1 1.910686e-15 0 -0.2 0 0 1
-node "WheelSpoke.004" 490 123 8 1 -4.371139e-08 6.106609e-08 1 0 -0.5000001 -0.8660254 3.102909e-08 0 0.8660254 -0.5000001 6.838822e-08 0 -0.1 -0.1732051 0 1
-node "WheelSpoke.005" 490 123 8 1 -4.371139e-08 -6.106609e-08 -1 0 0.5000001 -0.8660254 3.102909e-08 0 -0.8660254 -0.5000001 6.838822e-08 0 0.1 -0.1732051 0 1
-node "SafeBolt0" 483 124 8 1 1 0 0 0 0 1 0 0 0 0 1 0 2.68 0.45 -0.03 1
-node "SafeHinge" -1 125 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.53 0.75 -14.04 1
-node "SafeBolt1" 483 124 8 1 1 0 0 0 0 1 0 0 0 0 1 0 2.68 1.36 -0.03 1
-node "SafeHinge.001" -1 125 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.53 1.66 -14.04 1
-node "SafeBolt2" 483 126 8 1 1 0 0 0 0 1 0 0 0 0 1 0 2.68 2.27 -0.03 1
-node "SafeHinge.002" -1 127 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.53 2.57 -14.04 1
-node "SconcePlate" -1 128 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.76 2.3 -5 1
-node "SconceArm" -1 129 8 0 -4.371139e-08 0 -1 0 0.9965457 -0.0830455 -4.35604e-08 0 -0.0830455 -0.9965457 3.630034e-09 0 -3.64 2.19 -5 1
-node "SconceGlass" -1 130 10 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.37 -5 1
-node "SconceCap" -1 131 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.19 -5 1
-node "SconceCap.001" -1 131 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.55 -5 1
-node "SconcePlate.001" -1 128 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.76 2.3 -4 1
-node "SconceArm.001" -1 129 8 0 -4.371139e-08 0 1 0 -0.9965457 -0.0830455 -4.35604e-08 0 0.0830455 -0.9965457 3.630034e-09 0 3.64 2.19 -4 1
-node "SconceGlass.001" -1 130 10 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.37 -4 1
-node "SconceCap.002" -1 132 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.19 -4 1
-node "SconceCap.003" -1 132 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.55 -4 1
-node "SconcePlate.002" -1 128 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.76 2.3 -13.6 1
-node "SconceArm.002" -1 129 8 0 -4.371139e-08 0 -1 0 0.9965457 -0.0830455 -4.35604e-08 0 -0.0830455 -0.9965457 3.630034e-09 0 -3.64 2.19 -13.6 1
-node "SconceGlass.002" -1 130 10 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.37 -13.6 1
-node "SconceCap.004" -1 131 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.19 -13.6 1
-node "SconceCap.005" -1 131 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.55 -13.6 1
-node "SconcePlate.003" -1 128 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.76 2.3 -13.6 1
-node "SconceArm.003" -1 129 8 0 -4.371139e-08 0 1 0 -0.9965457 -0.0830455 -4.35604e-08 0 0.0830455 -0.9965457 3.630034e-09 0 3.64 2.19 -13.6 1
-node "SconceGlass.003" -1 130 10 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.37 -13.6 1
-node "SconceCap.006" -1 132 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.19 -13.6 1
-node "SconceCap.007" -1 132 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.55 -13.6 1
-node "SpotCeilingPlate" -1 133 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 3.86 -6.5 1
-node "SpotStem" -1 134 8 0 -1 8.742278e-08 -8.742278e-08 0 -8.742279e-08 -1 8.742277e-08 0 -8.742277e-08 8.742278e-08 1 0 -2.2 3.735 -6.5 1
+node "SafeDoor" 558 169 15 1 1 0 0 0 0 1 0 0 0 0 1 0 1.36 1.36 0 1
+node "SafeDoorInset" 558 170 8 1 1 0 0 0 0 1 0 0 0 0 1 0 1.36 1.36 0.1479998 1
+node "DoorRivet" 558 171 5 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 0.25 0.25 0.1899996 1
+node "DoorRivet.001" 558 171 5 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 0.25 2.47 0.1899996 1
+node "DoorRivet.002" 558 171 5 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 2.47 0.25 0.1899996 1
+node "DoorRivet.003" 558 171 5 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 2.47 2.47 0.1899996 1
+node "SafeWheel" 558 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1.36 1.36 0.2700005 1
+node "WheelRing" 565 172 5 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 0 0 0 1
+node "WheelHub" 565 173 5 1 1 0 0 0 0 -4.371139e-08 1 0 0 -1 -4.371139e-08 0 0 0 0 1
+node "WheelSpoke" 565 174 5 1 -4.371139e-08 0 -1 0 1 -4.371139e-08 -4.371139e-08 0 -4.371139e-08 -1 1.910686e-15 0 0.2 0 0 1
+node "WheelSpoke.001" 565 174 5 1 -4.371139e-08 0 -1 0 0.5000001 0.8660254 -2.18557e-08 0 0.8660254 -0.5000001 -3.785517e-08 0 0.1 0.1732051 0 1
+node "WheelSpoke.002" 565 174 5 1 -4.371139e-08 0 1 0 -0.5000001 0.8660254 -2.18557e-08 0 -0.8660254 -0.5000001 -3.785517e-08 0 -0.1 0.1732051 0 1
+node "WheelSpoke.003" 565 174 5 1 -4.371139e-08 0 1 0 -1 -4.371139e-08 -4.371139e-08 0 4.371139e-08 -1 1.910686e-15 0 -0.2 0 0 1
+node "WheelSpoke.004" 565 174 5 1 -4.371139e-08 6.106609e-08 1 0 -0.5000001 -0.8660254 3.102909e-08 0 0.8660254 -0.5000001 6.838822e-08 0 -0.1 -0.1732051 0 1
+node "WheelSpoke.005" 565 174 5 1 -4.371139e-08 -6.106609e-08 -1 0 0.5000001 -0.8660254 3.102909e-08 0 -0.8660254 -0.5000001 6.838822e-08 0 0.1 -0.1732051 0 1
+node "SafeBolt0" 558 175 5 1 1 0 0 0 0 1 0 0 0 0 1 0 2.68 0.45 -0.02999973 1
+node "SafeHinge" -1 176 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.53 0.75 -14.04 1
+node "SafeBolt1" 558 177 5 1 1 0 0 0 0 1 0 0 0 0 1 0 2.68 1.36 -0.02999973 1
+node "SafeHinge.001" -1 178 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.53 1.66 -14.04 1
+node "SafeBolt2" 558 175 5 1 1 0 0 0 0 1 0 0 0 0 1 0 2.68 2.27 -0.02999973 1
+node "SafeHinge.002" -1 176 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.53 2.57 -14.04 1
+node "SconcePlate" -1 179 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.76 2.3 -5 1
+node "SconceArm" -1 180 5 0 -4.371139e-08 0 -1 0 0.9965457 -0.0830455 -4.35604e-08 0 -0.0830455 -0.9965457 3.630034e-09 0 -3.64 2.19 -5 1
+node "SconceGlass" -1 181 6 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.37 -5 1
+node "SconceCap" -1 182 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.19 -5 1
+node "SconceCap.001" -1 182 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.55 -5 1
+node "SconcePlate.001" -1 179 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.76 2.3 -3.6 1
+node "SconceArm.001" -1 183 5 0 -4.371139e-08 0 1 0 -0.9965457 -0.0830455 -4.35604e-08 0 0.0830455 -0.9965457 3.630034e-09 0 3.64 2.19 -3.6 1
+node "SconceGlass.001" -1 181 6 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.37 -3.6 1
+node "SconceCap.002" -1 184 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.19 -3.6 1
+node "SconceCap.003" -1 182 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.55 -3.6 1
+node "SconcePlate.002" -1 179 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.76 2.3 -13.6 1
+node "SconceArm.002" -1 185 5 0 -4.371139e-08 0 -1 0 0.9965457 -0.0830455 -4.35604e-08 0 -0.0830455 -0.9965457 3.630034e-09 0 -3.64 2.19 -13.6 1
+node "SconceGlass.002" -1 181 6 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.37 -13.6 1
+node "SconceCap.004" -1 182 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.19 -13.6 1
+node "SconceCap.005" -1 184 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.52 2.55 -13.6 1
+node "SconcePlate.003" -1 186 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.76 2.3 -13.6 1
+node "SconceArm.003" -1 187 5 0 -4.371139e-08 0 1 0 -0.9965457 -0.0830455 -4.35604e-08 0 0.0830455 -0.9965457 3.630034e-09 0 3.64 2.19 -13.6 1
+node "SconceGlass.003" -1 181 6 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.37 -13.6 1
+node "SconceCap.006" -1 182 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.19 -13.6 1
+node "SconceCap.007" -1 184 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.52 2.55 -13.6 1
+node "SpotCeilingPlate" -1 188 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 3.86 -6.5 1
+node "SpotStem" -1 189 5 0 -1 8.742278e-08 -8.742278e-08 0 -8.742279e-08 -1 8.742277e-08 0 -8.742277e-08 8.742278e-08 1 0 -2.2 3.735 -6.5 1
 node "SpotPivot0" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 -2.2 3.6 -6.5 1
-node "SpotYoke" 527 135 5 1 1 0 0 0 0 1 0 0 0 0 1 0 0 -0.04999995 0 1
-node "SpotBracket" 527 136 5 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.22 -0.1800001 0 1
-node "SpotBracket.001" 527 137 5 1 1 0 0 0 0 1 0 0 0 0 1 0 0.22 -0.1800001 0 1
-node "SpotHousing" 527 138 13 1 1 0 0 0 0 0.9444103 0.3287692 0 0 -0.3287692 0.9444103 0 0 -0.22 -0.05999994 1
-node "SpotLens" 527 139 10 1 1 0 0 0 0 0.9444103 0.3287692 0 0 -0.3287692 0.9444103 0 0 -0.3800001 -0.1129999 1
-node "SpotCeilingPlate.001" -1 133 5 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 3.86 -6.5 1
-node "SpotStem.001" -1 134 8 0 -1 8.742278e-08 -8.742278e-08 0 -8.742279e-08 -1 8.742277e-08 0 -8.742277e-08 8.742278e-08 1 0 2.2 3.735 -6.5 1
+node "SpotYoke" 602 190 8 1 1 0 0 0 0 1 0 0 0 0 1 0 0 -0.04999995 0 1
+node "SpotBracket" 602 191 8 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.22 -0.1800001 0 1
+node "SpotBracket.001" 602 191 8 1 1 0 0 0 0 1 0 0 0 0 1 0 0.22 -0.1800001 0 1
+node "SpotHousing" 602 192 15 1 1 0 0 0 0 0.9444103 0.3287692 0 0 -0.3287692 0.9444103 0 0 -0.22 -0.05999994 1
+node "SpotLens" 602 193 6 1 1 0 0 0 0 0.9444103 0.3287692 0 0 -0.3287692 0.9444103 0 0 -0.3800001 -0.1129999 1
+node "SpotCeilingPlate.001" -1 194 8 0 1 0 0 0 0 1 0 0 0 0 1 0 2.2 3.86 -6.5 1
+node "SpotStem.001" -1 195 5 0 -1 8.742278e-08 -8.742278e-08 0 -8.742279e-08 -1 8.742277e-08 0 -8.742277e-08 8.742278e-08 1 0 2.2 3.735 -6.5 1
 node "SpotPivot1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 2.2 3.6 -6.5 1
-node "SpotYoke.001" 535 135 5 1 1 0 0 0 0 1 0 0 0 0 1 0 0 -0.04999995 0 1
-node "SpotBracket.002" 535 136 5 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.22 -0.1800001 0 1
-node "SpotBracket.003" 535 136 5 1 1 0 0 0 0 1 0 0 0 0 1 0 0.22 -0.1800001 0 1
-node "SpotHousing.001" 535 140 13 1 1 0 0 0 0 0.9444103 0.3287692 0 0 -0.3287692 0.9444103 0 0 -0.22 -0.05999994 1
-node "SpotLens.001" 535 139 10 1 1 0 0 0 0 0.9444103 0.3287692 0 0 -0.3287692 0.9444103 0 0 -0.3800001 -0.1129999 1
+node "SpotYoke.001" 610 196 8 1 1 0 0 0 0 1 0 0 0 0 1 0 0 -0.04999995 0 1
+node "SpotBracket.002" 610 191 8 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.22 -0.1800001 0 1
+node "SpotBracket.003" 610 191 8 1 1 0 0 0 0 1 0 0 0 0 1 0 0.22 -0.1800001 0 1
+node "SpotHousing.001" 610 192 15 1 1 0 0 0 0 0.9444103 0.3287692 0 0 -0.3287692 0.9444103 0 0 -0.22 -0.05999994 1
+node "SpotLens.001" 610 193 6 1 1 0 0 0 0 0.9444103 0.3287692 0 0 -0.3287692 0.9444103 0 0 -0.3800001 -0.1129999 1
 node "EmitterRoot0_-1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 -3.65 1.35 -2.9 1
-node "EmitterRail" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -2.9 1
-node "LaserMount" 541 142 5 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
-node "LaserEmitter" 541 143 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
-node "EmitterLens" 541 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
+node "EmitterRail" -1 197 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -2.9 1
+node "LaserMount" 616 198 8 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
+node "LaserEmitter" 616 199 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
+node "EmitterLens" 616 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
 node "EmitterRoot0_1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 3.65 1.35 -2.9 1
-node "EmitterRail.001" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -2.9 1
-node "LaserMount.001" 546 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
-node "LaserEmitter.001" 546 146 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
-node "EmitterLens.001" 546 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
-node "Laser0" -1 147 14 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.35 -2.9 1
+node "EmitterRail.001" -1 197 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -2.9 1
+node "LaserMount.001" 621 198 8 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
+node "LaserEmitter.001" 621 201 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
+node "EmitterLens.001" 621 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
+node "Laser0" -1 202 16 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.35 -2.9 1
 node "EmitterRoot1_-1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 -3.65 1.35 -4.2 1
-node "EmitterRail.002" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -4.2 1
-node "LaserMount.002" 552 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
-node "LaserEmitter.002" 552 148 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
-node "EmitterLens.002" 552 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
+node "EmitterRail.002" -1 197 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -4.2 1
+node "LaserMount.002" 627 203 8 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
+node "LaserEmitter.002" 627 204 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
+node "EmitterLens.002" 627 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
 node "EmitterRoot1_1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 3.65 1.35 -4.2 1
-node "EmitterRail.003" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -4.2 1
-node "LaserMount.003" 557 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
-node "LaserEmitter.003" 557 146 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
-node "EmitterLens.003" 557 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
-node "Laser1" -1 147 14 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.35 -4.2 1
+node "EmitterRail.003" -1 197 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -4.2 1
+node "LaserMount.003" 632 205 8 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
+node "LaserEmitter.003" 632 206 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
+node "EmitterLens.003" 632 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
+node "Laser1" -1 202 16 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.35 -4.2 1
 node "EmitterRoot2_-1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 -3.65 1.35 -5.6 1
-node "EmitterRail.004" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -5.6 1
-node "LaserMount.004" 563 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
-node "LaserEmitter.004" 563 148 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
-node "EmitterLens.004" 563 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
+node "EmitterRail.004" -1 207 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -5.6 1
+node "LaserMount.004" 638 205 8 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
+node "LaserEmitter.004" 638 206 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
+node "EmitterLens.004" 638 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
 node "EmitterRoot2_1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 3.65 1.35 -5.6 1
-node "EmitterRail.005" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -5.6 1
-node "LaserMount.005" 568 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
-node "LaserEmitter.005" 568 149 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
-node "EmitterLens.005" 568 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
-node "Laser2" -1 147 14 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.35 -5.6 1
+node "EmitterRail.005" -1 207 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -5.6 1
+node "LaserMount.005" 643 205 8 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
+node "LaserEmitter.005" 643 208 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
+node "EmitterLens.005" 643 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
+node "Laser2" -1 202 16 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.35 -5.6 1
 node "EmitterRoot3_-1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 -3.65 1.35 -6.9 1
-node "EmitterRail.006" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -6.9 1
-node "LaserMount.006" 574 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
-node "LaserEmitter.006" 574 150 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
-node "EmitterLens.006" 574 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
+node "EmitterRail.006" -1 207 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -6.9 1
+node "LaserMount.006" 649 205 8 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
+node "LaserEmitter.006" 649 209 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
+node "EmitterLens.006" 649 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
 node "EmitterRoot3_1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 3.65 1.35 -6.9 1
-node "EmitterRail.007" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -6.9 1
-node "LaserMount.007" 579 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
-node "LaserEmitter.007" 579 149 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
-node "EmitterLens.007" 579 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
-node "Laser3" -1 147 14 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.35 -6.9 1
+node "EmitterRail.007" -1 207 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -6.9 1
+node "LaserMount.007" 654 205 8 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
+node "LaserEmitter.007" 654 209 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
+node "EmitterLens.007" 654 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
+node "Laser3" -1 202 16 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.35 -6.9 1
 node "EmitterRoot4_-1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 -3.65 1.35 -8.15 1
-node "EmitterRail.008" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -8.15 1
-node "LaserMount.008" 585 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
-node "LaserEmitter.008" 585 146 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
-node "EmitterLens.008" 585 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
+node "EmitterRail.008" -1 207 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -8.15 1
+node "LaserMount.008" 660 205 8 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
+node "LaserEmitter.008" 660 210 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
+node "EmitterLens.008" 660 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
 node "EmitterRoot4_1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 3.65 1.35 -8.15 1
-node "EmitterRail.009" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -8.15 1
-node "LaserMount.009" 590 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
-node "LaserEmitter.009" 590 149 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
-node "EmitterLens.009" 590 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
-node "Laser4" -1 147 14 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.35 -8.15 1
+node "EmitterRail.009" -1 207 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -8.15 1
+node "LaserMount.009" 665 205 8 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
+node "LaserEmitter.009" 665 211 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
+node "EmitterLens.009" 665 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
+node "Laser4" -1 202 16 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.35 -8.15 1
 node "EmitterRoot5_-1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 -3.65 1.42 -9.5 1
-node "EmitterRail.010" -1 141 5 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -9.5 1
-node "LaserMount.010" 596 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
-node "LaserEmitter.010" 596 151 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
-node "EmitterLens.010" 596 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
+node "EmitterRail.010" -1 207 8 0 1 0 0 0 0 1 0 0 0 0 1 0 -3.86 1.95 -9.5 1
+node "LaserMount.010" 671 205 8 1 1 0 0 0 0 1 0 0 0 0 1 0 -0.1600001 0 0 1
+node "LaserEmitter.010" 671 212 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.02999997 0 0 1
+node "EmitterLens.010" 671 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.04999995 0 0 1
 node "EmitterRoot5_1" -1 -1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 3.65 1.42 -9.5 1
-node "EmitterRail.011" -1 152 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -9.5 1
-node "LaserMount.011" 601 145 5 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
-node "LaserEmitter.011" 601 143 11 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
-node "EmitterLens.011" 601 144 14 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
-node "Laser5" -1 147 14 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.42 -9.5 1
-node "PlantPot" -1 153 15 0 1 0 0 0 0 1 0 0 0 0 1 0 3.1 0.288 -1.3 1
-node "PotLip" -1 154 15 0 1 0 0 0 0 1 0 0 0 0 1 0 3.1 0.564 -1.3 1
-node "PotSoil" -1 155 11 0 1 0 0 0 0 1 0 0 0 0 1 0 3.1 0.552 -1.3 1
-node "PlantStalk" -1 156 16 0 -4.371139e-08 -8.193239e-08 -1 0 0.4569001 0.889518 -9.285208e-08 0 0.889518 -0.4569001 -1.447156e-09 0 3.23299 0.798912 -1.3 1
-node "BroadLeaf" -1 157 16 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.001" -1 158 16 0 -0.6754628 -8.343541e-08 0.7373941 0 -0.3369159 0.8895177 -0.3086193 0 -0.6559251 -0.4569006 -0.6008362 0 2.982953 0.8490241 -1.407216 1
-node "BroadLeaf.001" -1 159 17 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.002" -1 160 16 0 0.9961646 2.498619e-09 -0.08749902 0 0.03997834 0.8895178 0.4551481 0 0.07783194 -0.4569005 0.8861061 0 3.116141 0.8991361 -1.116237 1
-node "BroadLeaf.002" -1 161 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.003" -1 162 16 0 -0.7936682 3.25794e-08 -0.6083509 0 0.2779558 0.8895179 -0.3626272 0 0.541139 -0.4569004 -0.705982 0 3.180904 0.798912 -1.40555 1
-node "BroadLeaf.003" -1 163 16 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.004" -1 164 16 0 0.1743266 7.664111e-08 0.9846879 0 -0.4499044 0.8895178 0.07964985 0 -0.8758974 -0.4569005 0.1550667 0 2.9437 0.8490241 -1.272329 1
-node "BroadLeaf.004" -1 165 17 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.005" -1 166 16 0 0.5365731 -6.646352e-08 -0.8438538 0 0.3855571 0.8895179 0.2451604 0 0.7506231 -0.4569004 0.4772914 0 3.255666 0.8991361 -1.201018 1
-node "BroadLeaf.005" -1 167 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.006" -1 168 16 0 -0.9656577 1.25016e-08 0.2598178 0 -0.1187109 0.8895177 -0.4412096 0 -0.2311125 -0.4569006 -0.8589696 0 3.065447 0.798912 -1.428423 1
-node "BroadLeaf.006" -1 169 16 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.007" -1 170 16 0 0.8875668 -2.164757e-08 0.4606791 0 -0.2104844 0.8895178 0.4055296 0 -0.4097823 -0.4569004 0.7895065 0 3.026876 0.8490241 -1.159117 1
-node "BroadLeaf.007" -1 171 17 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.008" -1 172 16 0 -0.3433152 -2.24588e-08 -0.9392202 0 0.4291298 0.889518 -0.1568608 0 0.8354533 -0.4569001 -0.3053851 0 3.273258 0.8991361 -1.363331 1
-node "BroadLeaf.008" -1 173 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantPot.001" -1 174 15 0 1 0 0 0 0 1 0 0 0 0 1 0 3.12 0.264 -13.4 1
-node "PotLip.001" -1 175 15 0 1 0 0 0 0 1 0 0 0 0 1 0 3.12 0.517 -13.4 1
-node "PotSoil.001" -1 176 11 0 1 0 0 0 0 1 0 0 0 0 1 0 3.12 0.506 -13.4 1
-node "PlantStalk.009" -1 177 16 0 7.54979e-08 6.711982e-10 -1 0 0.4569004 0.8895179 3.509206e-08 0 0.8895179 -0.4569004 6.685006e-08 0 3.241907 0.732336 -13.4 1
-node "BroadLeaf.009" -1 178 16 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.010" -1 179 16 0 -0.6754642 7.470961e-08 0.7373928 0 -0.3369153 0.8895177 -0.3086202 0 -0.655924 -0.4569008 -0.6008373 0 3.012707 0.778272 -13.49828 1
-node "BroadLeaf.010" -1 180 17 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.011" -1 181 16 0 0.9961646 3.988857e-09 -0.08749948 0 0.03997846 0.8895184 0.455147 0 0.07783241 -0.4568994 0.8861067 0 3.134796 0.824208 -13.23155 1
-node "BroadLeaf.011" -1 182 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.012" -1 177 16 0 -0.7936679 1.128116e-07 -0.6083513 0 0.2779561 0.8895178 -0.3626272 0 0.5411392 -0.4569005 -0.7059817 0 3.194162 0.732336 -13.49675 1
-node "BroadLeaf.012" -1 183 16 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.013" -1 184 16 0 0.1743262 -6.674836e-08 0.984688 0 -0.4499042 0.8895179 0.07964973 0 -0.8758976 -0.4569003 0.1550662 0 2.976725 0.778272 -13.37463 1
-node "BroadLeaf.013" -1 185 17 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.014" -1 186 16 0 0.5365728 -1.30974e-08 -0.8438541 0 0.385557 0.889518 0.2451601 0 0.7506234 -0.4569001 0.4772912 0 3.262693 0.824208 -13.30927 1
-node "BroadLeaf.014" -1 187 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.015" -1 188 16 0 -0.9656577 -1.191605e-08 0.2598178 0 -0.1187106 0.8895184 -0.4412083 0 -0.2311127 -0.4568993 -0.8589703 0 3.088326 0.732336 -13.51772 1
-node "BroadLeaf.015" -1 189 16 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.016" -1 190 16 0 0.8875669 6.298326e-09 0.4606789 0 -0.2104844 0.8895178 0.4055297 0 -0.4097821 -0.4569004 0.7895066 0 3.05297 0.778272 -13.27086 1
-node "BroadLeaf.016" -1 191 17 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.017" -1 192 16 0 -0.3433163 8.566458e-09 -0.9392198 0 0.4291303 0.8895176 -0.1568615 0 0.8354526 -0.4569008 -0.3053859 0 3.27882 0.824208 -13.45805 1
-node "BroadLeaf.017" -1 193 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantPot.002" -1 194 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.65 0.204 -13.1 1
-node "PotLip.002" -1 195 15 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.65 0.3995 -13.1 1
-node "PotSoil.002" -1 196 11 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.65 0.391 -13.1 1
-node "PlantStalk.018" -1 197 16 0 -4.371139e-08 -2.04831e-08 -1 0 0.4569006 0.8895177 -3.819184e-08 0 0.8895177 -0.4569006 -2.952332e-08 0 -2.555799 0.565896 -13.1 1
-node "BroadLeaf.018" -1 198 16 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.019" -1 199 16 0 -0.6754636 5.142413e-08 0.7373933 0 -0.3369153 0.8895178 -0.3086197 0 -0.6559245 -0.4569005 -0.6008369 0 -2.732908 0.601392 -13.17595 1
-node "BroadLeaf.019" -1 200 17 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.020" -1 201 16 0 0.9961646 8.18758e-09 -0.08749869 0 0.03997817 0.8895179 0.4551479 0 0.07783166 -0.4569003 0.8861063 0 -2.638567 0.636888 -12.96984 1
-node "BroadLeaf.020" -1 202 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.021" -1 203 16 0 -0.7936669 -3.184586e-08 -0.6083526 0 0.2779561 0.8895182 -0.3626262 0 0.5411407 -0.4568998 -0.7059811 0 -2.592693 0.565896 -13.17476 1
-node "BroadLeaf.021" -1 204 16 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.022" -1 205 16 0 0.1743285 -1.533276e-08 0.9846876 0 -0.4499039 0.889518 0.07965074 0 -0.8758973 -0.4569002 0.1550683 0 -2.760712 0.601392 -13.0804 1
-node "BroadLeaf.022" -1 206 17 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.023" -1 207 16 0 0.5365743 9.140749e-08 -0.8438531 0 0.385557 0.8895177 0.2451612 0 0.7506223 -0.4569007 0.4772923 0 -2.539737 0.636888 -13.02989 1
-node "BroadLeaf.023" -1 208 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.024" -1 209 16 0 -0.9656578 7.87314e-08 0.2598171 0 -0.1187105 0.8895178 -0.4412096 0 -0.231112 -0.4569006 -0.8589698 0 -2.674475 0.565896 -13.19097 1
-node "BroadLeaf.024" -1 210 16 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.025" -1 211 16 0 0.8875669 -2.160705e-09 0.4606788 0 -0.2104843 0.8895179 0.4055296 0 -0.409782 -0.4569004 0.7895067 0 -2.701796 0.601392 -13.00021 1
-node "BroadLeaf.025" -1 212 17 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PlantStalk.026" -1 213 16 0 -0.3433164 1.558549e-07 -0.9392198 0 0.4291301 0.8895177 -0.1568613 0 0.8354527 -0.4569006 -0.3053861 0 -2.527276 0.636888 -13.14486 1
-node "BroadLeaf.026" -1 214 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-node "PaintingCanvas" -1 215 19 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 2.35 -2.4 1
-node "PictureSide" -1 216 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.35 -1.74 1
-node "PictureSide.001" -1 216 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.35 -3.06 1
-node "PictureTop" -1 217 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 1.79 -2.4 1
-node "PictureTop.001" -1 217 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.91 -2.4 1
-node "PictureLight" -1 218 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.65 3.07 -2.4 1
-node "PaintingCanvas.001" -1 215 19 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 2.35 -8.5 1
-node "PictureSide.002" -1 216 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.35 -7.84 1
-node "PictureSide.003" -1 216 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.35 -9.16 1
-node "PictureTop.002" -1 217 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 1.79 -8.5 1
-node "PictureTop.003" -1 217 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.91 -8.5 1
-node "PictureLight.001" -1 219 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.65 3.07 -8.5 1
-node "SideTableTop" -1 220 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 0.79 -8.9 1
-node "SideTableLeg" -1 221 1 0 1 0 0 0 0 1 0 0 0 0 1 0 2.53 0.38 -8.3 1
-node "SideTableLeg.001" -1 221 1 0 1 0 0 0 0 1 0 0 0 0 1 0 2.53 0.38 -9.5 1
-node "SideTableLeg.002" -1 221 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.47 0.38 -8.3 1
-node "SideTableLeg.003" -1 221 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.47 0.38 -9.5 1
-node "ClosedBook" -1 222 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3 0.9 -8.8 1
-node "ClosedBook.001" -1 222 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3 0.965 -8.8 1
-node "ClosedBook.002" -1 222 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3 1.03 -8.8 1
+node "EmitterRail.011" -1 207 8 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 1.95 -9.5 1
+node "LaserMount.011" 676 205 8 1 1 0 0 0 0 1 0 0 0 0 1 0 0.1600001 0 0 1
+node "LaserEmitter.011" 676 206 9 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 0.02999997 0 0 1
+node "EmitterLens.011" 676 200 16 1 -4.371139e-08 -1 0 0 1 -4.371139e-08 0 0 0 0 1 0 -0.04999995 0 0 1
+node "Laser5" -1 202 16 1 7.3 0 0 0 0 0.024 0 0 0 0 0.024 0 0 1.42 -9.5 1
+node "PlantPot" -1 213 17 0 1 0 0 0 0 1 0 0 0 0 1 0 3.1 0.288 -1.3 1
+node "PotLip" -1 214 17 0 1 0 0 0 0 1 0 0 0 0 1 0 3.1 0.564 -1.3 1
+node "PotSoil" -1 215 9 0 1 0 0 0 0 1 0 0 0 0 1 0 3.1 0.552 -1.3 1
+node "PlantStalk" -1 216 18 0 -4.371139e-08 -8.193239e-08 -1 0 0.4569001 0.889518 -9.285208e-08 0 0.889518 -0.4569001 -1.447156e-09 0 3.23299 0.798912 -1.3 1
+node "BroadLeaf" -1 217 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.001" -1 218 18 0 -0.6754628 -8.343541e-08 0.7373941 0 -0.3369159 0.8895177 -0.3086193 0 -0.6559251 -0.4569006 -0.6008362 0 2.982953 0.8490241 -1.407216 1
+node "BroadLeaf.001" -1 219 19 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.002" -1 220 18 0 0.9961646 2.498619e-09 -0.08749902 0 0.03997834 0.8895178 0.4551481 0 0.07783194 -0.4569005 0.8861061 0 3.116141 0.8991361 -1.116237 1
+node "BroadLeaf.002" -1 221 20 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.003" -1 222 18 0 -0.7936682 3.25794e-08 -0.6083509 0 0.2779558 0.8895179 -0.3626272 0 0.541139 -0.4569004 -0.705982 0 3.180904 0.798912 -1.40555 1
+node "BroadLeaf.003" -1 223 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.004" -1 224 18 0 0.1743266 7.664111e-08 0.9846879 0 -0.4499044 0.8895178 0.07964985 0 -0.8758974 -0.4569005 0.1550667 0 2.9437 0.8490241 -1.272329 1
+node "BroadLeaf.004" -1 225 19 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.005" -1 226 18 0 0.5365731 -6.646352e-08 -0.8438538 0 0.3855571 0.8895179 0.2451604 0 0.7506231 -0.4569004 0.4772914 0 3.255666 0.8991361 -1.201018 1
+node "BroadLeaf.005" -1 227 20 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.006" -1 228 18 0 -0.9656577 1.25016e-08 0.2598178 0 -0.1187109 0.8895177 -0.4412096 0 -0.2311125 -0.4569006 -0.8589696 0 3.065447 0.798912 -1.428423 1
+node "BroadLeaf.006" -1 229 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.007" -1 230 18 0 0.8875668 -2.164757e-08 0.4606791 0 -0.2104844 0.8895178 0.4055296 0 -0.4097823 -0.4569004 0.7895065 0 3.026876 0.8490241 -1.159117 1
+node "BroadLeaf.007" -1 231 19 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.008" -1 232 18 0 -0.3433152 -2.24588e-08 -0.9392202 0 0.4291298 0.889518 -0.1568608 0 0.8354533 -0.4569001 -0.3053851 0 3.273258 0.8991361 -1.363331 1
+node "BroadLeaf.008" -1 233 20 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantPot.001" -1 234 17 0 1 0 0 0 0 1 0 0 0 0 1 0 3.12 0.264 -13.4 1
+node "PotLip.001" -1 235 17 0 1 0 0 0 0 1 0 0 0 0 1 0 3.12 0.517 -13.4 1
+node "PotSoil.001" -1 236 9 0 1 0 0 0 0 1 0 0 0 0 1 0 3.12 0.506 -13.4 1
+node "PlantStalk.009" -1 237 18 0 7.54979e-08 6.711982e-10 -1 0 0.4569004 0.8895179 3.509206e-08 0 0.8895179 -0.4569004 6.685006e-08 0 3.241907 0.732336 -13.4 1
+node "BroadLeaf.009" -1 238 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.010" -1 239 18 0 -0.6754642 7.470961e-08 0.7373928 0 -0.3369153 0.8895177 -0.3086202 0 -0.655924 -0.4569008 -0.6008373 0 3.012707 0.778272 -13.49828 1
+node "BroadLeaf.010" -1 240 19 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.011" -1 241 18 0 0.9961646 3.988857e-09 -0.08749948 0 0.03997846 0.8895184 0.455147 0 0.07783241 -0.4568994 0.8861067 0 3.134796 0.824208 -13.23155 1
+node "BroadLeaf.011" -1 242 20 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.012" -1 237 18 0 -0.7936679 1.128116e-07 -0.6083513 0 0.2779561 0.8895178 -0.3626272 0 0.5411392 -0.4569005 -0.7059817 0 3.194162 0.732336 -13.49675 1
+node "BroadLeaf.012" -1 243 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.013" -1 244 18 0 0.1743262 -6.674836e-08 0.984688 0 -0.4499042 0.8895179 0.07964973 0 -0.8758976 -0.4569003 0.1550662 0 2.976725 0.778272 -13.37463 1
+node "BroadLeaf.013" -1 245 19 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.014" -1 246 18 0 0.5365728 -1.30974e-08 -0.8438541 0 0.385557 0.889518 0.2451601 0 0.7506234 -0.4569001 0.4772912 0 3.262693 0.824208 -13.30927 1
+node "BroadLeaf.014" -1 247 20 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.015" -1 248 18 0 -0.9656577 -1.191605e-08 0.2598178 0 -0.1187106 0.8895184 -0.4412083 0 -0.2311127 -0.4568993 -0.8589703 0 3.088326 0.732336 -13.51772 1
+node "BroadLeaf.015" -1 249 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.016" -1 250 18 0 0.8875669 6.298326e-09 0.4606789 0 -0.2104844 0.8895178 0.4055297 0 -0.4097821 -0.4569004 0.7895066 0 3.05297 0.778272 -13.27086 1
+node "BroadLeaf.016" -1 251 19 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.017" -1 252 18 0 -0.3433163 8.566458e-09 -0.9392198 0 0.4291303 0.8895176 -0.1568615 0 0.8354526 -0.4569008 -0.3053859 0 3.27882 0.824208 -13.45805 1
+node "BroadLeaf.017" -1 253 20 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantPot.002" -1 254 17 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.65 0.204 -13.1 1
+node "PotLip.002" -1 255 17 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.65 0.3995 -13.1 1
+node "PotSoil.002" -1 256 9 0 1 0 0 0 0 1 0 0 0 0 1 0 -2.65 0.391 -13.1 1
+node "PlantStalk.018" -1 257 18 0 -4.371139e-08 -2.04831e-08 -1 0 0.4569006 0.8895177 -3.819184e-08 0 0.8895177 -0.4569006 -2.952332e-08 0 -2.555799 0.565896 -13.1 1
+node "BroadLeaf.018" -1 258 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.019" -1 259 18 0 -0.6754636 5.142413e-08 0.7373933 0 -0.3369153 0.8895178 -0.3086197 0 -0.6559245 -0.4569005 -0.6008369 0 -2.732908 0.601392 -13.17595 1
+node "BroadLeaf.019" -1 260 19 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.020" -1 261 18 0 0.9961646 8.18758e-09 -0.08749869 0 0.03997817 0.8895179 0.4551479 0 0.07783166 -0.4569003 0.8861063 0 -2.638567 0.636888 -12.96984 1
+node "BroadLeaf.020" -1 262 20 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.021" -1 263 18 0 -0.7936669 -3.184586e-08 -0.6083526 0 0.2779561 0.8895182 -0.3626262 0 0.5411407 -0.4568998 -0.7059811 0 -2.592693 0.565896 -13.17476 1
+node "BroadLeaf.021" -1 264 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.022" -1 265 18 0 0.1743285 -1.533276e-08 0.9846876 0 -0.4499039 0.889518 0.07965074 0 -0.8758973 -0.4569002 0.1550683 0 -2.760712 0.601392 -13.0804 1
+node "BroadLeaf.022" -1 266 19 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.023" -1 267 18 0 0.5365743 9.140749e-08 -0.8438531 0 0.385557 0.8895177 0.2451612 0 0.7506223 -0.4569007 0.4772923 0 -2.539737 0.636888 -13.02989 1
+node "BroadLeaf.023" -1 268 20 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.024" -1 269 18 0 -0.9656578 7.87314e-08 0.2598171 0 -0.1187105 0.8895178 -0.4412096 0 -0.231112 -0.4569006 -0.8589698 0 -2.674475 0.565896 -13.19097 1
+node "BroadLeaf.024" -1 270 18 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.025" -1 271 18 0 0.8875669 -2.160705e-09 0.4606788 0 -0.2104843 0.8895179 0.4055296 0 -0.409782 -0.4569004 0.7895067 0 -2.701796 0.601392 -13.00021 1
+node "BroadLeaf.025" -1 272 19 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PlantStalk.026" -1 273 18 0 -0.3433164 1.558549e-07 -0.9392198 0 0.4291301 0.8895177 -0.1568613 0 0.8354527 -0.4569006 -0.3053861 0 -2.527276 0.636888 -13.14486 1
+node "BroadLeaf.026" -1 274 20 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+node "PaintingCanvas" -1 275 21 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 2.35 -1.65 1
+node "PictureSide" -1 276 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.35 -0.99 1
+node "PictureSide.001" -1 276 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.35 -2.31 1
+node "PictureTop" -1 277 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 1.79 -1.65 1
+node "PictureTop.001" -1 277 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.91 -1.65 1
+node "PictureLight" -1 278 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.65 3.07 -1.65 1
+node "PaintingCanvas.001" -1 275 21 0 1 0 0 0 0 1 0 0 0 0 1 0 3.86 2.35 -10.8 1
+node "PictureSide.002" -1 276 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.35 -10.14 1
+node "PictureSide.003" -1 276 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.35 -11.46 1
+node "PictureTop.002" -1 279 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 1.79 -10.8 1
+node "PictureTop.003" -1 277 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.83 2.91 -10.8 1
+node "PictureLight.001" -1 280 5 0 1 0 0 0 0 1 0 0 0 0 1 0 3.65 3.07 -10.8 1
+node "SideTableTop" -1 281 0 0 1 0 0 0 0 1 0 0 0 0 1 0 3 0.79 -8.9 1
+node "SideTableLeg" -1 282 1 0 1 0 0 0 0 1 0 0 0 0 1 0 2.53 0.38 -8.3 1
+node "SideTableLeg.001" -1 282 1 0 1 0 0 0 0 1 0 0 0 0 1 0 2.53 0.38 -9.5 1
+node "SideTableLeg.002" -1 282 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.47 0.38 -8.3 1
+node "SideTableLeg.003" -1 282 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3.47 0.38 -9.5 1
+node "ClosedBook" -1 283 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3 0.9 -8.8 1
+node "ClosedBook.001" -1 283 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3 0.965 -8.8 1
+node "ClosedBook.002" -1 283 1 0 1 0 0 0 0 1 0 0 0 0 1 0 3 1.03 -8.8 1
