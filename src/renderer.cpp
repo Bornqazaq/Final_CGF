@@ -67,6 +67,9 @@ Renderer::~Renderer() {
 }
 void Renderer::draw(Scene &s, const glm::mat4 &view, const glm::mat4 &proj, glm::vec3 eyePos,
                     const std::vector<Light> &lights, bool alarm, bool security) {
+    glEnable(GL_DEPTH_TEST);
+    glDepthMask(GL_TRUE);
+    glDepthFunc(GL_LESS);
     surface.use();
     surface.set("uView", view);
     surface.set("uProjection", proj);
@@ -196,6 +199,11 @@ void Renderer::frame(Scene &s, const glm::mat4 &view, glm::vec3 eyePos,
     post.set("uTint", glm::vec3(1));
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, cctv.color);
+    post.set("uSceneDepth", 1);
+    post.set("uNear", .08f);post.set("uFar", 35.f);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, cctv.depth);
+    glActiveTexture(GL_TEXTURE0);
     glBindVertexArray(quad);
     glDrawArrays(GL_TRIANGLES, 0, 3);
     glEnable(GL_DEPTH_TEST);
@@ -216,6 +224,11 @@ void Renderer::frame(Scene &s, const glm::mat4 &view, glm::vec3 eyePos,
     post.set("uTint", glm::vec3(1));
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, sceneTarget.color);
+    post.set("uSceneDepth", 1);
+    post.set("uNear", .06f);post.set("uFar", 50.f);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, sceneTarget.depth);
+    glActiveTexture(GL_TEXTURE0);
     glBindVertexArray(quad);
     glDrawArrays(GL_TRIANGLES, 0, 3);
 }
