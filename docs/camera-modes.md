@@ -33,3 +33,5 @@ Update these camera obstacle proxies together with gameplay collision when the
 location layout is redesigned.
 
 Windows mouse look consumes native WM_INPUT motion once per frame. Absolute-motion devices keep separate per-device baselines. Other platforms use GLFW raw motion where supported. Default sensitivity is 0.020 degrees per input unit; menu and pause provide a slider. Retry preserves the setting. Focus and capture changes reset pending motion. Input deltas and applied angles are recorded locally in evidence/mouse-input.csv. Obstacle avoidance changes camera distance without changing look direction.
+
+Sensitivity is displayed as a multiplier from 0.10 to 10.00, using 0.022 degrees per count per unit (Source-style yaw/pitch scaling). The existing 0.020 degrees/count default remains unchanged and displays as 0.91. Reference: https://github.com/ValveSoftware/source-sdk-2013/blob/master/src/game/client/in_mouse.cpp

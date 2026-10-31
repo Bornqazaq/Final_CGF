@@ -18,7 +18,28 @@ int main(int argc,char **argv){
     if(!gladLoadGL(reinterpret_cast<GLADloadfunc>(glfwGetProcAddress)))return 1;
     int result=0;
     try{
-        fs::path root=argv[1];Scene scene;scene.load(root/"assets/thief.scene");
+        fs::path root=argv[1];
+        Scene vault;vault.load(root/"assets/vault.scene");
+        auto localDepth=[&](const Node &node){
+            const auto &mesh=vault.meshes.at(node.mesh);
+            glBindBuffer(GL_ARRAY_BUFFER,mesh->vbo);
+            GLint size=0;glGetBufferParameteriv(GL_ARRAY_BUFFER,GL_BUFFER_SIZE,&size);
+            std::vector<Vertex> vertices(size/sizeof(Vertex));
+            glGetBufferSubData(GL_ARRAY_BUFFER,0,size,vertices.data());
+            float lo=1e9f,hi=-1e9f;
+            for(const auto &v:vertices){
+                float z=(node.base*glm::vec4(v.position,1)).z;
+                lo=std::min(lo,z);hi=std::max(hi,z);
+            }
+            return glm::vec2(lo,hi);
+        };
+        float innerFace=localDepth(vault.nodes.at(vault.find("SafeDoor"))).x;
+        for(int i=0;i<3;i++){
+            float clearance=localDepth(vault.nodes.at(vault.find("SafeBolt"+std::to_string(i)))).x-innerFace;
+            std::cout<<"Safe bolt "<<i<<" inner-face clearance: "<<clearance<<" m\n";
+            if(clearance<.015f)throw std::runtime_error("safe bolt coplanar with inner door face");
+        }
+        Scene scene;scene.load(root/"assets/thief.scene");
         Animator animator;animator.load(root/"assets/thief.lvanim");animator.update("Idle",0,1);
         scene.skinPalette=animator.palette;scene.showCharacter=true;
         scene.meshes.push_back(Mesh::box());

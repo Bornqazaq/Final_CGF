@@ -117,8 +117,10 @@ UIAction drawUI(Game &g, float fps, int width, int height, const std::string &gp
         }
         if (menu || g.state == State::Pause) {
             ImGui::SetNextItemWidth(300);
-            ImGui::SliderFloat("Mouse sensitivity", &g.mouseSensitivity, .002f, .12f,
-                               "%.3f", ImGuiSliderFlags_Logarithmic | ImGuiSliderFlags_AlwaysClamp);
+            float sensitivity=g.mouseSensitivity/.022f;
+            if (ImGui::SliderFloat("Mouse sensitivity", &sensitivity, .1f, 10.f,
+                                  "%.2f", ImGuiSliderFlags_AlwaysClamp))
+                g.mouseSensitivity=sensitivity*.022f;
         }
         if (ImGui::Button(menu                      ? "Begin heist  [ENTER]"
                           : g.state == State::Pause ? "Resume  [ESC]"

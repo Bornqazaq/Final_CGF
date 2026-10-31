@@ -1,4 +1,4 @@
-"""Build the approved room in Blender; preserve unrelated scenes."""
+"""Build the approved room through Blender MCP; preserve unrelated scenes."""
 import sys,math
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
@@ -120,7 +120,7 @@ cyl('WheelHub',(0,0,0),.10,.20,brass,24,wheel,(math.pi/2,0,0))
 for i in range(6):
  a=i*math.tau/6;rod('WheelSpoke',(0,0,0),(.40*math.cos(a),0,.40*math.sin(a)),.027,brass,wheel)
 for i,z in enumerate([.45,1.36,2.27]):
- bolt=cube('SafeBolt'+str(i),(2.68,.05,z),(.25,.16,.14),brass,.015,pivot)
+ bolt=cube('SafeBolt'+str(i),(2.68,.03,z),(.25,.16,.14),brass,.015,pivot)
  bolt.keyframe_insert('location',frame=13);bolt.location.x-=.22;bolt.keyframe_insert('location',frame=28)
  cyl('SafeHinge',(-1.53,14.04,z+.3),.11,.36,brass,20)
 # Wall sconces with visible supports and warm glass.
