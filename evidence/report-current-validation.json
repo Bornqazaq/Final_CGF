@@ -1,0 +1,74 @@
+{
+  "pages": 29,
+  "figures": [
+    {
+      "number": 1,
+      "file": "room.png",
+      "caption": "Current vault rendered by the application, with textured furniture, lasers and live CCTV"
+    },
+    {
+      "number": 2,
+      "file": "entrance.png",
+      "caption": "Enclosed entrance corridor and locked security gate replacing the former empty opening"
+    },
+    {
+      "number": 3,
+      "file": "menu.png",
+      "caption": "Current menu with sensitivity and monitor-aware FPS controls"
+    },
+    {
+      "number": 4,
+      "file": "third-person.png",
+      "caption": "Third-person character view in the current vault"
+    },
+    {
+      "number": 5,
+      "file": "crouch.png",
+      "caption": "Current skinned character in a crouch-forward animation review"
+    },
+    {
+      "number": 6,
+      "file": "cctv.png",
+      "caption": "Live security camera showing the current animated character"
+    },
+    {
+      "number": 7,
+      "file": "lamp.png",
+      "caption": "Desk-lamp interaction captured during actual gameplay"
+    },
+    {
+      "number": 8,
+      "file": "spotlights.png",
+      "caption": "Rotating spotlight equipment and illumination in the actual runtime"
+    },
+    {
+      "number": 9,
+      "file": "final-beam.png",
+      "caption": "Crouched view below the last laser before the final passage"
+    },
+    {
+      "number": 10,
+      "file": "alarm.png",
+      "caption": "Actual alarm state following contact with a laser"
+    },
+    {
+      "number": 11,
+      "file": "dance.png",
+      "caption": "Open safe and the current character performing the one-shot victory dance"
+    },
+    {
+      "number": 12,
+      "file": "victory.png",
+      "caption": "Victory appears after the complete safe-opening and dance sequence"
+    }
+  ],
+  "students": "Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet",
+  "reference_count": 18,
+  "pdf_sha256": "cbf45d196ffe37e23a18f4dddb336bda436be1daeffffd081ac1adf8cd2b69f1",
+  "template_page_geometry": [
+    595.3,
+    841.9
+  ],
+  "body_font_pt": 14,
+  "table_font_pt": 12
+}

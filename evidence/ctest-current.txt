@@ -1,0 +1,20 @@
+Internal ctest changing into directory: C:/Users/nyerb/OneDrive/Desktop/LaserVaultHeist/build-clean
+Test project C:/Users/nyerb/OneDrive/Desktop/LaserVaultHeist/build-clean
+    Start 1: laser_character_occlusion
+1/7 Test #1: laser_character_occlusion ........   Passed    0.57 sec
+    Start 2: gameplay_math
+2/7 Test #2: gameplay_math ....................   Passed    0.03 sec
+    Start 3: complete_gameplay_route
+3/7 Test #3: complete_gameplay_route ..........   Passed    0.65 sec
+    Start 4: demo_and_slow_frames
+4/7 Test #4: demo_and_slow_frames .............   Passed    0.21 sec
+    Start 5: imported_animation_clips
+5/7 Test #5: imported_animation_clips .........   Passed    0.25 sec
+    Start 6: complete_victory_cinematic
+6/7 Test #6: complete_victory_cinematic .......   Passed    0.04 sec
+    Start 7: player_camera_modes
+7/7 Test #7: player_camera_modes ..............   Passed    0.15 sec
+
+100% tests passed, 0 tests failed out of 7
+
+Total Test time (real) =   1.93 sec

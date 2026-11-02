@@ -17,9 +17,7 @@ Group: SE-2428
 | Makhmet Demesh | Gameplay mechanics: laser contact, progression and states; rendering and technical integration |
 | Nurassyl Nygmet | Gameplay mechanics: controls and interactions; testing, builds and documentation |
 
-These are the team's assigned responsibilities. Git history records the actual
-accounts that made commits; the table does not imply an account history that is
-absent. Each member should be able to explain the project and their assigned area.
+Each member should be able to explain the complete project and their assigned area.
 
 ## Run
 
@@ -136,8 +134,9 @@ and presentation. These are local results, not isolated GPU timings or a guarant
 for the unknown TA machine. The user has confirmed the corrected mouse behavior
 and reviewed the refreshed location; this is not a formal usability study.
 
-The newly captured 1080p demonstration follows ordinary deterministic inputs and
-collision, with captions and a visible FPS counter. The final route is continuous.
+Fresh report screenshots also come from a newly captured 1080p run using ordinary
+deterministic inputs and collision, captions and a visible FPS counter. The final
+route in that recording is continuous.
 Earlier slide materials remain a separate historical deliverable until refreshed.
 
 ## Requirement map
@@ -175,3 +174,8 @@ Third-party asset provenance and dependency licenses are in `CREDITS.md` and
 `LICENSES/`. Meshy-exported resources are credited separately from project-created
 room assets and derived animation. Public repository visibility does not grant an
 additional license for project-specific source or art.
+
+The current PDF builder is `tools/documents/build_report_pdf.py`. It uses reportlab,
+pypdf, Pillow and Windows Times fonts; it reads the current evidence folders. The
+retained local course template supplies its original logo when available. Document
+authoring dependencies are separate from the game build.
