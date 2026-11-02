@@ -1,6 +1,6 @@
 # Defense guide
 
-Student: Nurbek Yerbulekov  
+Students: Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet  
 Group: SE-2428
 
 This document prepares a live defense; it is not evidence that a defense occurred.

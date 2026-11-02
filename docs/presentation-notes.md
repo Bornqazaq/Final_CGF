@@ -4,7 +4,7 @@
 
 Target: 35 seconds.
 
-Introduce Laser Vault Heist as topic 12, a single-room first-person game for Computer Graphics Fundamentals. The goal is a complete, inspectable implementation using C++17 and OpenGL 3.3 core. The room and thief were made in Blender, including UVs, rig and actions. State the single author and group. This is the brief's teaching example, so there are no invented team members. Explain that the presentation will connect the visible game to its collision, shading and render pipeline, then show a real-time demo. Source: project README and the supplied topic brief.
+Introduce Laser Vault Heist as topic 12, a single-room first-person game for Computer Graphics Fundamentals. The goal is a complete, inspectable implementation using C++17 and OpenGL 3.3 core. The room and thief were made in Blender, including UVs, rig and actions. Introduce the three students and group, with Nurbek leading visual design and animation, and Makhmet and Nurassyl responsible for gameplay mechanics. Explain that the presentation will connect the visible game to its collision, shading and render pipeline, then show a real-time demo. Source: project README and the supplied topic brief.
 
 ## 2. The heist and its constraints
 

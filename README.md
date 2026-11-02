@@ -1,38 +1,45 @@
 # Laser Vault Heist
 
-A finished single-room stealth game for Computer Graphics Fundamentals, topic 12.
-Walk through a mansion vault, time six laser barriers, crouch below the last beam,
-and open the hinged safe. Contact with a laser turns the scene red and ends the attempt.
+A C++17 / OpenGL 3.3 core stealth game for Computer Graphics Fundamentals, topic 12.
+Read six moving laser barriers, crouch below the final beam, open the safe and watch
+the complete dance finale. Laser contact triggers a red alarm and a fresh attempt.
 
-Student: Nurbek Yerbulekov  
+Students: Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet  
 Group: SE-2428
 
-![The vault](evidence/screenshots/room-world-final.png)
+![Current vault](evidence/screenshots/report-current/room.png)
 
-## Run the Windows release
+## Team responsibilities
 
-Download `LaserVaultHeist-Windows-x64.zip` from [Releases](https://github.com/Bornqazaq/Final_CGF/releases).
-Extract the entire folder and run `LaserVaultHeist.exe`. Keep `assets/` and `shaders/`
-beside it. No additional runtime installation or network connection is needed. A working OpenGL 3.3 graphics driver is required. Escape pauses the game.
+| Student | Responsibility |
+|---|---|
+| **Nurbek Yerbulekov — project lead** | Game design, visual direction, models, animation and visual integration |
+| Makhmet Demesh | Gameplay mechanics: laser contact, progression and states; rendering and technical integration |
+| Nurassyl Nygmet | Gameplay mechanics: controls and interactions; testing, builds and documentation |
+
+These are the team's assigned responsibilities. Git history records the actual
+accounts that made commits; the table does not imply an account history that is
+absent. Each member should be able to explain the project and their assigned area.
+
+## Run
+
+The tested platform is **Windows x64** with an OpenGL 3.3-capable graphics driver.
+Extract the complete Windows package and run `LaserVaultHeist.exe`; keep `assets/`
+and `shaders/` beside it. No Python, Blender, compiler or network connection is needed.
+
+Source: [Bornqazaq/Final_CGF](https://github.com/Bornqazaq/Final_CGF).
+[Release downloads](https://github.com/Bornqazaq/Final_CGF/releases) are versioned;
+an older release can predate the latest source. Use the newest release or build
+`main` for current gameplay and location changes.
 
 ## Build from source
 
-All C/C++ library sources are vendored. There is no FetchContent, package download,
-or network access during configure, build or game startup. A C++17 compiler and
-CMake 3.20+ are required. The course starter was not supplied; C++17/CMake is the
-brief's permitted baseline, not a verified match to an unknown starter.
+All C/C++ dependencies are vendored. Configuration, build and startup download
+nothing. Required: CMake 3.20+ and a C++17 compiler. The exact course starter was not
+supplied; the verified local toolchain is LLVM-MinGW 20261020 / Clang 23.1.4,
+CMake 3.31.6 and Ninja 1.11.1 on Windows.
 
-Windows with Visual Studio 2022 C++ desktop tools:
-
-```powershell
-cmake -S . -B build -G "Visual Studio 17 2022" -A x64
-cmake --build build --config Release --parallel
-ctest --test-dir build -C Release --output-on-failure
-.\build\Release\LaserVaultHeist.exe
-```
-
-Verified toolchain: LLVM-MinGW 20261020 (Clang 23.1.4), CMake 3.31.6, Ninja 1.11.1.
-With their `bin` directories on PATH:
+With Clang and Ninja on PATH:
 
 ```powershell
 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
@@ -41,121 +48,130 @@ ctest --test-dir build --output-on-failure
 .\build\LaserVaultHeist.exe
 ```
 
-`tools/build/build.ps1 -Test` is a convenience wrapper for this LLVM/Ninja workflow.
-It also detects project-local tools in `.tools`, which are not distributed.
-Never reuse a CMake build directory between different compilers.
+Visual Studio 2022 C++ desktop tools are an alternative build configuration:
 
-Linux/macOS: use `cmake -S . -B build -DCMAKE_BUILD_TYPE=Release`, then
-`cmake --build build` and `ctest --test-dir build`. Linux requires the native X11/Wayland
-development packages expected by GLFW; macOS needs Xcode command-line tools.
-The macOS forward-compatible context path is present. These platforms and MSVC
-were not run here; only Windows LLVM-MinGW has direct build/run evidence.
+```powershell
+cmake -S . -B build-msvc -G "Visual Studio 17 2022" -A x64
+cmake --build build-msvc --config Release --parallel
+ctest --test-dir build-msvc -C Release --output-on-failure
+.\build-msvc\Release\LaserVaultHeist.exe
+```
 
-## Controls
+MSVC, Linux and macOS have not been executed here. On Linux/macOS use the normal
+CMake configure/build workflow; Linux also needs GLFW's native window-system
+development packages, and macOS needs Xcode command-line tools. The context requests
+core/forward compatibility on macOS. The GPU regression test needs a working graphics
+context. Never reuse a build directory across compilers.
+
+## Controls and settings
 
 | Input | Action |
 |---|---|
 | Enter / Begin | Start |
-| WASD | Walk |
-| Mouse | Look |
-| V | Switch first / third person |
-| Hold Left Ctrl or C | Crouch |
-| E | Use the object under the reticle within 2.15 m |
+| WASD / mouse | Move / look |
+| V | First- or third-person camera |
+| Hold Ctrl or C | Crouch |
+| E | Use the targeted object within 2.15 m |
+| Esc / F1 | Pause / controls help |
 | R | Retry after alarm or victory |
-| Esc | Pause / resume |
-| F1 | Controls help |
-| F12 | Save a screenshot in `evidence/screenshots/` |
+| F12 | Save a runtime screenshot |
 
-View modes: press V to switch. The camera boom avoids room obstacles; retry preserves the selected view. See docs/camera-modes.md.
+In first person the body follows the mouse. In third person mouse movement orbits
+the camera independently; standing movement turns the character toward actual
+displacement and uses forward walking for A/D/S as well. Crouching uses the supplied
+directional clips. The camera contracts before obstacles and the locked entrance gate.
 
-Three interactions: desk lamp on/off; switch between two live CCTV views; open the safe.
-The safe requires a real crossing of the final laser. Try crouching before approaching it.
+Menu and pause include mouse sensitivity and FPS settings. Sensitivity uses a
+Source-style multiplier: `0.022 × sensitivity` degrees per mouse count. Auto FPS
+follows the active monitor's refresh rate; presets include connected-monitor modes,
+Custom accepts 1–10000 FPS, and Unlimited disables pacing. Retry preserves these
+preferences. Windows uses fresh `WM_INPUT` motion consumed once per frame.
 
 ## Implemented features
 
-- Own OpenGL 3.3 core renderer, GLSL 330 shaders, indexed VAO/VBO/EBO meshes.
-- Six moving/rotating laser boxes; inverse-transform point/box collision sampled over
-  the player's body; fixed 240 Hz simulation with retained one-shot input.
-- Per-fragment Blinn-Phong, six local lights, two rotating spotlights, a moon source,
-  inverse-transpose normals, attenuation, soft spotlight edges, one PCF shadow map.
-- Original Blender room, UV-painted environment textures and mipmaps, scene hierarchy
-  and static instancing. User-supplied Meshy thief: 30,725 triangles, 52 weighted bones,
-  twelve animation clips, directional crouch movement and distance-driven GPU skinning.
-- A 15 m room keeps the full safe-door sweep 1.70 m clear of the final laser. After
-  the safe opens, a complete 7.5 s dance plays once before the victory screen.
-- Live CCTV render-to-texture including the complete animated character; hinged safe,
-  wheel and bolts; menu, pause, alarm, retry and victory UI; continuous FPS counter.
-- HDR framebuffer, small glow, credited filmic fit, gamma conversion and vignette.
+- Custom indexed OpenGL pipeline and separate GLSL 330 vertex/fragment programs.
+- Shared laser matrices for rendering and inverse-transform point-versus-box contact;
+  normalized movement and fixed 240 Hz simulation with retained one-shot inputs.
+- Blinn–Phong per-fragment shading, eight point lights, two rotating spotlights,
+  ambient/moon terms, attenuation, soft spot edges and one PCF shadow map.
+- UV-mapped textures, generated mipmaps, static instancing and hierarchical safe
+  wheel/bolt/door animation.
+- Live CCTV through an actual second-camera framebuffer; lamp toggle and CCTV switch.
+- A 15 m vault, decorated enclosed entrance corridor, locked gate and matching collision.
+  Paintings and deposit furniture are separated from the security mounting rails.
+- Current Meshy-exported thief: 30,725 triangles, 52 weighted bones plus ancestors,
+  four normalized influences per vertex and twelve runtime animation clips.
+- Forward crouching derived from the supplied backward cycle; contact-corrected leg
+  poses, directional crouching and distance-driven GPU skinning.
+- Safe opening over 3.4 s, then a complete 7.5 s dance before Victory. The full door
+  sweep is at least 1.70 m clear of the last beam.
+- HDR display conversion and compact depth-aware laser glow. The GPU regression
+  verifies that a rear beam does not bleed over the character silhouette.
 
-## Project layout
+## Current report and evidence
 
-| Path | Purpose |
+The refreshed [report](deliverables/report/Laser_Vault_Heist_Report.pdf) follows the
+course sections, includes all three students, eighteen journal references, current
+screenshots and a new hardware/FPS table. Source articles and ranking provenance
+are retained in `docs/references-verified.json` and `evidence/source-audit.json`.
+
+Seven CTest suites pass: gameplay mathematics, complete route, demo/slow-frame
+behavior, imported animation, complete finale, camera/input/settings and real GPU
+laser occlusion. `evidence/screenshots/report-current/` contains new framebuffer
+captures. New uncapped benchmark CSVs and memory measurements are in
+`evidence/benchmarks-current/`; the old `evidence/benchmarks/` results are historical.
+
+Three current visible 1280×720 runs lasted 25 s each, excluding 5 s warm-up:
+
+| Run | Average FPS | 1% low FPS | Peak working set |
+|---|---:|---:|---:|
+| 1 | 1148.9 | 695.8 | 140.9 MiB |
+| 2 | 1185.3 | 726.5 | 144.9 MiB |
+| 3 | 1168.2 | 660.3 | 140.9 MiB |
+
+Hardware: Intel Core i5-13400F, RTX 5060, approximately 32 GiB RAM, Windows x64;
+OpenGL 3.3.0 NVIDIA 617.42. VSync, frame cap and recording were disabled. Measurements
+cover the whole frame loop, including rendering submission, simulation, UI, telemetry
+and presentation. These are local results, not isolated GPU timings or a guarantee
+for the unknown TA machine. The user has confirmed the corrected mouse behavior
+and reviewed the refreshed location; this is not a formal usability study.
+
+The newly captured 1080p demonstration follows ordinary deterministic inputs and
+collision, with captions and a visible FPS counter. The final route is continuous.
+Earlier slide materials remain a separate historical deliverable until refreshed.
+
+## Requirement map
+
+| Requirement | Evidence |
 |---|---|
-| `src/`, `include/`, `shaders/` | C++ modules and custom GPU programs |
-| `assets/` | Runtime scene, mesh, animation, texture and font files |
-| `art/blender/` | Editable room and rigged character source scenes |
-| `assets/exchange/` | GLB exchange resources; the runtime uses documented native exports |
-| `tools/blender/` | Actual modeling, rigging, validation and export scripts |
-| `tests/` | Collision, state, complete-route and slow-frame regression tests |
-| `docs/` | Architecture, formats, research, rubric evidence and defense guide |
-| `deliverables/` | Report, slides and subtitles; the demo video is attached to the release |
-| `evidence/` | Actual screenshots, raw timing CSVs and validation records |
-| `LICENSES/`, `CREDITS.md` | Third-party attributions |
+| R1: modern pipeline | `graphics.cpp`, `renderer.cpp`, separate shaders, runtime diagnostics |
+| R2: 5+ objects | Current vault, corridor, furniture, fixtures, safe and character assets |
+| R3: MVP / hierarchy | `scene.cpp`, `world.cpp`, `surface.vert`; safe and spotlight pivots |
+| R4: dynamic per-fragment light | `surface.frag`; lamp, moving spots and red alarm |
+| R5: texture sampling | UV exports, PNG textures, mipmaps in `graphics.cpp` |
+| R6: controls / interactions | Native mouse input, two cameras, lamp/CCTV/safe actions |
+| R7: real time / counter | Current raw measurements, hardware table and on-screen FPS |
+| R8: build / documentation | Vendored CMake project and commands above |
 
-## Verification and limits
+All three topic stretch goals are implemented: rotating equipment/light cones, live
+CCTV and safe-opening victory. Exact course-starter compatibility, TA hardware,
+every member's live understanding and account history, rehearsal and submission
+remain external assessment items. See `docs/requirements-evidence.md` for the full map.
 
-Three visible 1280x720 runs, each 65 s with a 5 s warm-up, measured 1281.7, 1183.8
-and 1215.8 average FPS on an i5-13400F / RTX 5060 / 32 GiB Windows PC. VSync and frame
-limiting were disabled. Full frame-loop timing includes simulation, rendering commands,
-UI, CSV logging and presentation; these are not isolated GPU timings. Background desktop
-work was possible during measurement. See `evidence/benchmarks/summary.json` and raw CSVs.
+## Project layout and reproduction
 
-The 3:30 demo is a real-time 1920x1080 capture of the running application with visible
-FPS and captions. Its deterministic controller uses normal game input and collision;
-it is a repeatable demonstration, not evidence of human keyboard proficiency.
-The final attempt is continuous. No invulnerability, teleports or edited victory frames.
+`src/`, `include/` and `shaders/` contain the runtime. `assets/` contains native scene,
+mesh, texture and animation data; `assets/exchange/` holds GLB exchange copies.
+`art/blender/` contains editable sources, and `art/source/animated_thief/` preserves
+the supplied FBX/textures. Python scripts under `tools/` prepare assets, capture
+evidence, measure performance and build documents; they are not runtime dependencies.
 
-Automated input/state tests and visible rendering were run. Native UI automation could
-not obtain app approval in this session, so a human keyboard/mouse usability test is not
-claimed. Unknown TA hardware, course-starter compatibility and a live oral defense remain
-external checks. No numerical grade is promised.
+Useful inspection flags: `--entrance-preview`, `--character-preview --clip CrouchWalk`,
+`--finale-preview`, `--demo`, `--auto-route --seconds 25`, `--fps auto`, `--fps 0`,
+`--1080p`, and `--root PATH`. Hidden/demo/auto-route QA runs are uncapped unless an
+explicit FPS option is supplied. Ordinary play defaults to monitor refresh.
 
-This is the brief's single-author teaching example. The older course PDF described teams
-of 3-5; no additional team members, classroom milestones or presentations are invented.
-Third-party attribution and license notices are included.
-
-## Reproduce assets and evidence
-
-See `docs/asset-pipeline.md`, `docs/runtime-formats.md`, `docs/demo-script.md`,
-`docs/defense-guide.md` and `docs/requirements-evidence.md`.
-`--character-preview`, `--face-preview`, `--rest-pose`, and `--clip Walk` are art QA tools.
-`--finale-preview` reviews the actual safe-opening/dance sequence. See
-`docs/animated-thief-integration.md` for the imported model, source credits and clip mapping.
-The report, slides, demo video and historical benchmark figures describe v1.0; they
-will be refreshed after the remaining location work.
-`--demo` runs the 210-second presentation route. `--auto-route --seconds 65` repeats
-legal play for performance sampling. `--1080p` selects 1920x1080.
-`--root PATH` overrides the asset directory for development; ordinary releases discover
-assets beside the executable, regardless of the working directory.
-
-Use `python tools/capture/capture_demo.py --ffmpeg PATH` to re-record on Windows.
-FFmpeg is an optional recording tool and is not required or shipped with the game.
-
-## Mandatory requirement map
-
-| Requirement | Local result | Evidence |
-|---|---|---|
-| R1 | OpenGL 3.3 core / own GLSL / indexed buffers | src/main.cpp, src/graphics.cpp, shaders, runtime diagnostics |
-| R2 | 5+ distinct original objects | assets/vault.scene, art/blender/vault.blend |
-| R3 | MVP and parentвЂ“child hierarchy | scene.cpp, world.cpp; hinged safe and rotating mounts |
-| R4 | Per-fragment dynamic lighting | surface.frag; lamp, two spots, alarm recoloring |
-| R5 | UVs and mipmaps | graphics.cpp, Blender exports, textures |
-| R6 | Keyboard/mouse paths and 3 interactions | main.cpp/game.cpp; automated gameplay coverage; manual usability untested |
-| R7 | Local 30/60 FPS targets exceeded | Three raw benchmarks; TA hardware remains untested |
-| R8 | Clean C++17/CMake Release build passes | Vendored dependencies, CTest; exact course starter unavailable |
-
-Full criteria, actual checks and video timings: [requirements-evidence.md](docs/requirements-evidence.md).
-
-## Document authoring inputs
-
-The game and its assets build without authoring tools. Rebuilding the report uses the locally supplied `brief/source-materials/Report template.docx`, its recorded template contract, python-docx/reportlab, LibreOffice and Poppler. The supplied course documents/concepts are kept local rather than republished. The editable report intermediate remains local; the delivered report is PDF. The slide authoring script requires the presentation package and external validation utilities; set PRESENTATION_TOOLS_ROOT and PYTHON to use a local installation. The delivered PPTX is editable without them. Exact sources, final PDFs/PPTX, screenshots, hashes and validation records are included.
+Third-party asset provenance and dependency licenses are in `CREDITS.md` and
+`LICENSES/`. Meshy-exported resources are credited separately from project-created
+room assets and derived animation. Public repository visibility does not grant an
+additional license for project-specific source or art.

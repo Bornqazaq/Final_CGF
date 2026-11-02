@@ -33,11 +33,11 @@ function slide(title,note,seconds=50){
 function block(s,t,x,y,w=230,h=84){shape(s,'rect',x,y,w,h,'#1B2736');const a=text(s,t,x+10,y+15,w-20,h-24,25,C.ink,true);a.text.style={typeface:'Arial',fontSize:25,bold:true,color:C.ink,alignment:'center',insets:0};}
 function arrow(s,x,y,w=65){shape(s,'rightArrow',x,y,w,22,C.gold,C.gold);}
 // 1
-let s=slide('',`Introduce Laser Vault Heist as topic 12, a single-room first-person game for Computer Graphics Fundamentals. The goal is a complete, inspectable implementation using C++17 and OpenGL 3.3 core. The room and thief were made in Blender, including UVs, rig and actions. State the single author and group. This is the brief's teaching example, so there are no invented team members. Explain that the presentation will connect the visible game to its collision, shading and render pipeline, then show a real-time demo. Source: project README and the supplied topic brief.`,35);
+let s=slide('',`Introduce Laser Vault Heist as topic 12, a single-room first-person game for Computer Graphics Fundamentals. The goal is a complete, inspectable implementation using C++17 and OpenGL 3.3 core. The room and thief were made in Blender, including UVs, rig and actions. Introduce the three students and group, with Nurbek leading visual design and animation, and Makhmet and Nurassyl responsible for gameplay mechanics. Explain that the presentation will connect the visible game to its collision, shading and render pipeline, then show a real-time demo. Source: project README and the supplied topic brief.`,35);
 await img(s,'room-world-final',505,134,725,408);
 text(s,'LASER\nVAULT HEIST',58,152,430,175,64,C.ink,true);
 text(s,'C++17 / OpenGL 3.3 core',60,361,430,40,27,C.gold);
-text(s,'Student: Nurbek Yerbulekov\nGroup: SE-2428',60,445,430,84,24,C.ink);
+text(s,'Students: Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet\nGroup: SE-2428',60,420,500,155,24,C.ink);
 text(s,'Topic 12',60,582,430,40,25,C.muted);
 // 2
 s=slide('The heist and its constraints',`Describe the playable loop: observe six moving or rotating lasers, walk through the vault, crouch under the final low beam and interact with the safe. A real contact triggers red illumination and ends the attempt; retry resets position, phases and the mechanism. There are three useful interactions: lamp, CCTV and safe. Scope is deliberately one room with no guard NPC, combat or multiplayer. The controller, collision body and rendered thief must agree about crouching. The final demo uses the same Game rules through deterministic input, so it is repeatable automated evidence rather than a claimed human playtest. Sources: game.cpp, director.cpp, README.`,45);

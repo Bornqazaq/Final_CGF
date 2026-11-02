@@ -2,7 +2,7 @@
 page('',listing=False)
 p=doc.add_paragraph();p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.paragraph_format.space_before=Pt(22);p.add_run().add_picture(str(TMP/'image1.png'),width=Inches(3.1))
 p=doc.add_paragraph('Laser Vault Heist','Title');p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.paragraph_format.space_before=Pt(82)
-for text in ['Computer Graphics Fundamentals','Final Project Report','Student: Nurbek Yerbulekov','Group: SE-2428']:
+for text in ['Computer Graphics Fundamentals','Final Project Report','Students: Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet','Group: SE-2428']:
  p=para(text);p.alignment=WD_ALIGN_PARAGRAPH.CENTER
 p=para('Topic 12\nStandalone C++17 and OpenGL 3.3 core game');p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.paragraph_format.space_before=Pt(30)
 page('Table of Contents',listing=False);toc_anchor=doc.paragraphs[-1]._p
@@ -33,7 +33,7 @@ h('3.2 Problem statement')
 para('A thin rotating laser exposes several correctness problems. Its rendered orientation and contact volume must agree; a crouching camera must match the body proxy and animated mesh; a second camera must see the character without recursively sampling its own target. Movement must remain stable across frame rates, and the safe hierarchy must produce a coherent mechanical opening.')
 h('3.3 Scope')
 para('The room is approximately 8 by 12 by 4 metres. It contains wood flooring and beams, plaster and stone surfaces, a night window, deposit drawers, desk and chair, lamp, monitor, framed art, rug, plants and a grey safe with brass details. Six laser barriers occupy the route. The thief wears a brown jacket over a hooded zip sweatshirt, brown denim and low shoes, with visible skin and five-finger hands.')
-para('The scope is one room and one player. Guards, combat, weapons, multiplayer, campaigns and shops are excluded. Sound was optional and is not implemented. This is the brief\'s single-author teaching example; the older PDF\'s team size does not justify invented participants or classroom history.')
+para('The scope is one room and one player. Guards, combat, weapons, multiplayer, campaigns and shops are excluded. Sound was optional and is not implemented. The team responsibilities are listed in README.md; actual classroom milestones and individual account histories are not inferred.')
 table(['Interaction','Effect'],[['Desk lamp','Toggles local illumination and visible glow'],['Security monitor','Switches between two real CCTV cameras'],['Safe','Turns wheel, retracts bolts, swings door and wins']],[1.6,4.85])
 page('4 Technical Implementation')
 h('4.1 Tools and technologies used')

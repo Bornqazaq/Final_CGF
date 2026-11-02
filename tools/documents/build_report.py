@@ -120,8 +120,8 @@ for title,num in toc:
  el=OxmlElement('w:p');anchor.addnext(el);p=Paragraph(el,doc._body);p.text=f'{title}  . . . . . .  {num}';p.paragraph_format.space_after=Pt(7)
  for run in p.runs:run.font.name='Times New Roman';run.font.size=Pt(14)
  anchor=el
-doc.core_properties.author='Nurbek Yerbulekov'
-doc.core_properties.last_modified_by='Nurbek Yerbulekov'
+doc.core_properties.author='Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet'
+doc.core_properties.last_modified_by='Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet'
 doc.core_properties.title='Laser Vault Heist'
 candidate=TMP/'report-candidate.docx';doc.save(candidate)
 editable={'docProps/core.xml','word/document.xml','word/_rels/document.xml.rels','word/styles.xml','[Content_Types].xml'}

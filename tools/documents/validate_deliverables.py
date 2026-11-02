@@ -11,7 +11,7 @@ p=R/'deliverables/report/Laser_Vault_Heist_Report.docx'
 with ZipFile(p) as z:parts={n:z.read(n) for n in z.namelist()}
 ns={'dc':'http://purl.org/dc/elements/1.1/','cp':'http://schemas.openxmlformats.org/package/2006/metadata/core-properties'}
 e=E.fromstring(parts['docProps/core.xml'])
-for key,value in [('dc:creator','Nurbek Yerbulekov'),('dc:title','Laser Vault Heist'),('cp:lastModifiedBy','Nurbek Yerbulekov')]:
+for key,value in [('dc:creator','Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet'),('dc:title','Laser Vault Heist'),('cp:lastModifiedBy','Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet')]:
  prefix,name=key.split(':');tag='{'+ns[prefix]+'}'+name
  item=e.find(tag)
  if item is None:item=E.SubElement(e,tag)
@@ -25,13 +25,13 @@ out=R/'deliverables/report/Laser_Vault_Heist_Report.pdf'
 reader=PdfReader(src);w=PdfWriter(clone_from=reader)
 w.metadata=None
 if '/Metadata' in w._root_object:del w._root_object['/Metadata']
-w.add_metadata({'/Title':'Laser Vault Heist','/Author':'Nurbek Yerbulekov','/Subject':'Computer Graphics Fundamentals; Group SE-2428','/Creator':'LibreOffice Writer; verified report source'})
+w.add_metadata({'/Title':'Laser Vault Heist','/Author':'Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet','/Subject':'Computer Graphics Fundamentals; Group SE-2428','/Creator':'LibreOffice Writer; verified report source'})
 with out.open('wb') as f:w.write(f)
 final=PdfReader(out)
 assert len(final.pages)==26
 assert all(a.get_contents().get_data()==b.get_contents().get_data() for a,b in zip(reader.pages,final.pages))
 text='\n'.join(p.extract_text() for p in final.pages)
-assert 'Student: Nurbek Yerbulekov' in text and 'Group: SE-2428' in text
+assert 'Students: Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet' in text and 'Group: SE-2428' in text
 assert 'Kamila' not in text and 'Instructor' not in text
 shutil.copy2(out,Path('C:/Users/nyerb/Downloads/Laser_Vault_Heist_Report.pdf'))
 # GLB structure, isolated skin, exact named actions.

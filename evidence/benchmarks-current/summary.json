@@ -1,0 +1,57 @@
+{
+  "resolution": [
+    1280,
+    720
+  ],
+  "vsync": false,
+  "frame_limit": null,
+  "window_visible": true,
+  "capture": false,
+  "scenario": "Repeated legal crouch routes, live CCTV, moving lasers/spotlights, safe opening and retry",
+  "warmup_seconds": 5,
+  "requested_seconds_per_run": 25,
+  "one_percent_low_definition": "1000 / mean of the slowest 1% of frame times in milliseconds",
+  "timing_scope": "Complete frame-loop wall time, including simulation, draw submission, UI, CSV logging and presentation; not isolated GPU timer queries",
+  "runs": [
+    {
+      "run": 1,
+      "frames": 22979,
+      "measured_seconds": 20.0006114,
+      "average_fps": 1148.9148776721895,
+      "p50_ms": 0.8331,
+      "p95_ms": 1.1474,
+      "p99_ms": 1.3202,
+      "one_percent_low_fps": 695.7557086755896,
+      "minimum_frame_fps": 465.0081376424087,
+      "peak_working_set_mib": 140.85546875,
+      "peak_private_mib": 252.16796875
+    },
+    {
+      "run": 2,
+      "frames": 23705,
+      "measured_seconds": 19.999858800000002,
+      "average_fps": 1185.2583679240777,
+      "p50_ms": 0.81,
+      "p95_ms": 1.0809,
+      "p99_ms": 1.2648,
+      "one_percent_low_fps": 726.5352024621606,
+      "minimum_frame_fps": 517.7055290950508,
+      "peak_working_set_mib": 144.94921875,
+      "peak_private_mib": 254.0546875
+    },
+    {
+      "run": 3,
+      "frames": 23364,
+      "measured_seconds": 19.999595499999998,
+      "average_fps": 1168.2236273228625,
+      "p50_ms": 0.8176,
+      "p95_ms": 1.1154,
+      "p99_ms": 1.338,
+      "one_percent_low_fps": 660.3385166144275,
+      "minimum_frame_fps": 301.9961948479449,
+      "peak_working_set_mib": 140.90625,
+      "peak_private_mib": 254.1875
+    }
+  ],
+  "ta_hardware": "Not supplied or tested"
+}

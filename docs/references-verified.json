@@ -138,7 +138,7 @@
     "id": 5,
     "theme": "Animation",
     "method_summary": "Kavan, Sloan and O'Sullivan fit standard linear skinning to animated meshes with sparse weights and efficient optimization.",
-    "project_comparison": "The runtime likewise benefits from sparse influences and a compact palette. Our weights are authored procedurally and normalized, not fitted with the paper's optimization.",
+    "project_comparison": "The runtime uses the supplied sparse normalized skin weights, with at most four influences per vertex; it does not fit those weights with this optimization.",
     "ranking": {
       "quartile": "Q1",
       "year": 2025,
@@ -168,7 +168,7 @@
     "id": 6,
     "theme": "Animation",
     "method_summary": "Le and Deng jointly recover rigid bone transforms and sparse convex skinning weights from example poses.",
-    "project_comparison": "Their nonnegative, normalized weight constraints motivate explicit export validation. The project keeps an authored anatomical hierarchy instead of performing skinning decomposition.",
+    "project_comparison": "The exported weights are validated as nonnegative and normalized. The supplied skeleton is retained rather than recovered by decomposition.",
     "ranking": {
       "quartile": "Q1",
       "year": 2025,
@@ -549,7 +549,7 @@
     "id": 18,
     "theme": "Animation",
     "method_summary": "James and Twigg derive skinning approximations from deformable mesh sequences using automatically chosen transforms and weights.",
-    "project_comparison": "Their work supports the practicality of GPU matrix palettes. Our 20-bone rig is explicitly authored and hierarchical, so no automatic bone discovery or progressive approximation is needed.",
+    "project_comparison": "The current mesh has 52 weighted bones plus required ancestors within a 64-matrix palette. The runtime uses supplied bones and sampled transforms, without automatic bone discovery.",
     "ranking": {
       "quartile": "Q1",
       "year": 2025,

@@ -1,10 +1,10 @@
 # Credits and licenses
 
-Student: Nurbek Yerbulekov  
+Students: Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet  
 Group: SE-2428  
 Course: Computer Graphics Fundamentals
 
-This brief is a single-author teaching example. There are no invented collaborators.
+The project team is listed above; responsibilities are documented in README.md.
 The room, furniture and original procedural textures were created for this project
 with the checked-in Blender/Python scripts. The current thief replaces the earlier
 procedural character with the user's Meshy-exported model, textures, skeleton and
