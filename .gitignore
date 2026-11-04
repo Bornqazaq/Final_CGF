@@ -20,3 +20,7 @@ evidence/gameplay-trace.csv
 /deliverables/report/*.docx
 
 *.before-*
+
+/tools/
+
+/evidence/screenshots/laser-occlusion-*.png

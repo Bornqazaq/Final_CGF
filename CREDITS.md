@@ -1,23 +1,24 @@
 # Credits and licenses
 
-Students: Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet  
-Group: SE-2428  
+Students: Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet<br>
+Group: SE-2428
 Course: Computer Graphics Fundamentals
 
-The project team is listed above; responsibilities are documented in README.md.
-The room, furniture and original procedural textures were created for this project
-with the checked-in Blender/Python scripts. The current thief replaces the earlier
-procedural character with the user's Meshy-exported model, textures, skeleton and
-seven supplied motions (preserved in art/source/animated_thief). The input skeleton
-uses Mixamo bone names; this alone does not establish where each motion was authored.
-The integration scripts import these resources through Blender, derive the
-missing forward crouch cycle, backward walk, idle poses and reach, and export twelve
-runtime clips. The supplied model and motions retain their external provenance. No guard NPC or extracted game asset is used. Source provenance and
-the exact derived motions are recorded in docs/animated-thief-integration.md.
-The two user-supplied concept images guided the silhouette, palette and room composition;
-they remain with the original local brief, and are not claimed as original project art
-or redistributed in the public repository. Just Another Night Shift is a style reference,
-not a source of meshes, maps, interface artwork or code.
+The room, corridor, furniture and environment textures were prepared for this
+project in Blender. The current thief originates from a Meshy character package;
+animation preparation used Mixamo. The original FBX, textures, skeleton and seven
+motion actions are retained in `art/source/animated_thief/`. Runtime integration
+includes forward crouch, backward walk, idle and reach derivations, producing twelve
+clips; their mapping is described in `docs/animated-thief-integration.md`.
+
+The character package was supplied by Nurbek Yerbulekov. Its service-specific usage
+rights remain applicable; this repository does not add a separate redistribution
+license to that package. Service information: https://www.meshy.ai/ and
+https://www.mixamo.com/ .
+
+Just Another Night Shift informed the visual style. No meshes, maps, interface
+artwork or source code were extracted from that game. Reference images and course
+documents are not redistributed in this repository.
 
 | Component | Pinned source | Use | License |
 |---|---|---|---|
@@ -36,9 +37,8 @@ renderer or LearnOpenGL source snippets are included. Scientific comparisons and
 DOIs are in `docs/references-verified.json` and the report; cited alternative algorithms
 are not represented as implemented features.
 
-Blender, CMake, Ninja, LLVM-MinGW, Python, LibreOffice and FFmpeg are development/document
-or recording tools, not redistributed runtime dependencies. The demo has captions and no
-music or third-party audio. Game sound is optional in the brief and is not implemented.
+Blender, CMake, Ninja, LLVM-MinGW and FFmpeg are authoring, build or recording
+tools rather than runtime libraries. No music or third-party audio is included.
 
 Original project source/art has no additional public license grant in this repository;
 public visibility alone is not a license. The third-party licenses above govern their

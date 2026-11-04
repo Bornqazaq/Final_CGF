@@ -138,7 +138,7 @@
     "id": 5,
     "theme": "Animation",
     "method_summary": "Kavan, Sloan and O'Sullivan fit standard linear skinning to animated meshes with sparse weights and efficient optimization.",
-    "project_comparison": "The runtime uses the supplied sparse normalized skin weights, with at most four influences per vertex; it does not fit those weights with this optimization.",
+    "project_comparison": "The character retains four normalized influences per vertex. Existing skin weights are imported and checked; this optimization method is a comparison rather than an implemented weight-fitting stage.",
     "ranking": {
       "quartile": "Q1",
       "year": 2025,
@@ -168,7 +168,7 @@
     "id": 6,
     "theme": "Animation",
     "method_summary": "Le and Deng jointly recover rigid bone transforms and sparse convex skinning weights from example poses.",
-    "project_comparison": "The exported weights are validated as nonnegative and normalized. The supplied skeleton is retained rather than recovered by decomposition.",
+    "project_comparison": "Export checks weight normalization and non-negativity while retaining the supplied skeleton. Automatic recovery of joints and weights is outside the asset pipeline.",
     "ranking": {
       "quartile": "Q1",
       "year": 2025,
@@ -519,7 +519,7 @@
     "id": 17,
     "theme": "Animation",
     "method_summary": "Mohr and Gleicher fit a compact real-time deformation model to examples exported from richer authoring tools.",
-    "project_comparison": "The project similarly separates Blender authoring from a small runtime representation. It exports authored transforms directly, rather than fitting examples or reproducing muscle deformation.",
+    "project_comparison": "Editable Blender assets are converted to indexed meshes and sampled local transforms. The project uses imported motion and derived clips rather than fitting a physically simulated character.",
     "ranking": {
       "quartile": "Q1",
       "year": 2025,
@@ -549,7 +549,7 @@
     "id": 18,
     "theme": "Animation",
     "method_summary": "James and Twigg derive skinning approximations from deformable mesh sequences using automatically chosen transforms and weights.",
-    "project_comparison": "The current mesh has 52 weighted bones plus required ancestors within a 64-matrix palette. The runtime uses supplied bones and sampled transforms, without automatic bone discovery.",
+    "project_comparison": "The character uses 52 weighted bones within a 64-matrix shader palette. Automatic bone discovery and reconstruction from mesh sequences are comparison methods rather than runtime features.",
     "ranking": {
       "quartile": "Q1",
       "year": 2025,

@@ -27,10 +27,9 @@ it. Existing pause, retry and the final one-shot dance remain intact.
 
 tests/camera_tests.cpp checks both modes, wall/post/cabinet obstruction, passage
 over the desk, interaction reach, pitch limits, view persistence, movement equality
-and a complete third-person route through to victory. The two actual render
-screenshots are evidence/screenshots/first-person.png and third-person.png.
-Update these camera obstacle proxies together with gameplay collision when the
-location layout is redesigned.
+and a complete third-person route through to victory. The third-person screenshot is in
+`evidence/screenshots/report-current/third-person.png`. Camera obstacle proxies and
+gameplay collision use the same location dimensions.
 
 Windows mouse look consumes native WM_INPUT motion once per frame. Absolute-motion devices keep separate per-device baselines. Other platforms use GLFW raw motion where supported. Default sensitivity is 0.020 degrees per input unit; menu and pause provide a slider. Retry preserves the setting. Focus and capture changes reset pending motion. Input deltas and applied angles are recorded locally in evidence/mouse-input.csv. Obstacle avoidance changes camera distance without changing look direction.
 

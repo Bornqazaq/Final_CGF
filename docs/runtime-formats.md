@@ -1,8 +1,7 @@
 # Native runtime formats
 
-The brief permits an original exporter in place of a new GLB parser dependency.
-GLB remains a verified exchange resource in `assets/exchange`; the game reads the following
-uncompressed, documented formats directly and creates its own GPU buffers.
+GLB exchange resources are stored in `assets/exchange`. The game reads the native
+formats below and creates its own GPU buffers.
 All binary integers/floats are little-endian, u32/i32 and IEEE-754 f32.
 
 ## LVHM version 1

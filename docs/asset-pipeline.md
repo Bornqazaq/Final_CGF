@@ -1,31 +1,37 @@
-# Asset pipeline
+# Assets and coordinate conventions
 
-The saved Blender scripts are executed in Blender. Runtime remains C++/OpenGL
-and has no dependency on Blender, Meshy, Mixamo or a network connection.
+The application reads prepared mesh, scene and animation files. Blender is used
+for editing models and animation; the executable creates its own GPU buffers and
+evaluates cameras, transforms, lights, skinning and draw passes in C++ and GLSL.
 
-Current editable sources: art/blender/vault.blend and animated_thief.blend. The earlier
-procedural thief.blend and build_thief.py remain as historical source assets.
+## Source assets
 
-1. Preserve the supplied FBX and textures in art/source/animated_thief.
-2. In Blender execute tools/blender/import_animated_thief.py with its real __file__ path.
-   It uses the native wm.fbx_import operator, fixes source texture paths, retains seven
-   supplied actions, bakes eight derived/adjusted actions and exports the 52-bone weighted subset.
-3. Execute build_room.py for the 15 m room. It calls export_scene.py for vault.scene.
-4. Execute export_exchange.py while both current scenes are loaded. It exports the
-   vault GLB and delegates the character to export_animated_exchange.py, which retains
-   exactly twelve named animation clips and compacts their referenced buffers.
-5. Build and run CTest. The game loads thief.scene/thief.lvanim and vault.scene.
+- `art/blender/vault.blend`: environment geometry and articulated safe.
+- `art/blender/animated_thief.blend`: current character, rig and animation actions.
+- `art/source/animated_thief/`: original FBX and texture package.
+- `assets/exchange/`: GLB exchange copies.
 
-Meshes use LVHM, sampled local TRS clips use LVHA. The character front is +Z, up is Y,
-units are metres. Four influences per vertex are normalized after reduction. Bone
-matrices include the imported FBX bind transforms; the importer strips unweighted
-terminal markers from the runtime palette. Source rigs retain all 66 bones.
+## Runtime assets
 
-The baked base-color texture and runtime Blinn-Phong shader preserve the supplied
-appearance. The original roughness, metallic and normal maps remain packed in the
-Blender source; the OpenGL material uses the existing engine's supported parameters.
+- `assets/vault.scene`: environment materials, indexed meshes and node hierarchy.
+- `assets/thief.scene`: character mesh and material declarations.
+- `assets/thief.lvanim`: skeleton, inverse binds and twelve sampled animation clips.
+- `assets/meshes/`: native LVHM indexed geometry.
+- `assets/textures/`: environment maps and the character base-color map.
 
-Forward crouching samples the backward source cycle in reverse. Directional selection
-uses actual displacement relative to the camera, and gait phase follows distance.
-The non-looping dance clamps to its last frame. See animated-thief-integration.md,
-evidence/animated-thief-import.json and evidence/safe-door-clearance.json.
+One unit is one metre. Blender coordinates `(x, y, z)` become `(x, z, -y)` in the
+right-handed Y-up runtime. Vertices are converted once; local transforms and
+inverse binds use the same basis change. The character faces +Z in bind pose.
+Scene transforms compose as `world = parentWorld * local`.
+
+Each character vertex retains at most four normalized joint influences. Unweighted
+terminal markers are omitted from the runtime palette. The source rig has 66
+bones, with 52 weighted bones in the exported character. Animation is stored as
+local translation, quaternion and scale samples; locomotion displacement belongs
+to the game controller.
+
+The material shader uses base color and Blinn-Phong parameters. Source normal,
+metallic and roughness maps remain in the editable asset package; they are not
+sampled by the current surface shader. Native file layouts are specified in
+[runtime-formats.md](runtime-formats.md). Character clip derivation is described
+in [animated-thief-integration.md](animated-thief-integration.md).

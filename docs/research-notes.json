@@ -23,12 +23,12 @@
     [
       "Animation",
       "Kavan, Sloan and O'Sullivan fit standard linear skinning to animated meshes with sparse weights and efficient optimization.",
-      "The runtime likewise benefits from sparse influences and a compact palette. Our weights are authored procedurally and normalized, not fitted with the paper's optimization."
+      "The character retains four normalized influences per vertex. Existing skin weights are imported and checked; this optimization method is a comparison rather than an implemented weight-fitting stage."
     ],
     [
       "Animation",
       "Le and Deng jointly recover rigid bone transforms and sparse convex skinning weights from example poses.",
-      "Their nonnegative, normalized weight constraints motivate explicit export validation. The project keeps an authored anatomical hierarchy instead of performing skinning decomposition."
+      "Export checks weight normalization and non-negativity while retaining the supplied skeleton. Automatic recovery of joints and weights is outside the asset pipeline."
     ],
     [
       "Collision",
@@ -83,12 +83,12 @@
     [
       "Animation",
       "Mohr and Gleicher fit a compact real-time deformation model to examples exported from richer authoring tools.",
-      "The project similarly separates Blender authoring from a small runtime representation. It exports authored transforms directly, rather than fitting examples or reproducing muscle deformation."
+      "Editable Blender assets are converted to indexed meshes and sampled local transforms. The project uses imported motion and derived clips rather than fitting a physically simulated character."
     ],
     [
       "Animation",
       "James and Twigg derive skinning approximations from deformable mesh sequences using automatically chosen transforms and weights.",
-      "Their work supports the practicality of GPU matrix palettes. Our 20-bone rig is explicitly authored and hierarchical, so no automatic bone discovery or progressive approximation is needed."
+      "The character uses 52 weighted bones within a 64-matrix shader palette. Automatic bone discovery and reconstruction from mesh sequences are comparison methods rather than runtime features."
     ]
   ],
   "ranks": {
