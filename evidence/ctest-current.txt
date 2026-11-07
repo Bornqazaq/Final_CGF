@@ -1,23 +1,24 @@
-Start testing: Nov 04 18:42 Qyzylorda Standard Time
+Start testing: Nov 07 13:06 Qyzylorda Standard Time
 ----------------------------------------------------------
 1/7 Testing: laser_character_occlusion
 1/7 Test: laser_character_occlusion
 Command: "C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify/lvh_occlusion_tests.exe" "C:/Users/nyerb/Downloads/gamedev/Final_CGF"
 Directory: C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify
-"laser_character_occlusion" start time: Nov 04 18:42 Qyzylorda Standard Time
+"laser_character_occlusion" start time: Nov 07 13:06 Qyzylorda Standard Time
 Output:
 ----------------------------------------------------------
 Safe bolt 0 inner-face clearance: 0.0200003 m
 Safe bolt 1 inner-face clearance: 0.0200003 m
 Safe bolt 2 inner-face clearance: 0.0200003 m
+PASS separated entrance floors and raised threshold
 Occluded character interior differences: 0
 Glow leaking onto foreground character: 0 pixels
 PASS actual GPU character occlusion and visible foreground laser
 <end of output>
-Test time =   0.70 sec
+Test time =   0.48 sec
 ----------------------------------------------------------
 Test Passed.
-"laser_character_occlusion" end time: Nov 04 18:42 Qyzylorda Standard Time
+"laser_character_occlusion" end time: Nov 07 13:06 Qyzylorda Standard Time
 "laser_character_occlusion" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -25,7 +26,7 @@ Test Passed.
 2/7 Test: gameplay_math
 Command: "C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify/lvh_logic_tests.exe"
 Directory: C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify
-"gameplay_math" start time: Nov 04 18:42 Qyzylorda Standard Time
+"gameplay_math" start time: Nov 07 13:06 Qyzylorda Standard Time
 Output:
 ----------------------------------------------------------
 PASS box center
@@ -46,7 +47,7 @@ All logic tests passed
 Test time =   0.04 sec
 ----------------------------------------------------------
 Test Passed.
-"gameplay_math" end time: Nov 04 18:42 Qyzylorda Standard Time
+"gameplay_math" end time: Nov 07 13:06 Qyzylorda Standard Time
 "gameplay_math" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -54,16 +55,16 @@ Test Passed.
 3/7 Test: complete_gameplay_route
 Command: "C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify/lvh_route_tests.exe"
 Directory: C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify
-"complete_gameplay_route" start time: Nov 04 18:42 Qyzylorda Standard Time
+"complete_gameplay_route" start time: Nov 07 13:06 Qyzylorda Standard Time
 Output:
 ----------------------------------------------------------
 Route result: state=2 beam=6 z=-12.6802 t=25.631 safe=1\nPASS lamp, CCTV, alarm, retry, six lasers, crouch, safe hierarchy trigger, victory in 25.631 seconds
 PASS six alternate initial phases
 <end of output>
-Test time =   0.64 sec
+Test time =   0.65 sec
 ----------------------------------------------------------
 Test Passed.
-"complete_gameplay_route" end time: Nov 04 18:42 Qyzylorda Standard Time
+"complete_gameplay_route" end time: Nov 07 13:06 Qyzylorda Standard Time
 "complete_gameplay_route" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -71,7 +72,7 @@ Test Passed.
 4/7 Test: demo_and_slow_frames
 Command: "C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify/lvh_director_tests.exe"
 Directory: C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify
-"demo_and_slow_frames" start time: Nov 04 18:42 Qyzylorda Standard Time
+"demo_and_slow_frames" start time: Nov 07 13:06 Qyzylorda Standard Time
 Output:
 ----------------------------------------------------------
 PASS complete capture script, three interactions, alarm, reset, uninterrupted victory
@@ -80,7 +81,7 @@ PASS retained input edges and collision at 6 versus 120 render FPS
 Test time =   0.22 sec
 ----------------------------------------------------------
 Test Passed.
-"demo_and_slow_frames" end time: Nov 04 18:42 Qyzylorda Standard Time
+"demo_and_slow_frames" end time: Nov 07 13:06 Qyzylorda Standard Time
 "demo_and_slow_frames" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -88,7 +89,7 @@ Test Passed.
 5/7 Test: imported_animation_clips
 Command: "C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify/lvh_animation_tests.exe" "C:/Users/nyerb/Downloads/gamedev/Final_CGF/assets/thief.lvanim"
 Directory: C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify
-"imported_animation_clips" start time: Nov 04 18:42 Qyzylorda Standard Time
+"imported_animation_clips" start time: Nov 07 13:06 Qyzylorda Standard Time
 Output:
 ----------------------------------------------------------
 CrouchBackward height=1.26955 sole=0.00299954
@@ -98,10 +99,10 @@ CrouchRight height=1.28699 sole=0.00252107
 CrouchIdle height=1.24288 sole=0.00099978
 PASS imported clips, 52-bone palette, 7.5s one-shot dance and finite poses
 <end of output>
-Test time =   0.26 sec
+Test time =   0.25 sec
 ----------------------------------------------------------
 Test Passed.
-"imported_animation_clips" end time: Nov 04 18:42 Qyzylorda Standard Time
+"imported_animation_clips" end time: Nov 07 13:06 Qyzylorda Standard Time
 "imported_animation_clips" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -109,7 +110,7 @@ Test Passed.
 6/7 Test: complete_victory_cinematic
 Command: "C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify/lvh_finale_tests.exe"
 Directory: C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify
-"complete_victory_cinematic" start time: Nov 04 18:42 Qyzylorda Standard Time
+"complete_victory_cinematic" start time: Nov 07 13:06 Qyzylorda Standard Time
 Output:
 ----------------------------------------------------------
 PASS moved safe, input lock, full dance duration, pause, final hold, retry, room bounds
@@ -117,7 +118,7 @@ PASS moved safe, input lock, full dance duration, pause, final hold, retry, room
 Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"complete_victory_cinematic" end time: Nov 04 18:42 Qyzylorda Standard Time
+"complete_victory_cinematic" end time: Nov 07 13:06 Qyzylorda Standard Time
 "complete_victory_cinematic" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -125,7 +126,7 @@ Test Passed.
 7/7 Test: player_camera_modes
 Command: "C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify/lvh_camera_tests.exe"
 Directory: C:/Users/nyerb/Downloads/gamedev/Final_CGF/build-verify
-"player_camera_modes" start time: Nov 04 18:42 Qyzylorda Standard Time
+"player_camera_modes" start time: Nov 07 13:06 Qyzylorda Standard Time
 Output:
 ----------------------------------------------------------
 PASS camera modes, room/prop obstruction, reach, movement, retry and complete third-person route
@@ -133,8 +134,8 @@ PASS camera modes, room/prop obstruction, reach, movement, retry and complete th
 Test time =   0.15 sec
 ----------------------------------------------------------
 Test Passed.
-"player_camera_modes" end time: Nov 04 18:42 Qyzylorda Standard Time
+"player_camera_modes" end time: Nov 07 13:06 Qyzylorda Standard Time
 "player_camera_modes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 04 18:42 Qyzylorda Standard Time
+End testing: Nov 07 13:06 Qyzylorda Standard Time

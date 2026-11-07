@@ -7,6 +7,10 @@
   "opengl_errors": 0,
   "opengl": "3.3.0 NVIDIA 621.01",
   "gpu": "NVIDIA GeForce RTX 5060",
-  "protected_project_files": 1003,
-  "protected_project_files_changed": 0
+  "entrance_floor": {
+    "separate_surfaces": true,
+    "threshold_top_m": 0.025,
+    "checked_viewpoints": 4,
+    "source_and_runtime_assets_synced": true
+  }
 }

@@ -39,6 +39,35 @@ int main(int argc,char **argv){
             std::cout<<"Safe bolt "<<i<<" inner-face clearance: "<<clearance<<" m\n";
             if(clearance<.015f)throw std::runtime_error("safe bolt coplanar with inner door face");
         }
+        auto worldBounds=[&](const Node &node){
+            const auto &mesh=vault.meshes.at(node.mesh);
+            glBindBuffer(GL_ARRAY_BUFFER,mesh->vbo);
+            GLint size=0;glGetBufferParameteriv(GL_ARRAY_BUFFER,GL_BUFFER_SIZE,&size);
+            std::vector<Vertex> vertices(size/sizeof(Vertex));
+            glGetBufferSubData(GL_ARRAY_BUFFER,0,size,vertices.data());
+            glm::vec3 lo(1e9f),hi(-1e9f);
+            for(const auto &vertex:vertices){
+                auto p=glm::vec3(node.world*glm::vec4(vertex.position,1));
+                lo=glm::min(lo,p);hi=glm::max(hi,p);
+            }
+            return std::make_pair(lo,hi);
+        };
+        auto floor=worldBounds(vault.nodes.at(vault.find("VestibuleFloor")));
+        float woodEdge=-1e9f,woodHeight=-1e9f;
+        for(const auto &node:vault.nodes)if(node.name.rfind("Floor_",0)==0){
+            auto board=worldBounds(node);
+            woodEdge=std::max(woodEdge,board.second.z);
+            woodHeight=std::max(woodHeight,board.second.y);
+        }
+        if(floor.first.z<=woodEdge && std::abs(floor.second.y-woodHeight)<.005f)
+            throw std::runtime_error("entrance slab overlaps wooden floor at the same height");
+        int thresholdIndex=vault.find("EntranceThreshold");
+        if(thresholdIndex<0)throw std::runtime_error("entrance joint has no threshold");
+        auto threshold=worldBounds(vault.nodes.at(thresholdIndex));
+        if(threshold.first.z>=woodEdge || threshold.second.z<=floor.first.z ||
+           threshold.second.y<std::max(woodHeight,floor.second.y)+.015f)
+            throw std::runtime_error("entrance threshold does not cover the separated floor joint");
+        std::cout<<"PASS separated entrance floors and raised threshold\n";
         Scene scene;scene.load(root/"assets/thief.scene");
         Animator animator;animator.load(root/"assets/thief.lvanim");animator.update("Idle",0,1);
         scene.skinPalette=animator.palette;scene.showCharacter=true;
