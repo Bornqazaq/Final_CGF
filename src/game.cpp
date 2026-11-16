@@ -174,9 +174,39 @@ bool Game::playerHit() const {
             return true;
     return false;
 }
-// IMPORT N3 177 197
+int Game::interactionTarget() const {
+    const glm::vec3 points[] = {
+        {-2.85f, 1.24f, -1.97f}, {-2.78f, 1.27f, -3.0f}, {0, 1.65f, safeFront}};
+    int target = 0;
+    float best = -100;
+    for (int i = 0; i < 3; i++) {
+        glm::vec3 delta = points[i] - eyePosition();
+        float distance = glm::length(delta);
+        if (distance > 2.15f)
+            continue;
+        float alignment = glm::dot(forward(), delta / std::max(.001f, distance));
+        if (alignment < .40f)
+            continue;
+        float score = alignment * 3 - distance;
+        if (score > best) {
+            best = score;
+            target = i + 1;
+        }
+    }
+    return target;
+}
 void Game::interact() {
-// IMPORT N3 199 209
+    if (state != State::Playing)
+        return;
+    int target = interactionTarget();
+    if (target == 1) {
+        lamp = !lamp;
+        interactionTime = .6f;
+    }
+    if (target == 2) {
+        cctvView = 1 - cctvView;
+        interactionTime = .6f;
+    }
     if (target == 3 && lastCrossed) {
         safeOpened = true;
         safeTime = 0;
@@ -245,6 +275,21 @@ void Game::update(float dt, const Input &i) {
     }
     if (position.z < -9.74f)
         lastCrossed = true;
-// IMPORT N3 278 293
+    if (i.interact)
+        interact();
+    if (state == State::Finale)
+        return;
+    hint = "";
+    switch (interactionTarget()) {
+    case 1:
+        hint = lamp ? "E   Switch desk lamp off" : "E   Switch desk lamp on";
+        break;
+    case 2:
+        hint = "E   Switch security camera";
+        break;
+    case 3:
+        hint = lastCrossed ? "E   Open the vault" : "Cross the final laser to unlock the vault";
+        break;
+    }
 }
 } // namespace lvh
