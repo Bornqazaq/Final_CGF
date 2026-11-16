@@ -2,7 +2,20 @@
 #include <algorithm>
 #include <cmath>
 namespace lvh {
-// IMPORT M2 5 18
+bool pointInBox(glm::vec3 point, const glm::mat4 &model, glm::vec3 halfSize) {
+    glm::vec3 p = glm::vec3(glm::inverse(model) * glm::vec4(point, 1));
+    return glm::all(glm::lessThanEqual(glm::abs(p), halfSize + glm::vec3(1e-6f)));
+}
+bool sampledBodyHits(const Laser &l, glm::vec3 feet, float height) {
+    // Local-space point/box tests sample the player's upright body. The small
+    // local margin is conservative for our beam roll limits (at most 14 degrees).
+    for (float h = .12f; h <= height + .001f; h += .08f)
+        if (pointInBox(feet + glm::vec3(0, h, 0), l.matrix,
+                       l.halfSize + glm::vec3(.16f, .055f, .16f)))
+            return true;
+    return pointInBox(feet + glm::vec3(0, height, 0), l.matrix,
+                      l.halfSize + glm::vec3(.16f, .055f, .16f));
+}
 Game::Game() {
     updateLasers();
 }
@@ -53,7 +66,12 @@ void Game::updateLasers() {
     }
 }
 // IMPORT N1 159 170
-// IMPORT M2 171 176
+bool Game::playerHit() const {
+    for (auto &l : lasers)
+        if (sampledBodyHits(l, position, bodyHeight))
+            return true;
+    return false;
+}
 // IMPORT N3 177 197
 void Game::interact() {
 // IMPORT N3 199 209
