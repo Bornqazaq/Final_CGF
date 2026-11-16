@@ -32,7 +32,98 @@ void Game::reset() {
     mouseSensitivity = preferredSensitivity;
     retries = attempts;
 }
-// IMPORT N2 35 126
+glm::vec3 Game::forward() const {
+    float y = glm::radians(yaw);
+    float p = glm::radians(thirdPerson ? std::clamp(pitch,-60.f,60.f) : pitch);
+    return glm::normalize(glm::vec3(cos(y) * cos(p), sin(p), sin(y) * cos(p)));
+}
+void Game::toggleCamera() {
+    if (state != State::Playing || safeOpened) return;
+    // Enter orbit mode with the body's current first-person heading.
+    if (!thirdPerson) bodyYaw = yaw;
+    thirdPerson = !thirdPerson;
+    if (thirdPerson) pitch = std::clamp(pitch,-60.f,60.f);
+    else bodyYaw = yaw;
+}
+
+float Game::characterFacing() const {
+    return glm::radians(90.f - (thirdPerson ? bodyYaw : yaw));
+}
+
+std::string Game::locomotionClip() const {
+    bool moving = moveSpeed > .02f && state == State::Playing;
+    if (crouching) {
+        if (!moving) return "CrouchIdle";
+        if (std::abs(localRight) > std::abs(localForward))
+            return localRight > 0 ? "CrouchRight" : "CrouchLeft";
+        return localForward < 0 ? "CrouchBackward" : "CrouchWalk";
+    }
+    if (interactionTime > 0) return "Interact";
+    if (!moving) return "Idle";
+    return thirdPerson || localForward >= -.5f ? "Walk" : "WalkBackward";
+}
+glm::vec3 Game::eyePosition() const {
+    return position + glm::vec3(0,eye,0);
+}
+bool Game::cameraBlocked(glm::vec3 p) const {
+    // 0.18 m safety radius around the boom. The entrance remains an open doorway.
+    if (p.x < -3.77f || p.x > 3.77f || p.z < -14.77f || p.z > 2.40f ||
+        p.y < .18f || p.y > 3.55f) return true;
+    if (p.z > -.25f && p.z < 2.65f && (std::abs(p.x)>1.72f || p.y>3.27f)) return true;
+    auto box = [&](glm::vec3 lo,glm::vec3 hi) {
+        lo-=glm::vec3(.18f);hi+=glm::vec3(.18f);
+        return glm::all(glm::greaterThanEqual(p,lo)) && glm::all(glm::lessThanEqual(p,hi));
+    };
+    for(float depth : {.2f,4.6f,8.6f,11.7f,14.7f})
+        for(float side : {-1.f,1.f})
+            if(box({side*3.88f-.16f,0,-depth-.17f},{side*3.88f+.16f,4,-depth+.17f}))
+                return true;
+    return box({-3.73f,0,-3.8f},{-2.05f,.94f,-1.5f}) ||
+           box({-3.0f,0,-1.35f},{-2.32f,1.36f,-.65f}) ||
+           box({-3.89f,0,-12.85f},{-3.21f,2.72f,-10.15f}) ||
+           box({-1.8f,0,-14.9f},{1.8f,3.34f,-13.7f}) ||
+           box({2.43f,0,-9.65f},{3.57f,.9f,-8.15f}) ||
+           box({2.77f,0,-1.65f},{3.43f,1.5f,-.95f}) ||
+           box({2.79f,0,-13.73f},{3.45f,1.4f,-13.07f}) ||
+           box({-2.91f,0,-13.36f},{-2.39f,1.2f,-12.84f});
+}
+glm::vec3 Game::camera() const {
+    if (safeOpened) {
+        float t = glm::clamp((safeTime - safeOpenDuration) / danceDuration, 0.f, 1.f);
+        return {2.65f - .30f * t, 1.9f, -10.15f};
+    }
+    glm::vec3 anchor=eyePosition();
+    if (!thirdPerson) return anchor;
+    glm::vec3 f=forward();
+    glm::vec3 right=glm::normalize(glm::cross(f,glm::vec3(0,1,0)));
+    glm::vec3 boom=-f*2.8f+right*.38f+glm::vec3(0,.22f,0);
+    int steps=int(std::ceil(glm::length(boom)/.025f));
+    float clear=0;
+    for(int i=1;i<=steps;++i){
+        float t=float(i)/steps;
+        if(cameraBlocked(anchor+boom*t)) {
+            float lo=clear,hi=t;
+            for(int j=0;j<10;++j) {
+                float mid=(lo+hi)*.5f;
+                if(cameraBlocked(anchor+boom*mid)) hi=mid; else lo=mid;
+            }
+            clear=lo;
+            break;
+        }
+        clear=t;
+    }
+    return anchor+boom*clear;
+}
+bool Game::thirdPersonVisible() const {
+    // A contracted boom hides the head/body before the camera enters the hood.
+    return thirdPerson && !safeOpened && glm::distance(camera(),eyePosition())>.65f;
+}
+glm::mat4 Game::view() const {
+    if (safeOpened)
+        return glm::lookAt(camera(), glm::vec3(0, 1.42f, -13.1f), glm::vec3(0, 1, 0));
+    glm::vec3 target=camera()+forward();
+    return glm::lookAt(camera(),target,glm::vec3(0,1,0));
+}
 void Game::updateLasers() {
     const float depths[] = {-2.9f, -4.2f, -5.6f, -6.9f, -8.15f, -9.5f};
     for (int i = 0; i < 6; i++) {
