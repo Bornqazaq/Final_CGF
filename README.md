@@ -5,6 +5,7 @@ Cross six moving laser barriers, crouch through the final gap and open the vault
 Contact with a beam triggers an alarm; reaching the safe unlocks its mechanical
 opening sequence and the character's victory dance.
 
+Computer Graphics Fundamentals — final project, Topic 12<br>
 Students: Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet<br>
 Group: SE-2428
 
@@ -15,7 +16,7 @@ Group: SE-2428
 - First- and third-person cameras, independent third-person orbit and obstacle avoidance.
 - Moving and rotating laser barriers with oriented collision volumes.
 - Standing and directional crouching animations with GPU skinning and twelve clips.
-- Interactive desk lamp, two live CCTV views and an articulated safe.
+- Interactive desk lamp, a live CCTV feed (in-room monitor and full-screen view) and an articulated safe.
 - Blinn-Phong lighting, moving spotlights, a shadow map, HDR tone mapping and
   depth-aware laser glow.
 - A furnished vault and enclosed entrance corridor with a visible locked security gate.
@@ -24,10 +25,9 @@ Group: SE-2428
 
 ## Play
 
-The verified platform is **Windows x64** with an OpenGL 3.3-capable driver.
+Tested on Windows x64 with an OpenGL 3.3-capable GPU driver.
 Extract a [Windows release](https://github.com/Bornqazaq/Final_CGF/releases) and run
 `LaserVaultHeist.exe`. Keep the supplied `assets/` and `shaders/` folders beside it.
-Release archives are versioned snapshots; the commands below build the current source.
 
 | Input | Action |
 |---|---|
@@ -46,15 +46,15 @@ In first person, mouse movement also turns the character. In third person, it
 orbits the camera; standing movement turns the character toward travel. The safe
 becomes usable after the final laser has been crossed.
 
-Sensitivity uses `0.022 × sensitivity` degrees per mouse count. FPS **Auto** follows
-the active monitor, **Custom** accepts 1-10000 FPS, and **Unlimited** disables the
-limiter. Camera mode and settings persist across retries.
+In the settings you can change mouse sensitivity and the FPS limit (Auto follows
+the monitor's refresh rate, Custom accepts 1–10000 FPS, Unlimited disables the
+limiter). Camera mode and settings persist across retries.
 
 ## Build and test
 
-Required: **CMake 3.20+**, **Ninja**, and a **C++17 compiler**. Runtime libraries are
-included in `third_party/`; configuration and startup do not download dependencies.
-The verified toolchain is LLVM-MinGW / Clang 23.1.4, CMake 3.31.6 and Ninja 1.11.1.
+Requires CMake 3.20+, Ninja and a C++17 compiler. All libraries are included in
+`third_party/`, so nothing is downloaded during the build. We built and tested with
+LLVM-MinGW (Clang 23.1.4), CMake 3.31.6 and Ninja 1.11.1.
 With Clang and Ninja on `PATH`, run from the repository root:
 
 ```powershell
@@ -73,7 +73,6 @@ cmake --install build --prefix dist/Windows-x64
 Seven test suites cover collision and gameplay, the complete route, slow frames,
 animation data, the finale, camera/input/settings, and laser occlusion through the
 actual OpenGL renderer. The rendering test requires a working graphics context.
-Linux and macOS builds have not been validated.
 
 ## Performance
 
@@ -90,11 +89,18 @@ first five seconds excluded. VSync and recording were disabled.
 These measurements cover the complete frame loop. Raw timings and methodology
 are in [`evidence/benchmarks-current/`](evidence/benchmarks-current/).
 
+## Known limitations
+
+- Laser collision is discrete (fixed body points at 240 Hz), not swept.
+- Linear blend skinning: knees thin out slightly in a deep crouch.
+- One directional shadow map; spotlights do not cast shadows.
+- Only Windows has been tested; Linux and macOS builds have not been validated.
+
 ## Team
 
 | Student | Contribution |
 |---|---|
-| **Nurbek Yerbulekov - project lead** | Game design, visual direction, character and environment asset work, animation and visual integration |
+| Nurbek Yerbulekov | Project lead; game design, visual direction, character and environment asset work, animation and visual integration |
 | Makhmet Demesh | Gameplay mechanics: laser collision, progression and game states; rendering and technical integration |
 | Nurassyl Nygmet | Gameplay mechanics: controls and interactions; tests, builds and documentation |
 
@@ -116,3 +122,13 @@ implementation, literature review, screenshots and evaluation. See
 [architecture](docs/architecture.md), [asset formats](docs/runtime-formats.md) and
 [requirement coverage](docs/requirements-evidence.md) for source-level details.
 Asset origins and third-party licenses are listed in [CREDITS.md](CREDITS.md).
+
+## Contribution & AI Usage
+
+Nurbek Yerbulekov — game design, character, and animation. Nurbek used AI to explore gameplay ideas and Meshy to generate the thief model. He selected the design, exported the model as FBX, and prepared animation clips in Mixamo. Codex helped integrate the assets and derive the missing forward crouch animation from the supplied clips. Nurbek playtested the game, reported visual and control issues, and confirmed that the mouse input fix worked.
+
+Makhmet Demesh — laser gameplay and rendering. In this area of the project, Codex assisted with the collision check that compares player sample points against each laser beam in its local coordinates. It also helped correct the rendering so that laser glow respects scene depth and does not show through the character.
+
+Nurassyl Nygmet — controls, cameras, and interactions. In this area of the project, Codex assisted with processing Windows mouse movement, separating third-person camera orbit from character rotation, and adjusting camera distance near walls so the camera could avoid obstacles without changing the player’s viewing direction.
+
+
