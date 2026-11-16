@@ -20,7 +20,38 @@ void Game::reset() {
     retries = attempts;
 }
 // IMPORT N2 35 126
-// IMPORT M1 127 158
+void Game::updateLasers() {
+    const float depths[] = {-2.9f, -4.2f, -5.6f, -6.9f, -8.15f, -9.5f};
+    for (int i = 0; i < 6; i++) {
+        auto &l = lasers[i];
+        float height = 1.35f;
+        float angle = 0;
+        if (i == 0)
+            height = 2.35f + .55f * std::sin(time * .65f);
+        if (i == 1)
+            height = 1.0f + .62f * std::sin(time * .8f + .8f);
+        if (i == 2) {
+            height = 2.35f;
+            angle = glm::radians(10.f) * std::sin(time * .7f);
+        }
+        if (i == 3)
+            height = 1.1f + .60f * std::sin(time * .6f + 1.3f);
+        if (i == 4) {
+            height = 1.65f;
+            angle = glm::radians(7.f) * std::sin(time * .75f);
+        }
+        if (i == 5)
+            height = 1.42f;
+        l.center = {0, height, depths[i]};
+        l.angle = angle;
+        // A left-wall pivot makes the rotating beam's origin explicit.
+        glm::vec3 pivot(-3.65f, height, depths[i]);
+        l.halfSize.x = 3.65f / std::cos(angle);
+        l.matrix = glm::translate(glm::mat4(1), pivot) *
+                   glm::rotate(glm::mat4(1), angle, glm::vec3(0, 0, 1)) *
+                   glm::translate(glm::mat4(1), glm::vec3(l.halfSize.x, 0, 0));
+    }
+}
 // IMPORT N1 159 170
 // IMPORT M2 171 176
 // IMPORT N3 177 197
