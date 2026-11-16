@@ -26,8 +26,7 @@ Group: SE-2428
 ## Play
 
 Tested on Windows x64 with an OpenGL 3.3-capable GPU driver.
-Extract a [Windows release](https://github.com/Bornqazaq/Final_CGF/releases) and run
-`LaserVaultHeist.exe`. Keep the supplied `assets/` and `shaders/` folders beside it.
+Follow [Build and test](#build-and-test) to build and run the game from the current source.
 
 | Input | Action |
 |---|---|
