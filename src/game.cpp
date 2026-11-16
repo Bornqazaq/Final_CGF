@@ -75,12 +75,40 @@ bool Game::playerHit() const {
 // IMPORT N3 177 197
 void Game::interact() {
 // IMPORT N3 199 209
-// IMPORT M3 210 218
+    if (target == 3 && lastCrossed) {
+        safeOpened = true;
+        safeTime = 0;
+        moveSpeed = 0;
+        localForward = localRight = 0;
+        hint.clear();
+        state = State::Finale;
+        interactionTime = .7f;
+    }
 }
 void Game::update(float dt, const Input &i) {
-// IMPORT M3 221 236
+    if (i.retry && (state == State::Alarm || state == State::Victory)) {
+        reset();
+        return;
+    }
+    if (state == State::Finale) {
+        time += dt;
+        updateLasers();
+        safeTime = std::min(safeOpenDuration + danceDuration, safeTime + dt);
+        if (safeTime >= safeOpenDuration + danceDuration)
+            state = State::Victory;
+        return;
+    }
+    if (state != State::Playing)
+        return;
+    time += dt;
+    updateLasers();
 // IMPORT N1 237 271
-// IMPORT M3 272 277
+    if (playerHit()) {
+        state = State::Alarm;
+        return;
+    }
+    if (position.z < -9.74f)
+        lastCrossed = true;
 // IMPORT N3 278 293
 }
 } // namespace lvh
