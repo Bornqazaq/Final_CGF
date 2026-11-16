@@ -65,7 +65,18 @@ void Game::updateLasers() {
                    glm::translate(glm::mat4(1), glm::vec3(l.halfSize.x, 0, 0));
     }
 }
-// IMPORT N1 159 170
+bool Game::blocked(glm::vec3 p) const {
+    if (p.x < -3.65f || p.x > 3.65f || p.z > 2.35f || p.z < roomBack)
+        return true;
+    if (p.z > -.25f && std::abs(p.x)>1.70f) return true;
+    auto box = [&](float x0, float x1, float z0, float z1) {
+        return p.x > x0 - .22f && p.x < x1 + .22f && p.z > z0 - .22f && p.z < z1 + .22f;
+    };
+    return box(-3.7f, -2.05f, -3.8f, -1.5f) || box(-3.89f, -3.21f, -12.85f, -10.15f) ||
+           box(-1.8f, 1.8f, -14.9f, -13.7f) || box(2.43f, 3.57f, -9.65f, -8.15f) ||
+           box(2.77f, 3.43f, -1.65f, -.95f) || box(2.79f, 3.45f, -13.73f, -13.07f) ||
+           box(-2.91f, -2.39f, -13.36f, -12.84f);
+}
 bool Game::playerHit() const {
     for (auto &l : lasers)
         if (sampledBodyHits(l, position, bodyHeight))
@@ -102,7 +113,41 @@ void Game::update(float dt, const Input &i) {
         return;
     time += dt;
     updateLasers();
-// IMPORT N1 237 271
+    interactionTime = std::max(0.f, interactionTime - dt);
+    crouching = i.crouch;
+    bodyHeight += ((crouching ? 1.33f : 1.78f) - bodyHeight) * std::min(1.f, dt * 20.f);
+    float target = crouching ? 1.22f : 1.57f;
+    eye += (target - eye) * std::min(1.f, dt * 13.f);
+    glm::vec3 f = forward();
+    f.y = 0;
+    f = glm::normalize(f);
+    glm::vec3 right = glm::normalize(glm::cross(f, glm::vec3(0, 1, 0)));
+    glm::vec3 motion = f * i.forward + right * i.right;
+    if (glm::length(motion) > 1)
+        motion = glm::normalize(motion);
+    motion *= dt * (crouching ? 1.25f : 2.45f);
+    glm::vec3 old = position, p = position;
+    p.x += motion.x;
+    if (!blocked(p))
+        position.x = p.x;
+    p = position;
+    p.z += motion.z;
+    if (!blocked(p))
+        position.z = p.z;
+    moveSpeed = glm::length(position - old) / std::max(dt, .00001f);
+    float distance = glm::length(position - old);
+    stepDistance += distance;
+    if (!thirdPerson) bodyYaw = yaw;
+    else if (!crouching && distance > .000001f) {
+        // Use actual displacement, including wall sliding, rather than mouse yaw.
+        glm::vec3 direction = (position-old)/distance;
+        bodyYaw = glm::degrees(std::atan2(direction.z,direction.x));
+    }
+    float heading = glm::radians(thirdPerson ? bodyYaw : yaw);
+    glm::vec3 bodyForward(std::cos(heading),0,std::sin(heading));
+    glm::vec3 bodyRight = glm::cross(bodyForward,glm::vec3(0,1,0));
+    localForward = distance > .000001f ? glm::dot((position-old)/distance, bodyForward) : 0;
+    localRight = distance > .000001f ? glm::dot((position-old)/distance, bodyRight) : 0;
     if (playerHit()) {
         state = State::Alarm;
         return;
