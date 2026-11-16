@@ -1,0 +1,75 @@
+{
+  "pages": 26,
+  "figures": [
+    {
+      "number": 1,
+      "file": "room.png",
+      "caption": "Vault interior with textured furnishings, moving laser barriers and the live CCTV monitor."
+    },
+    {
+      "number": 2,
+      "file": "entrance.png",
+      "caption": "Illuminated entrance corridor behind the locked security gate."
+    },
+    {
+      "number": 3,
+      "file": "menu.png",
+      "caption": "Main menu with mouse sensitivity and monitor-aware frame-rate settings."
+    },
+    {
+      "number": 4,
+      "file": null,
+      "caption": "Application data flow from input and assets to simulation, animation and rendering."
+    },
+    {
+      "number": 5,
+      "file": "third-person.png",
+      "caption": "Third-person view with the animated character inside the vault."
+    },
+    {
+      "number": 6,
+      "file": "crouch.png",
+      "caption": "Skinned character playing the derived forward-crouch cycle."
+    },
+    {
+      "number": 7,
+      "file": "cctv.png",
+      "caption": "Live CCTV framebuffer containing the current room and animated character."
+    },
+    {
+      "number": 8,
+      "file": "lamp.png",
+      "caption": "Desk-lamp interaction changes the local light and visible lamp glow."
+    },
+    {
+      "number": 9,
+      "file": "spotlights.png",
+      "caption": "Rotating security fixtures and their spotlight illumination."
+    },
+    {
+      "number": 10,
+      "file": "final-beam.png",
+      "caption": "Crouched view below the final laser before the safe approach."
+    },
+    {
+      "number": 11,
+      "file": "alarm.png",
+      "caption": "Alarm feedback after laser contact, with retry controls."
+    },
+    {
+      "number": 12,
+      "file": "dance.png",
+      "caption": "One-shot character dance against the fully opened safe."
+    },
+    {
+      "number": 13,
+      "file": "victory.png",
+      "caption": "Victory state after the complete safe-opening and dance sequence."
+    }
+  ],
+  "students": "Nurbek Yerbulekov, Makhmet Demesh, Nurassyl Nygmet",
+  "reference_count": 18,
+  "pdf_sha256": "269ee2e944ddee99df1666941be281375ad66bf38cc0d088d8a7c00525005d59",
+  "body_font_pt": 14,
+  "table_font_pt": 12
+}

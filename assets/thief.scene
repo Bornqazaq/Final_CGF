@@ -1,0 +1,4 @@
+# User supplied Meshy character; metres, Y up, forward +Z
+material "MeshyThief" 1 1 1 0.055 20 0 "textures/thief_meshy_basecolor.png"
+mesh "MeshyThief" "meshes/thief_meshy.lvhm"
+node "MeshyThief" -1 0 0 4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1

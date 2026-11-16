@@ -1,0 +1,16 @@
+{
+  "build": "Windows x64 Release; Clang 23.1.4; CMake 3.31.6; Ninja 1.11.1",
+  "test_suites": 7,
+  "passed": 7,
+  "failed": 0,
+  "rendered_frames": 60,
+  "opengl_errors": 0,
+  "opengl": "3.3.0 NVIDIA 621.01",
+  "gpu": "NVIDIA GeForce RTX 5060",
+  "entrance_floor": {
+    "separate_surfaces": true,
+    "threshold_top_m": 0.025,
+    "checked_viewpoints": 4,
+    "source_and_runtime_assets_synced": true
+  }
+}

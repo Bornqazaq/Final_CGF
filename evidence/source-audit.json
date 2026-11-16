@@ -1,0 +1,53 @@
+{
+  "checked_utc": "2026-10-29T01:22:01.602244+00:00",
+  "method": "Article identity: publisher-deposited Crossref metadata plus publisher/author pages. Quartiles: cross-checked public reproductions of SJR 2025 by named category. Direct SCImago/Scopus pages returned HTTP 403, so no direct access is claimed. Ranking year does not mean ranking in the historical publication year.",
+  "journal_rankings": {
+    "ACM Transactions on Graphics": {
+      "quartile": "Q1",
+      "year": 2025,
+      "category": "Computer Graphics and Computer-Aided Design",
+      "sources": [
+        "https://www.journalsbase.com/journals/acm-transactions-on-graphics",
+        "https://journalindexes.com/acm-transactions-on-graphics-07300301/"
+      ]
+    },
+    "Computer Graphics Forum": {
+      "quartile": "Q1",
+      "year": 2025,
+      "category": "Computer Graphics and Computer-Aided Design",
+      "sources": [
+        "https://www.croris.hr/casopisi/casopis/10902",
+        "https://scienceaijournal.com/journals/computer-graphics-forum-0167-7055"
+      ]
+    },
+    "IEEE Transactions on Visualization and Computer Graphics": {
+      "quartile": "Q1",
+      "year": 2025,
+      "category": "Computer Graphics and Computer-Aided Design",
+      "sources": [
+        "https://www.iit.comillas.edu/publicacion/info_revista/en/912/ieee-transactions-on-visualization-and-computer-graphics",
+        "https://researchcloud.net/journal/1941-0506"
+      ]
+    },
+    "Computers & Graphics": {
+      "quartile": "Q2",
+      "year": 2025,
+      "category": "Computer Graphics and Computer-Aided Design",
+      "sources": [
+        "https://researchcloud.net/journal/0097-8493",
+        "https://akaturk.com/journals/25028?lang=en"
+      ]
+    },
+    "Communications of the ACM": {
+      "quartile": "Q1",
+      "year": 2025,
+      "category": "Computer Science (miscellaneous)",
+      "sources": [
+        "https://www.iit.comillas.edu/publicacion/info_revista/en/16/Communications_of_the_ACM",
+        "https://scienceaijournal.com/journals/communications-of-the-acm-0001-0782"
+      ]
+    }
+  },
+  "article_count": 18,
+  "strict_journal_count_excluding_CACM": 16
+}

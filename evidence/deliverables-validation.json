@@ -1,0 +1,98 @@
+{
+  "report": {
+    "pages": 26,
+    "all_pages_visually_reviewed": true,
+    "content_streams_equal_to_reviewed_render": true,
+    "sha256": "15477e1520c86de3843a77dd007dc74319d0a53f223397936bb0feaa1cf4a9b6",
+    "author": "Nurbek Yerbulekov",
+    "template_core_metadata_intentionally_corrected": true,
+    "render_revision": "v4; page 26 re-reviewed, pages 1-25 byte-identical PNGs to reviewed v3"
+  },
+  "presentation": {
+    "slides": 10,
+    "all_final_pdf_pages_visually_reviewed": true,
+    "native_chart_on_slide": 8,
+    "embedded_workbook": true,
+    "editable_shapes_and_text": true,
+    "speaking_target_seconds": 520,
+    "sha256_pptx": "4ab4bbe2ebb5488a600f415701174bd18cb23a13a20f5f83599deaa9c9d3edfb"
+  },
+  "video": {
+    "duration_seconds": 210.07,
+    "size": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frames": 6302,
+    "repeated_sampling_slots": 0,
+    "whole_video_decode": "passed",
+    "bytes": 76530962,
+    "sha256": "2453b21067ddbea79a0c12ce8e9696088ed98848d8a42f1728296d22e9c105dc",
+    "state_transitions": [
+      {
+        "wall_seconds": "0.332873",
+        "demo_seconds": "0",
+        "state": "0",
+        "retries": "0"
+      },
+      {
+        "wall_seconds": "63.5439",
+        "demo_seconds": "63.0415",
+        "state": "1",
+        "retries": "0"
+      },
+      {
+        "wall_seconds": "84.5529",
+        "demo_seconds": "84.0447",
+        "state": "0",
+        "retries": "1"
+      },
+      {
+        "wall_seconds": "197.964",
+        "demo_seconds": "197.429",
+        "state": "2",
+        "retries": "1"
+      }
+    ],
+    "method": "Live GL_BACK framebuffer; real wall clock; deterministic ordinary game inputs; no montage."
+  },
+  "glb": {
+    "vault": {
+      "bytes": 1775372,
+      "sha256": "a7442de2f1f7c71b737abedb162e5d2baa0899780882c2699fd2a02df803db2c",
+      "skins": 0,
+      "meshes": 629,
+      "animations": [
+        "SafeDoorPivotAction.003",
+        "SafeBolt0Action",
+        "SafeBolt1Action",
+        "SafeBolt2Action",
+        "SafeWheelAction.003",
+        "SpotPivot0Action.003",
+        "SpotPivot1Action.003"
+      ]
+    },
+    "thief": {
+      "bytes": 916260,
+      "sha256": "7061c49cda4471b17201bac11b5d9e897801edbb949ce5df291e263bd8bfdfc4",
+      "skins": 1,
+      "meshes": 70,
+      "animations": [
+        "CrouchIdle",
+        "CrouchWalk",
+        "Idle",
+        "Interact",
+        "Walk"
+      ]
+    }
+  },
+  "fresh_clone_build": {
+    "passed": true,
+    "ctest_suites": 3,
+    "failures": 0,
+    "evidence": "evidence/fresh-clone-build.txt",
+    "runtime_commit": "babb6dd"
+  },
+  "portable_validation": "evidence/package-validation.json"
+}

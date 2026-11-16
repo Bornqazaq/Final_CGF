@@ -1,0 +1,12 @@
+src/graphics.cpp - actual build source excerpts
+    glShaderSource(id, 1, &text, nullptr);
+    glGenVertexArrays(1, &vao);
+    glGenBuffers(1, &vbo);
+    glGenBuffers(1, &ebo);
+    glBindVertexArray(vao);
+    glBufferData(GL_ARRAY_BUFFER, GLsizeiptr(v.size() * sizeof(Vertex)), v.data(), GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, GLsizeiptr(i.size() * sizeof(unsigned)), i.data(),
+        glVertexAttribPointer(a, sizes[a], GL_FLOAT, GL_FALSE, sizeof(Vertex),
+    glBindVertexArray(0);
+    glBindVertexArray(vao);
+    glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, nullptr);

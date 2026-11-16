@@ -1,0 +1,42 @@
+{
+  "archive_crc": "passed",
+  "all_manifest_hashes_match": true,
+  "unicode_extraction_path": true,
+  "working_directory": "Downloads, outside the extracted game folder",
+  "explicit_asset_root_used": false,
+  "startup_seconds": 2,
+  "route_seconds": 40,
+  "both_process_exit_codes": 0,
+  "both_runtime_gl_checks": "Rendered frames without GL errors",
+  "safe_opening_samples": [
+    {
+      "wall_seconds": "15.8597",
+      "demo_seconds": "0",
+      "x": "-8.64308e-09",
+      "z": "-10.0808",
+      "crouching": "0",
+      "body_height": "1.9",
+      "lamp": "1",
+      "cctv": "0",
+      "state": "0",
+      "safe_time": "3.31666",
+      "retries": "0"
+    },
+    {
+      "wall_seconds": "31.816",
+      "demo_seconds": "0",
+      "x": "-8.64308e-09",
+      "z": "-10.0808",
+      "crouching": "0",
+      "body_height": "1.9",
+      "lamp": "1",
+      "cctv": "0",
+      "state": "0",
+      "safe_time": "3.32083",
+      "retries": "1"
+    }
+  ],
+  "route_resets": 2,
+  "note": "Benchmark auto-route retries immediately on Victory/Alarm; the 10 Hz trace does not promise to sample the single-step Victory state. The separate final demo trace records Victory explicitly.",
+  "compiler_runtime_dlls": "Only standard Windows system/UCRT imports; no LLVM or Blender DLL dependency."
+}

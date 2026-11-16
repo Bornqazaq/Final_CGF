@@ -1,0 +1,18 @@
+{
+  "Cautious_Crouch_Walk_Backward_inplace": {
+    "max_height": 1.409550666809082,
+    "minimum_sole": -0.03010101616382599
+  },
+  "Cautious_Crouch_Walk_Left_inplace": {
+    "max_height": 1.4016921520233154,
+    "minimum_sole": -0.0631975382566452
+  },
+  "Cautious_Crouch_Walk_Right_inplace": {
+    "max_height": 1.4269850254058838,
+    "minimum_sole": -0.0366172231733799
+  },
+  "LVH_CrouchIdle": {
+    "max_height": 1.382878065109253,
+    "minimum_sole": -0.012289479374885559
+  }
+}
