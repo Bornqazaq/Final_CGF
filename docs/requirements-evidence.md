@@ -23,8 +23,8 @@
 
 The seven CTest suites exercise gameplay mathematics, complete routes, slow-frame
 behavior, animation data, the finale, camera/input/settings and GPU laser occlusion.
-`evidence/ctest-current.txt` contains the latest test result. Report figures are
-captured from the application in `evidence/screenshots/report-current/`.
+Use the README test command to reproduce the checks. Report figures are captured
+from the application in `evidence/screenshots/report-current/`.
 
 ## Measurement scope
 

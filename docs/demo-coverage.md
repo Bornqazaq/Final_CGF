@@ -17,5 +17,4 @@ The complete sequence lasts approximately 3 minutes 45 seconds.
 
 Recording reads the actual OpenGL backbuffer. The on-screen FPS counter and
 feature captions identify the displayed systems. The report uses runtime captures
-in `evidence/screenshots/report-current/`. Existing video ledgers and subtitle files
-belong to their recorded release snapshot.
+in `evidence/screenshots/report-current/`.
